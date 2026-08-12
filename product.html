@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product | StarkLLM</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">Stark<span class="text-gradient">LLM</span></a>
+            <button class="menu-toggle" id="menuToggle">&#9776;</button>
+            <nav>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="product.html" class="active">Product</a></li>
+                    <li><a href="download.html">Download</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="page-header">
+            <h1>What <span class="text-gradient">StarkLLM</span> does</h1>
+            <p>Your private, local-first research companion.</p>
+        </div>
+
+        <div class="content-block">
+            <h2>Core Features</h2>
+            <ul>
+                <li><strong>Local Chat:</strong> Talk to open-weight LLMs safely on your own machine without sending data to the cloud.</li>
+                <li><strong>Document Upload & RAG:</strong> Upload PDFs and text files directly into your workspace. StarkLLM automatically chunks, embeds, and retrieves relevant context to ground the AI's answers in your actual sources.</li>
+                <li><strong>Knowledge Base:</strong> Maintain a global directory of reference material on your computer. Map this directory into StarkLLM to search across all your persistent personal knowledge.</li>
+                <li><strong>Multi-Workspace Support:</strong> Isolate contexts by project. Keep your coding tasks separated from your literature reviews.</li>
+                <li><strong>Source-Grounded Answers:</strong> Never wonder where an answer came from. StarkLLM provides direct context from the documents you provide it.</li>
+            </ul>
+
+            <h2>Under the Hood</h2>
+            <p>StarkLLM is built for technical users and researchers. It runs locally using <strong>Docker Desktop</strong> to orchestrate the backend and frontend, and connects seamlessly to <strong>Ollama</strong> running on your host machine for fast, secure LLM inference.</p>
+            <p>This architecture guarantees that the product remains transparent, inspectable, and completely private.</p>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-col">
+                <h4>StarkLLM</h4>
+                <p>Free & Open Source</p>
+                <p>Research Beta</p>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <p>info@starkllm.com</p>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <a href="impressum.html">Impressum</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Christian Stark. Provided "as is" with no warranty or liability.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download | StarkLLM</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">Stark<span class="text-gradient">LLM</span></a>
+            <button class="menu-toggle" id="menuToggle">&#9776;</button>
+            <nav>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="product.html">Product</a></li>
+                    <li><a href="download.html" class="active">Download</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="page-header">
+            <h1><span class="text-gradient">Download</span> StarkLLM</h1>
+            <p>Get started with the Windows Research Beta.</p>
+        </div>
+
+        <div class="content-block">
+            <div style="text-align: center; margin-bottom: 3rem;">
+                <a href="#" class="btn btn-primary" onclick="alert('Placeholder: Download link will be available upon official release.')">Download Windows Beta (.zip)</a>
+                <p style="margin-top: 1rem; font-size: 0.9rem;">Version 1.0.0 (Research Beta)</p>
+            </div>
+
+            <h2>System Requirements</h2>
+            <ul>
+                <li><strong>OS:</strong> Windows 10/11 (with WSL2 enabled)</li>
+                <li><strong>Docker Desktop:</strong> Must be installed and running.</li>
+                <li><strong>Ollama:</strong> Must be installed natively on your Windows host.</li>
+                <li><strong>Hardware:</strong> Minimum 16GB RAM and an NVIDIA GPU (8GB+ VRAM recommended).</li>
+            </ul>
+
+            <h2>Installation Steps</h2>
+            <ol>
+                <li>Download and extract the ZIP file to your preferred location.</li>
+                <li>Ensure Docker Desktop and Ollama are running.</li>
+                <li>Double-click the <strong><code>start.bat</code></strong> file inside the folder.</li>
+                <li>In the menu, press <strong>1</strong> to start StarkLLM. The system will build and open automatically in your browser at <code>http://localhost:5173</code>.</li>
+            </ol>
+            
+            <p><em>The launcher controls are simple: 1 = Start, 2 = Stop, 3 = Exit.</em></p>
+
+            <h2>Important Notes</h2>
+            <p>By downloading StarkLLM, you acknowledge that:</p>
+            <ul>
+                <li>The software is <strong>completely free</strong> and <strong>open source</strong>.</li>
+                <li>It is intended for <strong>research and non-commercial use</strong>.</li>
+                <li>It is provided <strong>without warranty</strong> or liability of any kind.</li>
+            </ul>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-col">
+                <h4>StarkLLM</h4>
+                <p>Free & Open Source</p>
+                <p>Research Beta</p>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <p>info@starkllm.com</p>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <a href="impressum.html">Impressum</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Christian Stark. Provided "as is" with no warranty or liability.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
