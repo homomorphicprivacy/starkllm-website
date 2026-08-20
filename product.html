@@ -4,18 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product | StarkLLM</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta name="description" content="StarkLLM product features — local chat, document RAG, Knowledge Base, and multi-workspace support running entirely on your own machine.">
+    <link rel="canonical" href="https://www.starkllm.com/product.html">
+    <link rel="stylesheet" href="/styles.css?v=5">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" href="/assets/logo.png">
+    <link rel="apple-touch-icon" href="/assets/logo.png">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
+    <canvas id="neural-canvas"></canvas>
     <header>
         <div class="container nav-container">
-            <a href="index.html" class="logo">Stark<span class="text-gradient">LLM</span></a>
+            <a href="/" class="logo">
+                <img src="/assets/logo.png?v=5" alt="StarkLLM Logo" class="logo-img">
+                <span class="brand-text text-gradient">StarkLLM</span>
+            </a>
             <button class="menu-toggle" id="menuToggle">&#9776;</button>
             <nav>
                 <ul class="nav-links" id="navLinks">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="product.html" class="active">Product</a></li>
+                    <li><a href="manual.html">Manual</a></li>
                     <li><a href="download.html">Download</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="contact.html">Contact</a></li>
@@ -24,42 +34,203 @@
         </div>
     </header>
 
-    <main class="container">
-        <div class="page-header">
-            <h1>What <span class="text-gradient">StarkLLM</span> does</h1>
-            <p>Your private, local-first research companion.</p>
+    <main>
+        <div class="page-header text-center" style="margin-top: 2rem;">
+            <h1 style="font-size: 3.5rem;">How <span class="text-gradient">StarkLLM</span> Works</h1>
+            <p style="font-size: 1.25rem;">An end-to-end local pipeline designed with data privacy in mind.</p>
         </div>
 
-        <div class="content-block">
-            <h2>Core Features</h2>
-            <ul>
-                <li><strong>Local Chat:</strong> Talk to open-weight LLMs safely on your own machine without sending data to the cloud.</li>
-                <li><strong>Document Upload & RAG:</strong> Upload PDFs and text files directly into your workspace. StarkLLM automatically chunks, embeds, and retrieves relevant context to ground the AI's answers in your actual sources.</li>
-                <li><strong>Knowledge Base:</strong> Maintain a global directory of reference material on your computer. Map this directory into StarkLLM to search across all your persistent personal knowledge.</li>
-                <li><strong>Multi-Workspace Support:</strong> Isolate contexts by project. Keep your coding tasks separated from your literature reviews.</li>
-                <li><strong>Source-Grounded Answers:</strong> Never wonder where an answer came from. StarkLLM provides direct context from the documents you provide it.</li>
-            </ul>
+        <!-- End-to-End Journey -->
+        <section class="container" style="max-width: 900px; padding-bottom: 4rem;">
+            <div class="glass-panel text-center">
+                <h3 style="color: var(--text-primary); margin-bottom: 1rem;">The Document Lifecycle</h3>
+                <p>When you upload a PDF or text file into StarkLLM, it is processed locally. Local parsers extract the raw text (using OCR if necessary). Second, a Semantic Chunking algorithm splits the text into logical, overlapping blocks. Third, a local embedding model converts these blocks into high-dimensional vectors, storing them in your private ChromaDB container. Finally, when you ask a question, the system retrieves the most relevant vectors and injects them into the context window of your chosen Ollama LLM, aiming to produce grounded responses.</p>
+            </div>
+        </section>
 
-            <h2>Under the Hood</h2>
-            <p>StarkLLM is built for technical users and researchers. It runs locally using <strong>Docker Desktop</strong> to orchestrate the backend and frontend, and connects seamlessly to <strong>Ollama</strong> running on your host machine for fast, secure LLM inference.</p>
-            <p>This architecture guarantees that the product remains transparent, inspectable, and completely private.</p>
-        </div>
+        <!-- Deep Dive: Document/RAG Answers -->
+        <section class="deep-dive-section container" style="padding-top: 0;">
+            <div class="deep-dive-grid">
+                <div class="deep-dive-visual">
+                    <div class="showcase-frame">
+                        <img src="/assets/LLM20242.png?v=5" alt="StarkLLM RAG Answers" class="showcase-img">
+                    </div>
+                </div>
+                <div class="deep-dive-text">
+                    <h2>Verifiable Intelligence</h2>
+                    <p>Large Language Models are prone to hallucination when relying solely on their pre-trained weights. StarkLLM solves this through rigorous Retrieval-Augmented Generation (RAG).</p>
+                    
+                    <ul class="deep-dive-list">
+                        <li><strong>Source-Backed Responses:</strong> The AI is prompted to read your exact documents before formulating an answer, aiming for high fidelity to the original text.</li>
+                        <li><strong>Direct Citations:</strong> Every response includes expandable citations. Click a citation to view the exact paragraph the AI used to construct its logic.</li>
+                        <li><strong>Reduced Hallucination:</strong> By constraining the model's context to your verified data, you significantly reduce the risk of confident but false information.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Deep Dive: Global Knowledge Base -->
+        <section class="deep-dive-section container">
+            <div class="deep-dive-grid reverse">
+                <div class="deep-dive-visual">
+                    <div class="showcase-frame frame-dark">
+                        <img src="/assets/KnowledgeBase.png?v=5" alt="StarkLLM Knowledge Base" class="showcase-img">
+                    </div>
+                </div>
+                <div class="deep-dive-text">
+                    <h2>Your Persistent Library</h2>
+                    <p>While workspace uploads are great for isolated projects, the Global Knowledge Base acts as your permanent, universally accessible reference library.</p>
+                    
+                    <ul class="deep-dive-list">
+                        <li><strong>Local Folder Indexing:</strong> Map any folder on your Windows machine to StarkLLM. The system will recursively index supported files into a global vector collection.</li>
+                        <li><strong>Universal Access:</strong> Query your Knowledge Base from any active chat session, regardless of the current workspace you are in.</li>
+                        <li><strong>Continuous Synchronization:</strong> As you add or modify files in your local folder, the Knowledge Base updates to reflect your latest research.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+
+
+
+        <!-- Workspace vs KB Comparison -->
+        <section id="workspace-vs-kb" class="container" style="max-width: 900px; padding-bottom: 4rem;">
+            <h2 style="font-size: 2.2rem; margin-bottom: 1rem;">Workspace vs Knowledge Base</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 2rem; font-size: 1.1rem;">StarkLLM offers two ways to contextualize the AI. Understanding the difference is critical to organizing your intelligence.</p>
+            
+            <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2rem;">
+                <div class="glass-panel" style="border-top: 4px solid #c084fc;">
+                    <h3 style="color: #c084fc; font-size: 1.4rem; margin-bottom: 1rem;">Workspace Documents</h3>
+                    <ul style="padding-left: 1.2rem; color: var(--text-secondary); margin-bottom: 1.5rem; line-height: 1.6;">
+                        <li>Tied strictly to one single workspace.</li>
+                        <li>Useful when work must stay isolated to prevent context contamination.</li>
+                        <li>Best for temporary or highly specific document sets.</li>
+                    </ul>
+                    <div style="background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 6px; border: 1px solid #333;">
+                        <strong style="color: var(--text-primary);">Example:</strong><br>
+                        <span style="color: var(--text-secondary); font-size: 0.95rem;">A folder of contracts for one specific legal case.</span>
+                    </div>
+                </div>
+
+                <div class="glass-panel" style="border-top: 4px solid #d4af37;">
+                    <h3 style="color: #d4af37; font-size: 1.4rem; margin-bottom: 1rem;">Knowledge Base</h3>
+                    <ul style="padding-left: 1.2rem; color: var(--text-secondary); margin-bottom: 1.5rem; line-height: 1.6;">
+                        <li>A persistent, global intelligence layer.</li>
+                        <li>Useful across all chats and ongoing workspaces simultaneously.</li>
+                        <li>Best for long-term reference material and personal archives.</li>
+                    </ul>
+                    <div style="background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 6px; border: 1px solid #333;">
+                        <strong style="color: var(--text-primary);">Example:</strong><br>
+                        <span style="color: var(--text-secondary); font-size: 0.95rem;">Your ongoing, permanent research library or company SOPs.</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Deep Dive: System Controls -->
+        <section class="deep-dive-section container">
+            <div class="deep-dive-grid">
+                <div class="deep-dive-visual">
+                    <div class="showcase-frame">
+                        <img src="/assets/Settings.png?v=5" alt="StarkLLM Settings" class="showcase-img">
+                    </div>
+                </div>
+                <div class="deep-dive-text">
+                    <h2>Local Control</h2>
+                    <p>StarkLLM provides deep administrative control over your local inference environment, empowering you to tune performance to your exact hardware capabilities.</p>
+                    
+                    <ul class="deep-dive-list">
+                        <li><strong>Model Selection:</strong> Switch seamlessly between any LLM downloaded via Ollama (e.g., Llama 3, Mistral, Qwen) directly from the chat interface.</li>
+                        <li><strong>Runtime Configuration:</strong> Adjust context window sizes, temperature, and advanced decoding parameters to perfectly balance speed and intelligence.</li>
+                        <li><strong>Local-First Routing:</strong> Review your network settings to verify that API calls are routed to <code>localhost</code>, helping keep your workflows private.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technology Hub Grid -->
+        <section class="features-section container" style="padding-top: 4rem;">
+            <div class="text-center" style="margin-bottom: 3rem;">
+                <h2 style="font-size: 2.5rem;">Core <span class="text-gradient">Technologies</span></h2>
+                <p style="font-size: 1.15rem;">Explore the architecture and capabilities powering StarkLLM.</p>
+            </div>
+            
+            <div class="grid">
+                <a href="/tech-rag.html?v=3" class="card tech-card">
+                    <div class="card-icon">&#128269;</div>
+                    <h3>Retrieval-Augmented Generation (RAG)</h3>
+                    <p>Learn how StarkLLM retrieves context from your documents to ground AI responses.</p>
+                </a>
+                
+                <a href="/tech-knowledge-base.html?v=3" class="card tech-card">
+                    <div class="card-icon">&#128218;</div>
+                    <h3>Global Knowledge Base</h3>
+                    <p>Index local folders to act as a persistent reference library across all chats.</p>
+                </a>
+                
+                <a href="/tech-semantic-chunking.html?v=3" class="card tech-card">
+                    <div class="card-icon">&#9986;&#65039;</div>
+                    <h3>Semantic Chunking</h3>
+                    <p>Discover how documents are split intelligently to preserve contextual meaning.</p>
+                </a>
+                
+                <a href="/tech-hybrid-search.html?v=3" class="card tech-card">
+                    <div class="card-icon">&#128176;</div>
+                    <h3>Hybrid Search &amp; Re-ranking</h3>
+                    <p>Understand the combination of vector and keyword search for precise retrieval.</p>
+                </a>
+                
+                <a href="/tech-multimodal.html?v=3" class="card tech-card">
+                    <div class="card-icon">&#128248;</div>
+                    <h3>Multimodal Documents</h3>
+                    <p>Process PDFs, images, and scanned documents using advanced OCR and Vision models.</p>
+                </a>
+                
+                <a href="/tech-workspaces.html?v=3" class="card tech-card">
+                    <div class="card-icon">&#128193;</div>
+                    <h3>Multi-Workspace &amp; Multi-Chat</h3>
+                    <p>Organize your work into isolated workspaces and separate chat sessions.</p>
+                </a>
+                
+                <a href="/tech-voice.html?v=3" class="card tech-card">
+                    <div class="card-icon">&#127897;&#65039;</div>
+                    <h3>Voice I/O (STT/TTS)</h3>
+                    <p>Interact hands-free with local Speech-to-Text and Text-to-Speech capabilities.</p>
+                </a>
+                
+                <a href="/tech-local-models.html?v=3" class="card tech-card">
+                    <div class="card-icon">&#129302;</div>
+                    <h3>Local Models with Ollama</h3>
+                    <p>Run open-weight LLMs directly on your GPU without cloud dependencies.</p>
+                </a>
+                
+                <a href="/tech-privacy.html?v=3" class="card tech-card">
+                    <div class="card-icon">&#128274;</div>
+                    <h3>Privacy &amp; Local-First Architecture</h3>
+                    <p>Deep dive into the Docker-based system that is designed to keep your data on your PC.</p>
+                </a>
+            </div>
+        </section>
     </main>
 
-    <footer>
+        <footer>
         <div class="container footer-content">
             <div class="footer-col">
-                <h4>StarkLLM</h4>
-                <p>Free & Open Source</p>
-                <p>Research Beta</p>
+                <div class="footer-brand">
+                    <img src="/assets/logo.png?v=5" alt="StarkLLM" class="footer-logo">
+                    <span class="footer-brand-name">StarkLLM</span>
+                </div>
+                <p>A free, open-source project.</p>
+                <p>Windows Research Beta</p>
+                <p style="margin-top: 1rem; font-size: 0.8rem; color: #71717a;">Provided "as-is" without warranties of any kind.<br>No liability for damages, data loss, or outcomes.<br>Dependent on user hardware, setup, and chosen local models.<br>Not a substitute for professional judgment. Third-party components (Docker, Ollama, models) have their own terms.</p>
             </div>
             <div class="footer-col">
-                <h4>Contact</h4>
-                <p>info@starkllm.com</p>
+                <h4>Related Projects</h4>
+                <a href="https://homomorphicprivacy.com" target="_blank" rel="noopener">homomorphicprivacy.com</a>
             </div>
             <div class="footer-col">
                 <h4>Legal</h4>
-                <a href="impressum.html">Impressum</a>
+                <a href="/impressum.html?v=4">Impressum</a>
+                <a href="/contact.html?v=4">Contact</a>
             </div>
         </div>
         <div class="footer-bottom">
@@ -67,6 +238,12 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="/script.js?v=5"></script>
 </body>
 </html>
+
+
+
+
+
+

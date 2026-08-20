@@ -4,18 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Download | StarkLLM</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta name="description" content="Download the StarkLLM Windows Research Beta. Free, open-source, local-first AI assistant requiring Docker Desktop and Ollama.">
+    <link rel="canonical" href="https://www.starkllm.com/download.html">
+    <link rel="stylesheet" href="/styles.css?v=5">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" href="/assets/logo.png">
+    <link rel="apple-touch-icon" href="/assets/logo.png">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
+    <canvas id="neural-canvas"></canvas>
     <header>
         <div class="container nav-container">
-            <a href="index.html" class="logo">Stark<span class="text-gradient">LLM</span></a>
+            <a href="/" class="logo">
+                <img src="/assets/logo.png?v=5" alt="StarkLLM Logo" class="logo-img">
+                <span class="brand-text text-gradient">StarkLLM</span>
+            </a>
             <button class="menu-toggle" id="menuToggle">&#9776;</button>
             <nav>
                 <ul class="nav-links" id="navLinks">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="product.html">Product</a></li>
+                    <li><a href="manual.html">Manual</a></li>
                     <li><a href="download.html" class="active">Download</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="contact.html">Contact</a></li>
@@ -30,54 +40,210 @@
             <p>Get started with the Windows Research Beta.</p>
         </div>
 
-        <div class="content-block">
-            <div style="text-align: center; margin-bottom: 3rem;">
-                <a href="#" class="btn btn-primary" onclick="alert('Placeholder: Download link will be available upon official release.')">Download Windows Beta (.zip)</a>
-                <p style="margin-top: 1rem; font-size: 0.9rem;">Version 1.0.0 (Research Beta)</p>
+        <div class="content-block" style="max-width: 1000px;">
+            <!-- Prominent Start in 5 Minutes Block -->
+            <div class="glass-panel" style="background: rgba(20, 20, 25, 0.85); border: 1px solid rgba(212, 175, 55, 0.2); padding: 2.5rem; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); margin-bottom: 3rem;">
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 2rem;">
+                    <div style="flex: 1; min-width: 300px;">
+                        <h2 style="font-size: 2.2rem; margin-bottom: 1.5rem; color: #fff;">&#9889; Start in 5 Minutes</h2>
+                        <ol class="custom-ordered-list" style="padding-left: 0; list-style: none; counter-reset: custom-counter; display: flex; flex-direction: column; gap: 1.2rem; color: var(--text-secondary); font-size: 1.05rem; line-height: 1.6;">
+                            <li style="position: relative; padding-left: 2.5rem;">
+                                <span style="position: absolute; left: 0; top: 0; font-weight: 800; color: #d4af37; font-size: 1.2rem; background: rgba(212, 175, 55, 0.1); border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; counter-increment: custom-counter; content: counter(custom-counter);">1</span>
+                                <strong style="color: var(--text-primary);">Start Docker Desktop</strong> &mdash; make sure it is running in the system tray.
+                            </li>
+                            <li style="position: relative; padding-left: 2.5rem;">
+                                <span style="position: absolute; left: 0; top: 0; font-weight: 800; color: #d4af37; font-size: 1.2rem; background: rgba(212, 175, 55, 0.1); border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center;">2</span>
+                                <strong style="color: var(--text-primary);">Install Ollama</strong> and pull the required models:<br>
+                                <code style="background:#0a0a0c; border: 1px solid #333; padding:0.4rem 0.6rem; border-radius:6px; font-size:0.9rem; display: block; margin-top: 0.5rem; color: #a1a1aa;">ollama pull qwen3.8:27b &amp;&amp; ollama pull qwen3-embedding:0.6b</code>
+                            </li>
+                            <li style="position: relative; padding-left: 2.5rem;">
+                                <span style="position: absolute; left: 0; top: 0; font-weight: 800; color: #d4af37; font-size: 1.2rem; background: rgba(212, 175, 55, 0.1); border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center;">3</span>
+                                <strong style="color: var(--text-primary);">Download the ZIP</strong> and extract it to a folder (e.g. <code>C:\StarkLLM\</code>).
+                            </li>
+                            <li style="position: relative; padding-left: 2.5rem;">
+                                <span style="position: absolute; left: 0; top: 0; font-weight: 800; color: #d4af37; font-size: 1.2rem; background: rgba(212, 175, 55, 0.1); border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center;">4</span>
+                                <strong style="color: var(--text-primary);">Run start.bat</strong> &mdash; double-click it and press <strong>1</strong>.<br>
+                                <span style="color: var(--text-secondary); font-size: 0.9rem;">Or run manually from terminal: <code>docker compose up --build -d</code></span>
+                            </li>
+                            <li style="position: relative; padding-left: 2.5rem;">
+                                <span style="position: absolute; left: 0; top: 0; font-weight: 800; color: #d4af37; font-size: 1.2rem; background: rgba(212, 175, 55, 0.1); border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center;">5</span>
+                                <strong style="color: var(--text-primary);">Open your browser</strong> at <code>http://localhost:5173</code>
+                            </li>
+                        </ol>
+                    </div>
+                    
+                    <div style="flex: 0 0 320px; background: rgba(0,0,0,0.4); padding: 1.5rem; border-radius: 8px; border: 1px solid #333;">
+                        <h4 style="color: #fff; margin-bottom: 1rem; font-size: 1.1rem;">Important Notes</h4>
+                        <ul style="padding-left: 1.2rem; color: #a1a1aa; font-size: 0.9rem; line-height: 1.5; margin-bottom: 1.5rem; display: flex; flex-direction: column; gap: 0.8rem;">
+                            <li>&#8987; <strong>First launch takes longer:</strong> Docker must download container images initially.</li>
+                            <li>&#9888;&#65039; <strong>Windows SmartScreen:</strong> If Windows blocks <code>start.bat</code>, use the alternative options below.</li>
+                            <li>&#128187; <strong>Hardware matters:</strong> Speed and answer quality depend heavily on having a capable GPU (8GB+ VRAM).</li>
+                        </ul>
+                        <a href="https://github.com/homomorphicprivacy/StarkLLM/releases/latest" class="btn btn-primary" style="width: 100%; text-align: center; padding: 0.8rem 1rem;" target="_blank" rel="noopener">&#11015; Download from GitHub Releases</a>
+                    </div>
+                </div>
             </div>
 
-            <h2>System Requirements</h2>
+            <!-- Prerequisites Checklist -->
+            <h2>Prerequisites Checklist</h2>
+            <p>Before you attempt to start StarkLLM, confirm that all of the following are in place:</p>
             <ul>
-                <li><strong>OS:</strong> Windows 10/11 (with WSL2 enabled)</li>
-                <li><strong>Docker Desktop:</strong> Must be installed and running.</li>
-                <li><strong>Ollama:</strong> Must be installed natively on your Windows host.</li>
-                <li><strong>Hardware:</strong> Minimum 16GB RAM and an NVIDIA GPU (8GB+ VRAM recommended).</li>
+                <li><strong>OS:</strong> Windows 10 or 11 with WSL2 enabled.</li>
+                <li><strong>Docker Desktop:</strong> Installed and actively running (visible in the system tray). <em>Without this, nothing will start.</em></li>
+                <li><strong>Ollama:</strong> Installed natively on Windows and running. Download from <a href="https://ollama.com" target="_blank" rel="noopener">ollama.com</a>.</li>
+                <li><strong>Models pulled:</strong> Open a terminal and run:
+                    <div class="code-block">
+                        ollama pull qwen3.8:27b<br>
+                        ollama pull qwen3-embedding:0.6b
+                    </div>
+                </li>
+                <li><strong>Hardware:</strong> Minimum 16 GB RAM. An NVIDIA GPU with 8 GB+ VRAM is strongly recommended for usable performance. See the <a href="/manual.html">User Manual</a> for hardware tier guidance.</li>
             </ul>
 
-            <h2>Installation Steps</h2>
-            <ol>
-                <li>Download and extract the ZIP file to your preferred location.</li>
-                <li>Ensure Docker Desktop and Ollama are running.</li>
-                <li>Double-click the <strong><code>start.bat</code></strong> file inside the folder.</li>
-                <li>In the menu, press <strong>1</strong> to start StarkLLM. The system will build and open automatically in your browser at <code>http://localhost:5173</code>.</li>
-            </ol>
-            
-            <p><em>The launcher controls are simple: 1 = Start, 2 = Stop, 3 = Exit.</em></p>
+            <!-- Windows Security Warning -->
+            <div class="alert warning" style="margin: 2rem 0;">
+                <h4>&#9888;&#65039; Windows May Block start.bat</h4>
+                <p>Because <code>start.bat</code> was downloaded from the internet, Windows Smart App Control or SmartScreen may flag it as potentially unsafe and refuse to run it. <strong>This does not mean the file is malware.</strong> It is a standard Windows security mechanism applied to any script downloaded from outside the local network. StarkLLM is entirely open-source and you are welcome to inspect every line of the file before running it.</p>
+            </div>
 
+            <!-- Method A: start.bat Control Panel -->
+            <h2>Option A &mdash; start.bat Control Panel (Easiest)</h2>
+            <p>If Windows allows it, simply double-click <code>start.bat</code> in the extracted folder. A text menu opens in a terminal window:</p>
+            <div class="code-block" style="line-height: 2;">
+                Press <strong>1</strong> &rarr; Start StarkLLM &nbsp;&nbsp;<span style="color: #71717a;">(builds and launches containers, opens app in browser)</span><br>
+                Press <strong>2</strong> &rarr; Stop StarkLLM &nbsp;&nbsp;<span style="color: #71717a;">(cleanly shuts down all containers)</span><br>
+                Press <strong>3</strong> &rarr; Exit &nbsp;&nbsp;<span style="color: #71717a;">(closes the control panel without changing anything)</span>
+            </div>
+            <div class="alert info" style="margin-top: 1.5rem;">
+                <h4>&#128270; First Start Takes Longer</h4>
+                <p>The first time you press <strong>1</strong>, Docker will download and build the required container images. This can take several minutes. Subsequent starts are fast.</p>
+            </div>
+            <p>Once running, navigate to <code>http://localhost:5173</code> in your browser if it doesn't open automatically.</p>
+
+            <!-- Method B: Unblock -->
+            <h2>Option B &mdash; Unblock the File (If Blocked)</h2>
+            <p>If Windows prevents <code>start.bat</code> from running, try unblocking it first:</p>
+            <ol>
+                <li>Right-click <code>start.bat</code> and select <strong>Properties</strong>.</li>
+                <li>At the bottom of the General tab, look for a message about the file being blocked from another computer.</li>
+                <li>Check the <strong>Unblock</strong> checkbox if it is present.</li>
+                <li>Click <strong>Apply</strong>, then <strong>OK</strong>.</li>
+                <li>Double-click <code>start.bat</code> again.</li>
+            </ol>
+
+            <!-- Method C: Run from terminal -->
+            <h2>Option C &mdash; Run from Terminal</h2>
+            <p>Running a script directly from a terminal window often bypasses SmartScreen entirely:</p>
+            <ol>
+                <li>Open the extracted project folder in File Explorer.</li>
+                <li>Click the address bar, type <code>cmd</code> or <code>powershell</code>, and press Enter to open a terminal in that folder.</li>
+                <li>Run the following command:</li>
+            </ol>
+            <div class="code-block">.\start.bat</div>
+
+            <!-- Method D: Full manual start -->
+            <h2>Option D &mdash; Manual Start Without start.bat</h2>
+            <p>If the starter script is still blocked or unavailable, you can control StarkLLM directly using Docker commands. Make sure Docker Desktop is running before proceeding.</p>
+            <p><strong>To start:</strong></p>
+            <div class="code-block">docker compose up --build -d</div>
+            <p>Then open <code>http://localhost:5173</code> in your browser.</p>
+            <p><strong>To stop:</strong></p>
+            <div class="code-block">docker compose down</div>
+            <p>These two commands are exactly what <code>start.bat</code> runs internally. There is no difference in outcome.</p>
+
+            <!-- Important Notes -->
             <h2>Important Notes</h2>
-            <p>By downloading StarkLLM, you acknowledge that:</p>
             <ul>
-                <li>The software is <strong>completely free</strong> and <strong>open source</strong>.</li>
-                <li>It is intended for <strong>research and non-commercial use</strong>.</li>
-                <li>It is provided <strong>without warranty</strong> or liability of any kind.</li>
+                <li>StarkLLM is <strong>free</strong> and <strong>open source</strong>.</li>
+                <li>Intended for <strong>research and non-commercial use</strong>.</li>
+                <li>Provided <strong>without warranty</strong> or liability of any kind.</li>
+            </ul>
+
+            <h2>Contribute &amp; Suggest Improvements</h2>
+            <p>StarkLLM is an open, evolving project. If you encounter a bug, have a feature idea, or want to share how you are using it, you are welcome to get in touch.</p>
+            <ul>
+                <li><strong>Email:</strong> <a href="mailto:info@starkllm.com">info@starkllm.com</a></li>
+                <li><strong>GitHub:</strong> Browse the source, open issues, or submit improvements directly.</li>
             </ul>
         </div>
+
+
+
+        <!-- FAQ Section -->
+        <section id="faq" class="container" style="max-width: 900px; padding-bottom: 4rem;">
+            <h2 style="font-size: 2.2rem; margin-bottom: 2rem;">Frequently Asked Questions</h2>
+            
+            <div style="margin-bottom: 1.5rem;">
+                <h4 style="color: var(--text-primary); font-size: 1.1rem; margin-bottom: 0.5rem;">1. Does my data leave my computer?</h4>
+                <p style="color: var(--text-secondary); margin-bottom: 0;">StarkLLM is designed to keep your data on your machine. Documents are stored in a local ChromaDB container. AI inference runs via Ollama on your host machine. During normal local operation, no data is intended to be transmitted externally.</p>
+            </div>
+
+            <div style="margin-bottom: 1.5rem;">
+                <h4 style="color: var(--text-primary); font-size: 1.1rem; margin-bottom: 0.5rem;">2. Is StarkLLM free?</h4>
+                <p style="color: var(--text-secondary); margin-bottom: 0;">Yes. It is free and open-source. There are no subscriptions or premium tiers. It is provided "as is" with no liability.</p>
+            </div>
+
+            <div style="margin-bottom: 1.5rem;">
+                <h4 style="color: var(--text-primary); font-size: 1.1rem; margin-bottom: 0.5rem;">3. Why can answers be slow?</h4>
+                <p style="color: var(--text-secondary); margin-bottom: 0;">Speed depends on your hardware. If you do not have a dedicated GPU, Ollama defaults to CPU inference, which is significantly slower. A dedicated NVIDIA GPU (8GB+ VRAM) can significantly improve generation speed.</p>
+            </div>
+
+            <div style="margin-bottom: 1.5rem;">
+                <h4 style="color: var(--text-primary); font-size: 1.1rem; margin-bottom: 0.5rem;">4. Why does Windows block start.bat?</h4>
+                <p style="color: var(--text-secondary); margin-bottom: 0;">Windows SmartScreen flags scripts downloaded from the internet. It does not mean the file is malware. You can unblock it via file Properties, or bypass SmartScreen by running <code>.\start.bat</code> directly from a terminal.</p>
+            </div>
+
+            <div style="margin-bottom: 1.5rem;">
+                <h4 style="color: var(--text-primary); font-size: 1.1rem; margin-bottom: 0.5rem;">5. What hardware do I need?</h4>
+                <p style="color: var(--text-secondary); margin-bottom: 0;">At minimum: 16 GB RAM and an NVIDIA GPU with 8GB VRAM for 8-Billion parameter models. For demanding models (14B-32B), 24GB VRAM or 64GB system RAM is recommended.</p>
+            </div>
+
+            <div style="margin-bottom: 1.5rem;">
+                <h4 style="color: var(--text-primary); font-size: 1.1rem; margin-bottom: 0.5rem;">6. What is the difference between normal chat and document chat?</h4>
+                <p style="color: var(--text-secondary); margin-bottom: 0;">Normal chat relies solely on the LLM's pre-trained knowledge. Document chat uses RAG: it searches your uploaded PDFs first, feeds relevant chunks to the LLM, and provides answers with specific citations to your documents.</p>
+            </div>
+
+            <div style="margin-bottom: 1.5rem;">
+                <h4 style="color: var(--text-primary); font-size: 1.1rem; margin-bottom: 0.5rem;">7. What is the difference between Workspace Documents and Knowledge Base?</h4>
+                <p style="color: var(--text-secondary); margin-bottom: 0;">Workspace Documents are temporary and isolated to a specific project. The Knowledge Base is a persistent, global folder on your machine that can be referenced from any chat.</p>
+            </div>
+
+            <div style="margin-bottom: 1.5rem;">
+                <h4 style="color: var(--text-primary); font-size: 1.1rem; margin-bottom: 0.5rem;">8. What if the UI opens but chat does not work?</h4>
+                <p>Ensure Docker Desktop and Ollama are running. Verify you have pulled the required models (<code>ollama pull qwen3.8:27b</code>). If it still fails, reset the backend manually in a terminal with <code>docker compose down</code> followed by <code>docker compose up --build -d</code>.</p>
+            </div>
+
+            <div style="margin-bottom: 1.5rem;">
+                <h4 style="color: var(--text-primary); font-size: 1.1rem; margin-bottom: 0.5rem;">9. Can I use this commercially?</h4>
+                <p style="color: var(--text-secondary); margin-bottom: 0;">StarkLLM is a Research Beta. You can use it freely, but there are no commercial warranties, support SLAs, or liability accepted for business disruption or data loss.</p>
+            </div>
+
+            <div style="margin-bottom: 1.5rem;">
+                <h4 style="color: var(--text-primary); font-size: 1.1rem; margin-bottom: 0.5rem;">10. Where can I send feedback or contribute?</h4>
+                <p style="color: var(--text-secondary); margin-bottom: 0;">We welcome feedback! Email us at <a href="mailto:info@starkllm.com">info@starkllm.com</a> or open an issue on our GitHub repository.</p>
+            </div>
+        </section>
     </main>
 
-    <footer>
+        <footer>
         <div class="container footer-content">
             <div class="footer-col">
-                <h4>StarkLLM</h4>
-                <p>Free & Open Source</p>
-                <p>Research Beta</p>
+                <div class="footer-brand">
+                    <img src="/assets/logo.png?v=5" alt="StarkLLM" class="footer-logo">
+                    <span class="footer-brand-name">StarkLLM</span>
+                </div>
+                <p>A free, open-source project.</p>
+                <p>Windows Research Beta</p>
+                <p style="margin-top: 1rem; font-size: 0.8rem; color: #71717a;">Provided "as-is" without warranties of any kind.<br>No liability for damages, data loss, or outcomes.<br>Dependent on user hardware, setup, and chosen local models.<br>Not a substitute for professional judgment. Third-party components (Docker, Ollama, models) have their own terms.</p>
             </div>
             <div class="footer-col">
-                <h4>Contact</h4>
-                <p>info@starkllm.com</p>
+                <h4>Related Projects</h4>
+                <a href="https://homomorphicprivacy.com" target="_blank" rel="noopener">homomorphicprivacy.com</a>
             </div>
             <div class="footer-col">
                 <h4>Legal</h4>
-                <a href="impressum.html">Impressum</a>
+                <a href="/impressum.html?v=4">Impressum</a>
+                <a href="/contact.html?v=4">Contact</a>
             </div>
         </div>
         <div class="footer-bottom">
@@ -85,6 +251,12 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="/script.js?v=5"></script>
 </body>
 </html>
+
+
+
+
+
+

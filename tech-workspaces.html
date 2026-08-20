@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Workspace & Multi-Chat | StarkLLM</title>
+    <link rel="canonical" href="https://www.starkllm.com/tech-workspaces.html">
+    <link rel="stylesheet" href="/styles.css?v=4">
+    <link rel="icon" type="image/png" href="/assets/logo.png?v=4?v=4">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <canvas id="neural-canvas"></canvas>
+    <header>
+        <div class="container nav-container">
+            <a href="/index.html?v=4" class="logo">
+                <img src="/assets/logo.png?v=4?v=4" alt="StarkLLM Logo" class="logo-img">
+                Stark<span class="text-gradient">LLM</span>
+            </a>
+            <button class="menu-toggle" id="menuToggle">&#9776;</button>
+            <nav>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="/index.html?v=4">Home</a></li>
+                    <li><a href="/product.html?v=4">Product</a></li>
+                    <li><a href="/manual.html?v=4">Manual</a></li>
+                    <li><a href="/download.html?v=4">Download</a></li>
+                    <li><a href="/about.html?v=4">About</a></li>
+                    <li><a href="/contact.html?v=4">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="tech-header text-center">
+            <h1>Multi-Workspace <span class="text-gradient">Organization</span></h1>
+            <p>Isolate contexts by project and keep workflows clean.</p>
+        </div>
+
+        <div class="tech-content">
+            <div class="tech-main">
+                <div class="showcase-frame">
+                    <img src="/assets/Dashboard.png?v=4?v=4" alt="Multi-Workspace & Multi-Chat | StarkLLM" class="showcase-img">
+                </div>
+                
+                <h2>1. Plain-Language Definition</h2>
+                <p>Workspaces are hard-bounded, isolated environments within StarkLLM. Each workspace has its own dedicated collection of uploaded documents and its own chat history.</p>
+                
+                <h2>2. Why It Exists</h2>
+                <p>Professionals work on multiple distinct projects simultaneously. A lawyer might be working on three different cases; a developer might be working on two different codebases.</p>
+                
+                <h2>3. What Breaks Without It</h2>
+                <p>If all documents are dumped into a single global bucket, asking 'Summarize the plaintiff's argument' might retrieve data from the wrong legal case, causing dangerous cross-contamination.</p>
+
+                <h2>4. How StarkLLM Implements It</h2>
+                <p>StarkLLM dynamically creates isolated collections in the ChromaDB backend for each workspace. When you chat, it strictly queries only the collection associated with your active workspace.</p>
+                
+                <h2>5. User-Visible Benefit</h2>
+                <p>Strict context isolation. You have strong assurance that there will be no cross-contamination of ideas, facts, or data between your disparate projects.</p>
+                
+                <h2>6. Practical Example</h2>
+                <p>You switch from your 'Tax Returns 2023' workspace to your 'Python App' workspace. The AI instantly forgets about your taxes and only retrieves context about your code.</p>
+            </div>
+            
+            <aside>
+                <div class="tech-sidebar glass-panel" style="padding: 2rem;">
+                    <h3 style="color: var(--text-primary);">Further Reading</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">Dive deeper into how to leverage this technology within the StarkLLM ecosystem.</p>
+                    <a href="/manual.html?v=4" class="btn btn-primary" style="width: 100%; text-align: center; margin-bottom: 1rem;">Read the User Manual</a>
+                    <a href="/product.html?v=4" class="btn btn-outline" style="width: 100%; text-align: center;">View All Technologies</a>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-col">
+                <div class="footer-brand">
+                    <img src="/assets/logo.png?v=4?v=4" alt="StarkLLM" class="footer-logo">
+                    <span class="footer-brand-name">StarkLLM</span>
+                </div>
+                <p>A free, open-source project.</p>
+                <p>Windows Research Beta</p>
+                <p style="margin-top: 1rem; font-size: 0.8rem; color: #71717a;">Provided "as-is" without warranties of any kind.<br>No liability for damages, data loss, or outcomes.<br>Dependent on user hardware, setup, and chosen local models.<br>Not a substitute for professional judgment. Third-party components (Docker, Ollama, models) have their own terms.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Related Projects</h4>
+                <a href="https://homomorphicprivacy.com" target="_blank" rel="noopener">homomorphicprivacy.com</a>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <a href="/impressum.html?v=4">Impressum</a>
+                <a href="/contact.html?v=4">Contact</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Christian Stark. Provided "as is" with no warranty or liability.</p>
+        </div>
+    </footer>
+
+    <script src="/script.js?v=4"></script>
+</body>
+</html>
+
+
+
+
+

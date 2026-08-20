@@ -4,18 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact | StarkLLM</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="canonical" href="https://www.starkllm.com/contact.html">
+    <link rel="stylesheet" href="/styles.css?v=5">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" href="/assets/logo.png">
+    <link rel="apple-touch-icon" href="/assets/logo.png">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
+    <canvas id="neural-canvas"></canvas>
     <header>
         <div class="container nav-container">
-            <a href="index.html" class="logo">Stark<span class="text-gradient">LLM</span></a>
+            <a href="/" class="logo">
+                <img src="/assets/logo.png?v=5" alt="StarkLLM Logo" class="logo-img">
+                <span class="brand-text text-gradient">StarkLLM</span>
+            </a>
             <button class="menu-toggle" id="menuToggle">&#9776;</button>
             <nav>
                 <ul class="nav-links" id="navLinks">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="product.html">Product</a></li>
+                    <li><a href="manual.html">Manual</a></li>
                     <li><a href="download.html">Download</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="contact.html" class="active">Contact</a></li>
@@ -33,7 +42,6 @@
         <div class="content-block" style="text-align: center;">
             <h2>Reach Out</h2>
             <p>If you have questions, feedback, or would like to contribute to the open source Research Beta, please reach out via email.</p>
-            
             <div style="margin-top: 2rem;">
                 <p><strong>Email:</strong> <a href="mailto:info@starkllm.com" style="font-size: 1.1rem;">info@starkllm.com</a></p>
                 <p><strong>Website:</strong> <a href="https://starkllm.com">https://starkllm.com</a></p>
@@ -42,20 +50,25 @@
         </div>
     </main>
 
-    <footer>
+        <footer>
         <div class="container footer-content">
             <div class="footer-col">
-                <h4>StarkLLM</h4>
-                <p>Free & Open Source</p>
-                <p>Research Beta</p>
+                <div class="footer-brand">
+                    <img src="/assets/logo.png?v=5" alt="StarkLLM" class="footer-logo">
+                    <span class="footer-brand-name">StarkLLM</span>
+                </div>
+                <p>A free, open-source project.</p>
+                <p>Windows Research Beta</p>
+                <p style="margin-top: 1rem; font-size: 0.8rem; color: #71717a;">Provided "as-is" without warranties of any kind.<br>No liability for damages, data loss, or outcomes.<br>Dependent on user hardware, setup, and chosen local models.<br>Not a substitute for professional judgment. Third-party components (Docker, Ollama, models) have their own terms.</p>
             </div>
             <div class="footer-col">
-                <h4>Contact</h4>
-                <p>info@starkllm.com</p>
+                <h4>Related Projects</h4>
+                <a href="https://homomorphicprivacy.com" target="_blank" rel="noopener">homomorphicprivacy.com</a>
             </div>
             <div class="footer-col">
                 <h4>Legal</h4>
-                <a href="impressum.html">Impressum</a>
+                <a href="/impressum.html?v=4">Impressum</a>
+                <a href="/contact.html?v=4">Contact</a>
             </div>
         </div>
         <div class="footer-bottom">
@@ -63,6 +76,12 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="/script.js?v=5"></script>
 </body>
 </html>
+
+
+
+
+
+

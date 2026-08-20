@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Models with Ollama | StarkLLM</title>
+    <link rel="canonical" href="https://www.starkllm.com/tech-local-models.html">
+    <link rel="stylesheet" href="/styles.css?v=4">
+    <link rel="icon" type="image/png" href="/assets/logo.png?v=4?v=4">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <canvas id="neural-canvas"></canvas>
+    <header>
+        <div class="container nav-container">
+            <a href="/index.html?v=4" class="logo">
+                <img src="/assets/logo.png?v=4?v=4" alt="StarkLLM Logo" class="logo-img">
+                Stark<span class="text-gradient">LLM</span>
+            </a>
+            <button class="menu-toggle" id="menuToggle">&#9776;</button>
+            <nav>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="/index.html?v=4">Home</a></li>
+                    <li><a href="/product.html?v=4">Product</a></li>
+                    <li><a href="/manual.html?v=4">Manual</a></li>
+                    <li><a href="/download.html?v=4">Download</a></li>
+                    <li><a href="/about.html?v=4">About</a></li>
+                    <li><a href="/contact.html?v=4">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="tech-header text-center">
+            <h1>Local Models via <span class="text-gradient">Ollama</span></h1>
+            <p>Run open-weight LLMs directly on your hardware.</p>
+        </div>
+
+        <div class="tech-content">
+            <div class="tech-main">
+                <div class="showcase-frame">
+                    <img src="/assets/LLM2024.png?v=4?v=4" alt="Local Models with Ollama | StarkLLM" class="showcase-img">
+                </div>
+                
+                <h2>1. Plain-Language Definition</h2>
+                <p>Ollama is a powerful, open-source inference engine that runs Large Language Models (like Llama 3 or Qwen) directly on your local CPU or GPU. It serves as the 'brain' of StarkLLM.</p>
+                
+                <h2>2. Why It Exists</h2>
+                <p>Running models locally is a highly effective way to maintain strong data privacy. It avoids subscription fees, is designed to work completely offline once downloaded, and allows you to swap models instantly.</p>
+                
+                <h2>3. What Breaks Without It</h2>
+                <p>If you rely on OpenAI or Anthropic APIs, you must trust them with your highly sensitive data. Furthermore, if you lose your internet connection, your AI assistant stops working.</p>
+
+                <h2>4. How StarkLLM Implements It</h2>
+                <p>StarkLLM connects to the Ollama API running on `localhost`. When you send a prompt, StarkLLM retrieves document context, formats it, sends it to Ollama, and streams the response back to your UI.</p>
+                
+                <h2>5. User-Visible Benefit</h2>
+                <p>Fast, deeply private, and free AI inference that scales with your hardware and never tracks your behavior.</p>
+                
+                <h2>6. Practical Example</h2>
+                <p>You are on an airplane with no Wi-Fi. You can still upload a PDF to StarkLLM and have a full, intelligent conversation about it using a locally running 8B model.</p>
+            </div>
+            
+            <aside>
+                <div class="tech-sidebar glass-panel" style="padding: 2rem;">
+                    <h3 style="color: var(--text-primary);">Further Reading</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">Dive deeper into how to leverage this technology within the StarkLLM ecosystem.</p>
+                    <a href="/manual.html?v=4" class="btn btn-primary" style="width: 100%; text-align: center; margin-bottom: 1rem;">Read the User Manual</a>
+                    <a href="/product.html?v=4" class="btn btn-outline" style="width: 100%; text-align: center;">View All Technologies</a>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-col">
+                <div class="footer-brand">
+                    <img src="/assets/logo.png?v=4?v=4" alt="StarkLLM" class="footer-logo">
+                    <span class="footer-brand-name">StarkLLM</span>
+                </div>
+                <p>A free, open-source project.</p>
+                <p>Windows Research Beta</p>
+                <p style="margin-top: 1rem; font-size: 0.8rem; color: #71717a;">Provided "as-is" without warranties of any kind.<br>No liability for damages, data loss, or outcomes.<br>Dependent on user hardware, setup, and chosen local models.<br>Not a substitute for professional judgment. Third-party components (Docker, Ollama, models) have their own terms.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Related Projects</h4>
+                <a href="https://homomorphicprivacy.com" target="_blank" rel="noopener">homomorphicprivacy.com</a>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <a href="/impressum.html?v=4">Impressum</a>
+                <a href="/contact.html?v=4">Contact</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Christian Stark. Provided "as is" with no warranty or liability.</p>
+        </div>
+    </footer>
+
+    <script src="/script.js?v=4"></script>
+</body>
+</html>
+
+
+
+
+

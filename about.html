@@ -4,18 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About | StarkLLM</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta name="description" content="About StarkLLM — a free, open-source, local-first AI assistant created by Christian Stark in Aachen.">
+    <link rel="canonical" href="https://www.starkllm.com/about.html">
+    <link rel="stylesheet" href="/styles.css?v=5">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" href="/assets/logo.png">
+    <link rel="apple-touch-icon" href="/assets/logo.png">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
+    <canvas id="neural-canvas"></canvas>
     <header>
         <div class="container nav-container">
-            <a href="index.html" class="logo">Stark<span class="text-gradient">LLM</span></a>
+            <a href="/" class="logo">
+                <img src="/assets/logo.png?v=5" alt="StarkLLM Logo" class="logo-img">
+                <span class="brand-text text-gradient">StarkLLM</span>
+            </a>
             <button class="menu-toggle" id="menuToggle">&#9776;</button>
             <nav>
                 <ul class="nav-links" id="navLinks">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="product.html">Product</a></li>
+                    <li><a href="manual.html">Manual</a></li>
                     <li><a href="download.html">Download</a></li>
                     <li><a href="about.html" class="active">About</a></li>
                     <li><a href="contact.html">Contact</a></li>
@@ -30,36 +40,55 @@
             <p>The mission for private, inspectable AI.</p>
         </div>
 
-        <div class="content-block">
-            <h2>Our Mission</h2>
-            <p>StarkLLM was created with a singular focus: bringing powerful AI capabilities entirely to your local machine. We believe that your private documents, research notes, and daily thoughts shouldn't have to be sent to a corporate cloud just to interact with an AI.</p>
-            <p>By providing a <strong>completely free</strong> and <strong>open source</strong> tool, we aim to foster transparency and empower technical researchers and developers to own their AI workflows.</p>
+        <div class="content-block" style="max-width: 900px;">
+            <h2>What StarkLLM Is</h2>
+            <p>StarkLLM is a private, local-first AI assistant for Windows. It lets you chat with open-weight Large Language Models (LLMs) and interrogate your own documents using Retrieval-Augmented Generation (RAG). Every process runs locally on your machine—intended to keep chats and documents on the local machine during normal local operation.</p>
+            <p><strong>This is a free Research Beta.</strong> It is highly capable for technical users, but it is not a polished, commercial SaaS product. You are responsible for providing capable hardware, choosing your models via Ollama, and evaluating the outcomes of your AI interactions.</p>
+
+            <h2>Why It Exists</h2>
+            <p>The standard paradigm of AI requires handing your sensitive documents—legal cases, medical records, or proprietary code—to remote corporate servers. StarkLLM was built to prove that you can achieve powerful, document-grounded AI intelligence while maintaining strong data privacy.</p>
+
+            <h2>Who It Is For</h2>
+            <p>StarkLLM is built for researchers, developers, legal professionals, and privacy advocates who require a secure environment for document analysis and refuse to compromise on data privacy.</p>
 
             <h2>Creator</h2>
-            <p>StarkLLM is developed and maintained by:</p>
             <ul>
                 <li><strong>Christian Stark</strong></li>
                 <li>Maxstr. 14, 52070 Aachen, Germany</li>
                 <li>Email: <a href="mailto:info@starkllm.com">info@starkllm.com</a></li>
-                <li>Website: <a href="https://starkllm.com">https://starkllm.com</a></li>
+            </ul>
+
+            <h2>The Privacy Ecosystem</h2>
+            <p>StarkLLM is part of a broader interest in privacy-preserving technologies and secure computing. If you are interested in advanced cryptographic approaches to data privacy, explore our related project at <a href="https://homomorphicprivacy.com" target="_blank" rel="noopener">homomorphicprivacy.com</a>.</p>
+
+            <h2>Contribute &amp; Collaborate</h2>
+            <p>If you find StarkLLM useful, discover a bug, or have ideas for improvement, we welcome your input.</p>
+            <ul>
+                <li><strong>Email suggestions:</strong> <a href="mailto:info@starkllm.com">info@starkllm.com</a></li>
+                <li><strong>GitHub:</strong> Browse the source code, open issues, or submit improvements directly.</li>
             </ul>
         </div>
     </main>
 
-    <footer>
+        <footer>
         <div class="container footer-content">
             <div class="footer-col">
-                <h4>StarkLLM</h4>
-                <p>Free & Open Source</p>
-                <p>Research Beta</p>
+                <div class="footer-brand">
+                    <img src="/assets/logo.png?v=5" alt="StarkLLM" class="footer-logo">
+                    <span class="footer-brand-name">StarkLLM</span>
+                </div>
+                <p>A free, open-source project.</p>
+                <p>Windows Research Beta</p>
+                <p style="margin-top: 1rem; font-size: 0.8rem; color: #71717a;">Provided "as-is" without warranties of any kind.<br>No liability for damages, data loss, or outcomes.<br>Dependent on user hardware, setup, and chosen local models.<br>Not a substitute for professional judgment. Third-party components (Docker, Ollama, models) have their own terms.</p>
             </div>
             <div class="footer-col">
-                <h4>Contact</h4>
-                <p>info@starkllm.com</p>
+                <h4>Related Projects</h4>
+                <a href="https://homomorphicprivacy.com" target="_blank" rel="noopener">homomorphicprivacy.com</a>
             </div>
             <div class="footer-col">
                 <h4>Legal</h4>
-                <a href="impressum.html">Impressum</a>
+                <a href="/impressum.html?v=4">Impressum</a>
+                <a href="/contact.html?v=4">Contact</a>
             </div>
         </div>
         <div class="footer-bottom">
@@ -67,6 +96,12 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="/script.js?v=5"></script>
 </body>
 </html>
+
+
+
+
+
+

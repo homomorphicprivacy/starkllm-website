@@ -4,18 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>StarkLLM | Private Local AI</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta name="description" content="StarkLLM is a free, open-source, local-first AI assistant for Windows. Chat privately with your documents and Knowledge Base on your own machine.">
+    <link rel="canonical" href="https://www.starkllm.com/">
+    <link rel="stylesheet" href="/styles.css?v=5">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" href="/assets/logo.png">
+    <link rel="apple-touch-icon" href="/assets/logo.png">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
+    <canvas id="neural-canvas"></canvas>
     <header>
         <div class="container nav-container">
-            <a href="index.html" class="logo">Stark<span class="text-gradient">LLM</span></a>
+            <a href="/" class="logo">
+                <img src="/assets/logo.png?v=5" alt="StarkLLM Logo" class="logo-img">
+                <span class="brand-text text-gradient">StarkLLM</span>
+            </a>
             <button class="menu-toggle" id="menuToggle">&#9776;</button>
             <nav>
                 <ul class="nav-links" id="navLinks">
                     <li><a href="index.html" class="active">Home</a></li>
                     <li><a href="product.html">Product</a></li>
+                    <li><a href="manual.html">Manual</a></li>
                     <li><a href="download.html">Download</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="contact.html">Contact</a></li>
@@ -26,56 +36,180 @@
 
     <main>
         <section class="hero container">
-            <span class="badge">Research Beta</span>
+            <span class="badge">Research Beta &mdash; Windows</span>
             <h1>Private Local AI for your <span class="text-gradient">Documents</span></h1>
-            <p>A completely free, open-source, and local-first AI assistant. Chat with your PDFs and personal Knowledge Base entirely on your own Windows machine.</p>
-            <a href="download.html" class="btn btn-primary">Download Windows Research Beta</a>
+            <p>A free, open-source, and local-first AI assistant. Chat with your PDFs and personal Knowledge Base entirely on your own Windows machine. Your data is intended to keep your chats and documents on the local machine during normal operation.</p>
+            <div class="hero-actions">
+                <a href="download.html" class="btn btn-primary">Download Windows Research Beta</a>
+                <a href="manual.html" class="btn btn-outline">Read User Manual</a>
+            </div>
         </section>
 
-        <section class="container">
+        <section class="container hero-img-section">
+            <img src="/assets/LLM2024.png?v=5" alt="StarkLLM chat interface" class="hero-screenshot">
+        </section>
+
+        <section class="container features-section">
             <div class="grid">
                 <div class="card">
+                    <div class="card-icon">&#128274;</div>
                     <h3>Local-First Privacy</h3>
-                    <p>Powered by Docker and Ollama, your chats and documents never leave your local machine. Total data sovereignty.</p>
+                    <p>Powered by Docker and Ollama, your chats and documents are designed to stay on your local machine. Built with data privacy in mind.</p>
                 </div>
                 <div class="card">
+                    <div class="card-icon">&#128196;</div>
                     <h3>Chat with Documents</h3>
                     <p>Upload PDFs and text files directly to your workspace. The integrated RAG engine retrieves answers directly from your sources.</p>
                 </div>
                 <div class="card">
+                    <div class="card-icon">&#128218;</div>
                     <h3>Knowledge Base</h3>
                     <p>Map a local folder on your PC to act as a global Knowledge Base accessible across all your different chats and projects.</p>
                 </div>
                 <div class="card">
+                    <div class="card-icon">&#128193;</div>
                     <h3>Workspace Organization</h3>
                     <p>Keep your workflows separated. Create distinct workspaces for different research projects, isolating context effectively.</p>
                 </div>
                 <div class="card">
-                    <h3>Free & Open Source</h3>
-                    <p>Built for the community. Inspect the code yourself. Intended for research and non-commercial use, without restrictions.</p>
+                    <div class="card-icon">&#10024;</div>
+                <a href="manual.html" class="btn btn-outline">Read the User Manual</a>
+            </div>
+        </section>
+
+
+        <!-- Prominent Start in 5 Minutes Block -->
+        <section class="container" style="padding-bottom: 3rem;">
+            <div class="glass-panel" style="background: rgba(20, 20, 25, 0.85); border: 1px solid rgba(212, 175, 55, 0.2); padding: 2.5rem; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 2rem;">
+                    <div style="flex: 1; min-width: 300px;">
+                        <h2 style="font-size: 2.2rem; margin-bottom: 1.5rem; color: #fff;">&#9889; Start in 5 Minutes</h2>
+                        <ol class="custom-ordered-list" style="padding-left: 0; list-style: none; counter-reset: custom-counter; display: flex; flex-direction: column; gap: 1.2rem; color: var(--text-secondary); font-size: 1.05rem; line-height: 1.6;">
+                            <li style="position: relative; padding-left: 2.5rem;">
+                                <span style="position: absolute; left: 0; top: 0; font-weight: 800; color: #d4af37; font-size: 1.2rem; background: rgba(212, 175, 55, 0.1); border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; counter-increment: custom-counter; content: counter(custom-counter);">1</span>
+                                <strong style="color: var(--text-primary);">Start Docker Desktop</strong> &mdash; make sure it is running in the system tray.
+                            </li>
+                            <li style="position: relative; padding-left: 2.5rem;">
+                                <span style="position: absolute; left: 0; top: 0; font-weight: 800; color: #d4af37; font-size: 1.2rem; background: rgba(212, 175, 55, 0.1); border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center;">2</span>
+                                <strong style="color: var(--text-primary);">Install Ollama</strong> and pull the required models:<br>
+                                <code style="background:#0a0a0c; border: 1px solid #333; padding:0.4rem 0.6rem; border-radius:6px; font-size:0.9rem; display: block; margin-top: 0.5rem; color: #a1a1aa;">ollama pull qwen3.8:27b &amp;&amp; ollama pull qwen3-embedding:0.6b</code>
+                            </li>
+                            <li style="position: relative; padding-left: 2.5rem;">
+                                <span style="position: absolute; left: 0; top: 0; font-weight: 800; color: #d4af37; font-size: 1.2rem; background: rgba(212, 175, 55, 0.1); border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center;">3</span>
+                                <strong style="color: var(--text-primary);">Download the ZIP</strong> and extract it to a folder (e.g. <code>C:\StarkLLM\</code>).
+                            </li>
+                            <li style="position: relative; padding-left: 2.5rem;">
+                                <span style="position: absolute; left: 0; top: 0; font-weight: 800; color: #d4af37; font-size: 1.2rem; background: rgba(212, 175, 55, 0.1); border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center;">4</span>
+                                <strong style="color: var(--text-primary);">Run start.bat</strong> &mdash; double-click it and press <strong>1</strong>.<br>
+                                <span style="color: var(--text-secondary); font-size: 0.9rem;">Or run manually from terminal: <code>docker compose up --build -d</code></span>
+                            </li>
+                            <li style="position: relative; padding-left: 2.5rem;">
+                                <span style="position: absolute; left: 0; top: 0; font-weight: 800; color: #d4af37; font-size: 1.2rem; background: rgba(212, 175, 55, 0.1); border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center;">5</span>
+                                <strong style="color: var(--text-primary);">Open your browser</strong> at <code>http://localhost:5173</code>
+                            </li>
+                        </ol>
+                    </div>
+                    
+                    <div style="flex: 0 0 320px; background: rgba(0,0,0,0.4); padding: 1.5rem; border-radius: 8px; border: 1px solid #333;">
+                        <h4 style="color: #fff; margin-bottom: 1rem; font-size: 1.1rem;">Important Notes</h4>
+                        <ul style="padding-left: 1.2rem; color: #a1a1aa; font-size: 0.9rem; line-height: 1.5; margin-bottom: 1.5rem; display: flex; flex-direction: column; gap: 0.8rem;">
+                            <li>&#8987; <strong>First launch takes longer:</strong> Docker must download container images initially.</li>
+                            <li>&#9888;&#65039; <strong>Windows SmartScreen:</strong> If Windows blocks <code>start.bat</code>, use the terminal or Unblock the file (see <a href="/download.html" style="color: #d4af37; text-decoration: none;">Download page</a>).</li>
+                            <li>&#128187; <strong>Hardware matters:</strong> Speed and answer quality depend heavily on having a capable GPU (8GB+ VRAM recommended).</li>
+                        </ul>
+                        <a href="https://github.com/homomorphicprivacy/StarkLLM/releases/latest" class="btn btn-primary" style="width: 100%; text-align: center; padding: 0.8rem 1rem;" target="_blank" rel="noopener">&#11015; Download from GitHub Releases</a>
+                    </div>
                 </div>
-                <div class="card">
-                    <h3>Windows Research Beta</h3>
-                    <p>Available now for Windows 10/11 using WSL2. Easy-to-use batch scripts make starting and stopping effortless.</p>
+            </div>
+        </section>
+
+        <!-- Deep Dive: The Dashboard -->
+        <section class="deep-dive-section container">
+            <div class="deep-dive-grid">
+                <div class="deep-dive-visual">
+                    <div class="showcase-frame">
+                        <img src="/assets/Dashboard.png?v=5" alt="StarkLLM Dashboard" class="showcase-img">
+                    </div>
+                </div>
+                <div class="deep-dive-text">
+                    <h2>The Command Center</h2>
+                    <p>The Dashboard provides immediate visibility into your local intelligence ecosystem. Navigate seamlessly between distinct workspaces and monitor system status in real-time.</p>
+                    
+                    <ul class="deep-dive-list">
+                        <li><strong>Workspace Isolation:</strong> Separate your research projects, coding tasks, and legal document reviews into hard-bounded workspaces to prevent context contamination.</li>
+                        <li><strong>Live System Status &amp; Onboarding:</strong> A guided onboarding wizard checks your dependencies on first launch, while the live status monitor watches your vector database and Ollama uptime at a glance.</li>
+                        <li><strong>Instant Access:</strong> Jump directly into recent chat threads or review the documents currently indexed in your active workspace.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Deep Dive: The Chat Interface -->
+        <section class="deep-dive-section container">
+            <div class="deep-dive-grid reverse">
+                <div class="deep-dive-visual">
+                    <div class="showcase-frame frame-dark">
+                        <img src="/assets/LLM2024.png?v=5" alt="StarkLLM Chat Interface" class="showcase-img">
+                    </div>
+                </div>
+                <div class="deep-dive-text">
+                    <h2>Document-Aware Intelligence</h2>
+                    <p>Experience chat that is grounded in your documents. StarkLLM bridges the gap between open-weight LLMs and your personal or enterprise documents.</p>
+                    
+                    <ul class="deep-dive-list">
+                        <li><strong>Smart Intent Routing:</strong> StarkLLM automatically detects if you're asking a general knowledge question or interrogating your documents, optimizing response speed and minimizing unnecessary vector searches.</li>
+                        <li><strong>Strict Citations &amp; Refusals:</strong> The AI is heavily grounded. It will explicitly cite the source filename for claims, and strictly refuse to answer if the uploaded context doesn't contain the requested information.</li>
+                        <li><strong>Multilingual Retrieval:</strong> Fully validated RAG support for English, Chinese, German, and Arabic. Upload non-English documents and query them natively.</li>
+                        <li><strong>Multi-Chat Sessions:</strong> Maintain parallel, distinct conversations within the same workspace to explore different hypotheses simultaneously.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Architecture of Privacy -->
+        <section class="deep-dive-section container">
+            <div class="glass-panel text-center">
+                <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem;">The Architecture of Privacy</h2>
+                <p style="font-size: 1.15rem; max-width: 800px; margin: 0 auto 2rem;">
+                    StarkLLM offers an alternative to the cloud-dependent paradigm. Your enterprise data, legal briefs, and personal research may be too sensitive to transmit to remote APIs where they could be used for future model training.
+                </p>
+                <div class="grid" style="text-align: left; margin-top: 3rem;">
+                    <div>
+                        <h3 style="color: var(--text-primary); margin-bottom: 0.5rem;">Local Inference</h3>
+                        <p style="color: var(--text-secondary);">Powered by Ollama, Large Language Models run directly on your own CPU or GPU. Designed to work fully offline once models are downloaded.</p>
+                    </div>
+                    <div>
+                        <h3 style="color: var(--text-primary); margin-bottom: 0.5rem;">Local Storage</h3>
+                        <p style="color: var(--text-secondary);">Your documents are chunked and embedded into a local ChromaDB vector store running inside an isolated Docker container.</p>
+                    </div>
+                    <div>
+                        <h3 style="color: var(--text-primary); margin-bottom: 0.5rem;">Minimal Telemetry</h3>
+                        <p style="color: var(--text-secondary);">StarkLLM does not include built-in tracking or analytics. Core AI functionality is designed to operate without remote dependencies.</p>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer>
+        <footer>
         <div class="container footer-content">
             <div class="footer-col">
-                <h4>StarkLLM</h4>
-                <p>Free & Open Source</p>
-                <p>Research Beta</p>
+                <div class="footer-brand">
+                    <img src="/assets/logo.png?v=5" alt="StarkLLM" class="footer-logo">
+                    <span class="footer-brand-name">StarkLLM</span>
+                </div>
+                <p>A free, open-source project.</p>
+                <p>Windows Research Beta</p>
+                <p style="margin-top: 1rem; font-size: 0.8rem; color: #71717a;">Provided "as-is" without warranties of any kind.<br>No liability for damages, data loss, or outcomes.<br>Dependent on user hardware, setup, and chosen local models.<br>Not a substitute for professional judgment. Third-party components (Docker, Ollama, models) have their own terms.</p>
             </div>
             <div class="footer-col">
-                <h4>Contact</h4>
-                <p>info@starkllm.com</p>
+                <h4>Related Projects</h4>
+                <a href="https://homomorphicprivacy.com" target="_blank" rel="noopener">homomorphicprivacy.com</a>
             </div>
             <div class="footer-col">
                 <h4>Legal</h4>
-                <a href="impressum.html">Impressum</a>
+                <a href="/impressum.html?v=4">Impressum</a>
+                <a href="/contact.html?v=4">Contact</a>
             </div>
         </div>
         <div class="footer-bottom">
@@ -83,6 +217,12 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="/script.js?v=5"></script>
 </body>
 </html>
+
+
+
+
+
+

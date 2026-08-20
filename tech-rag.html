@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retrieval-Augmented Generation (RAG) | StarkLLM</title>
+    <link rel="canonical" href="https://www.starkllm.com/tech-rag.html">
+    <link rel="stylesheet" href="/styles.css?v=4">
+    <link rel="icon" type="image/png" href="/assets/logo.png?v=4?v=4">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <canvas id="neural-canvas"></canvas>
+    <header>
+        <div class="container nav-container">
+            <a href="/index.html?v=4" class="logo">
+                <img src="/assets/logo.png?v=4?v=4" alt="StarkLLM Logo" class="logo-img">
+                Stark<span class="text-gradient">LLM</span>
+            </a>
+            <button class="menu-toggle" id="menuToggle">&#9776;</button>
+            <nav>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="/index.html?v=4">Home</a></li>
+                    <li><a href="/product.html?v=4">Product</a></li>
+                    <li><a href="/manual.html?v=4">Manual</a></li>
+                    <li><a href="/download.html?v=4">Download</a></li>
+                    <li><a href="/about.html?v=4">About</a></li>
+                    <li><a href="/contact.html?v=4">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="tech-header text-center">
+            <h1>Retrieval-Augmented <span class="text-gradient">Generation</span></h1>
+            <p>Ground AI responses in your exact documents.</p>
+        </div>
+
+        <div class="tech-content">
+            <div class="tech-main">
+                <div class="showcase-frame">
+                    <img src="/assets/LLM20242.png?v=4?v=4" alt="Retrieval-Augmented Generation (RAG) | StarkLLM" class="showcase-img">
+                </div>
+                
+                <h2>1. Plain-Language Definition</h2>
+                <p>Retrieval-Augmented Generation (RAG) is a framework that forces the AI to read specific excerpts from your uploaded documents before it attempts to answer your question.</p>
+                
+                <h2>2. Why It Exists</h2>
+                <p>Large Language Models are trained on public data. They do not know about your private contracts, proprietary research, or internal company wikis. RAG bridges this gap.</p>
+                
+                <h2>3. What Breaks Without It</h2>
+                <p>Without RAG, an LLM will confidently hallucinate an answer based on its pre-trained weights if it doesn't know the exact facts of your specific query.</p>
+
+                <h2>4. How StarkLLM Implements It</h2>
+                <p>When you ask a question, StarkLLM searches your local vector database (ChromaDB) for paragraphs semantically related to your query, and injects those paragraphs directly into the LLM's context window.</p>
+                
+                <h2>5. User-Visible Benefit</h2>
+                <p>You receive highly accurate, source-grounded answers. AI responses can typically be traced back to a specific sentence in your original PDF.</p>
+                
+                <h2>6. Practical Example</h2>
+                <p>If you ask 'What is the termination clause in the Smith contract?', the AI retrieves the exact clause from the uploaded PDF and bases its answer solely on that text.</p>
+            </div>
+            
+            <aside>
+                <div class="tech-sidebar glass-panel" style="padding: 2rem;">
+                    <h3 style="color: var(--text-primary);">Further Reading</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">Dive deeper into how to leverage this technology within the StarkLLM ecosystem.</p>
+                    <a href="/manual.html?v=4" class="btn btn-primary" style="width: 100%; text-align: center; margin-bottom: 1rem;">Read the User Manual</a>
+                    <a href="/product.html?v=4" class="btn btn-outline" style="width: 100%; text-align: center;">View All Technologies</a>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-col">
+                <div class="footer-brand">
+                    <img src="/assets/logo.png?v=4?v=4" alt="StarkLLM" class="footer-logo">
+                    <span class="footer-brand-name">StarkLLM</span>
+                </div>
+                <p>A free, open-source project.</p>
+                <p>Windows Research Beta</p>
+                <p style="margin-top: 1rem; font-size: 0.8rem; color: #71717a;">Provided "as-is" without warranties of any kind.<br>No liability for damages, data loss, or outcomes.<br>Dependent on user hardware, setup, and chosen local models.<br>Not a substitute for professional judgment. Third-party components (Docker, Ollama, models) have their own terms.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Related Projects</h4>
+                <a href="https://homomorphicprivacy.com" target="_blank" rel="noopener">homomorphicprivacy.com</a>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <a href="/impressum.html?v=4">Impressum</a>
+                <a href="/contact.html?v=4">Contact</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Christian Stark. Provided "as is" with no warranty or liability.</p>
+        </div>
+    </footer>
+
+    <script src="/script.js?v=4"></script>
+</body>
+</html>
+
+
+
+
+
