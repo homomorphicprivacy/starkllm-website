@@ -54,7 +54,7 @@
                             <li style="position: relative; padding-left: 2.5rem;">
                                 <span style="position: absolute; left: 0; top: 0; font-weight: 800; color: #d4af37; font-size: 1.2rem; background: rgba(212, 175, 55, 0.1); border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center;">2</span>
                                 <strong style="color: var(--text-primary);">Install Ollama &amp; pull models</strong> &mdash; In terminal, run:<br>
-                                <code style="background:#0a0a0c; border: 1px solid #333; padding:0.2rem 0.5rem; border-radius:4px; color:#d4af37; font-size: 0.88rem; display: inline-block; margin-top: 0.3rem;">ollama pull qwen3.6:27b</code><br>
+                                <code style="background:#0a0a0c; border: 1px solid #333; padding:0.2rem 0.5rem; border-radius:4px; color:#d4af37; font-size: 0.88rem; display: inline-block; margin-top: 0.3rem;">ollama pull qwen3.8:27b</code><br>
                                 <code style="background:#0a0a0c; border: 1px solid #333; padding:0.2rem 0.5rem; border-radius:4px; color:#d4af37; font-size: 0.88rem; display: inline-block; margin-top: 0.2rem;">ollama pull qwen3-embedding:0.6b</code>
                             </li>
                             <li style="position: relative; padding-left: 2.5rem;">
@@ -80,7 +80,7 @@
                     <div style="flex: 0 0 320px; background: rgba(0,0,0,0.4); padding: 1.5rem; border-radius: 8px; border: 1px solid #333;">
                         <h4 style="color: #fff; margin-bottom: 1rem; font-size: 1.1rem;">Important Notes</h4>
                         <ul style="padding-left: 1.2rem; color: #a1a1aa; font-size: 0.9rem; line-height: 1.5; margin-bottom: 1.5rem; display: flex; flex-direction: column; gap: 0.8rem;">
-                            <li>&#8987; <strong>First launch takes longer:</strong> Docker must download container images initially.</li>
+                            <li>&#8987; <strong>First launch:</strong> First launch can take several minutes while Docker images download. Later starts are much faster.</li>
                             <li>&#9888;&#65039; <strong>Windows SmartScreen:</strong> If execution is blocked, use <em>More info &rarr; Run anyway</em> or run <code>start.cmd</code>.</li>
                             <li>&#128187; <strong>Hardware matters:</strong> Speed and answer quality depend heavily on having a capable GPU (8GB+ VRAM).</li>
                         </ul>
@@ -98,7 +98,7 @@
                 <li><strong>Ollama:</strong> Installed natively on Windows and running. Download from <a href="https://ollama.com" target="_blank" rel="noopener">ollama.com</a>.</li>
                 <li><strong>Models pulled:</strong> Open a terminal and run:
                     <div class="code-block">
-                        ollama pull qwen3.6:27b<br>
+                        ollama pull qwen3.8:27b<br>
                         ollama pull qwen3-embedding:0.6b
                     </div>
                 </li>
@@ -236,7 +236,7 @@
 
             <div style="margin-bottom: 1.5rem;">
                 <h4 style="color: var(--text-primary); font-size: 1.1rem; margin-bottom: 0.5rem;">8. What if the UI opens but chat does not work?</h4>
-                <p>Ensure Docker Desktop and Ollama are running. Verify you have pulled the required models (<code>ollama pull qwen3.6:27b</code> and <code>ollama pull qwen3-embedding:0.6b</code>). If chat cannot connect, Ollama must be running natively on your Windows host; the backend container communicates with Ollama via <code>host.docker.internal:11434</code>. If it still fails, reset the backend manually in a terminal with <code>docker compose down</code> followed by <code>docker compose up --build -d</code>.</p>
+                <p>Ensure Docker Desktop and Ollama are running. Verify you have pulled the required models (<code>ollama pull qwen3.8:27b</code> and <code>ollama pull qwen3-embedding:0.6b</code>). If chat cannot connect, Ollama must be running natively on your Windows host; the backend container communicates with Ollama via <code>host.docker.internal:11434</code>. If it still fails, reset the backend manually in a terminal with <code>docker compose down</code> followed by <code>docker compose up --build -d</code>.</p>
             </div>
 
             <div style="margin-bottom: 1.5rem;">

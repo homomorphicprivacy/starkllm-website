@@ -107,10 +107,10 @@
                 <h2>6. Default &amp; recommended models</h2>
                 <div class="alert info">
                     <h4>Model Intelligence &amp; Defaults</h4>
-                    <p>StarkLLM defaults to <strong><code>qwen3.6:27b</code></strong> for text generation and <strong><code>qwen3-embedding:0.6b</code></strong> for document embedding. Answer quality depends heavily on the model used.</p>
+                    <p>StarkLLM defaults to <strong><code>qwen3.8:27b</code></strong> for text generation and <strong><code>qwen3-embedding:0.6b</code></strong> for document embedding. Answer quality depends heavily on the model used.</p>
                 </div>
                 <ul>
-                    <li><strong>Default Text Model (qwen3.6:27b):</strong> High-capacity model providing strong reasoning and document comprehension. Requires ~12GB–16GB VRAM/RAM.</li>
+                    <li><strong>Default Text Model (qwen3.8:27b):</strong> High-capacity model providing strong reasoning and document comprehension. Requires ~12GB–16GB VRAM/RAM.</li>
                     <li><strong>Default Embedding Model (qwen3-embedding:0.6b):</strong> Lightweight, highly accurate vector embedding model optimized for fast RAG retrieval.</li>
                     <li><strong>Optional Alternatives (e.g., Llama 3 or Mistral):</strong> You can pull other Ollama models as alternatives if desired for testing or lower hardware constraints.</li>
                 </ul>
@@ -122,7 +122,7 @@
                 <ol>
                     <li>Install WSL2 (`wsl --install` in PowerShell).</li>
                     <li>Install Docker Desktop and ensure WSL2 integration is enabled in its settings.</li>
-                    <li>Install Ollama for Windows and download default models (<code>ollama pull qwen3.6:27b &amp;&amp; ollama pull qwen3-embedding:0.6b</code>).</li>
+                    <li>Install Ollama for Windows and download default models (<code>ollama pull qwen3.8:27b &amp;&amp; ollama pull qwen3-embedding:0.6b</code>).</li>
                     <li>Extract the StarkLLM release package completely to a directory of your choice.</li>
                 </ol>
             </section>
@@ -130,6 +130,10 @@
             <section id="first-launch">
                 <h2>8. Launching StarkLLM</h2>
                 <p>Navigate to the extracted StarkLLM folder. Recommended launch sequence:</p>
+
+                <div class="alert info" style="margin-bottom: 1rem;">
+                    <strong>First Launch Note:</strong> First launch can take several minutes while Docker images download. Later starts are much faster.
+                </div>
 
                 <div class="alert warning">
                     <h4>&#9888;&#65039; Windows SmartScreen / Execution Notice</h4>
@@ -279,7 +283,7 @@
 
             <section id="switching-models">
                 <h2>13. Switching models</h2>
-                <p>If you have downloaded multiple models via Ollama (e.g., `qwen3.6:27b` and `mistral`), you can switch between them using the dropdown menu in the StarkLLM chat interface. Note that changing models mid-conversation will not lose chat history, but the tone and intelligence of the new model will apply to subsequent messages.</p>
+                <p>If you have downloaded multiple models via Ollama (e.g., `qwen3.8:27b` and `mistral`), you can switch between them using the dropdown menu in the StarkLLM chat interface. Note that changing models mid-conversation will not lose chat history, but the tone and intelligence of the new model will apply to subsequent messages.</p>
             </section>
 
             <section id="voice">
@@ -290,7 +294,7 @@
             <section id="troubleshooting">
                 <h2>15. Troubleshooting</h2>
                 <ul>
-                    <li><strong>"Cannot connect to Ollama":</strong> Ensure the Ollama app is running in your Windows system tray. Note that Ollama runs on the host and the container communicates via <code>host.docker.internal:11434</code>. Verify you pulled the required default model (<code>ollama pull qwen3.6:27b</code>).</li>
+                    <li><strong>"Cannot connect to Ollama":</strong> Ensure the Ollama app is running in your Windows system tray. Note that Ollama runs on the host and the container communicates via <code>host.docker.internal:11434</code>. Verify you pulled the required default model (<code>ollama pull qwen3.8:27b</code>).</li>
                     <li><strong>Docker fails to start:</strong> Ensure Docker Desktop is running. If containers fail, try running <code>docker compose down</code> followed by <code>docker compose up --build -d</code>.</li>
                     <li><strong>Very slow responses:</strong> Your machine may be relying on CPU inference. Ensure you have an NVIDIA GPU and that Ollama is correctly detecting it.</li>
                 </ul>
@@ -349,7 +353,7 @@
 
             <div style="margin-bottom: 1.5rem;">
                 <h4 style="color: var(--text-primary); font-size: 1.1rem; margin-bottom: 0.5rem;">8. What if the UI opens but chat does not work?</h4>
-                <p>Ensure Docker Desktop and Ollama are running. Verify you have pulled the required models (<code>ollama pull qwen3.6:27b</code>). If it still fails, reset the backend manually in a terminal with <code>docker compose down</code> followed by <code>docker compose up --build -d</code>.</p>
+                <p>Ensure Docker Desktop and Ollama are running. Verify you have pulled the required models (<code>ollama pull qwen3.8:27b</code>). If it still fails, reset the backend manually in a terminal with <code>docker compose down</code> followed by <code>docker compose up --build -d</code>.</p>
             </div>
 
             <div style="margin-bottom: 1.5rem;">
