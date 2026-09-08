@@ -35,13 +35,48 @@
     </header>
 
     <main>
-        <section class="hero container">
+        <section class="hero container" style="max-width: 950px; text-align: center; padding-bottom: 2rem;">
             <span class="badge">Research Beta &mdash; Windows</span>
-            <h1>Private Local AI for your <span class="text-gradient">Documents</span></h1>
-            <p>A private, local AI assistant for your own documents and workflows. Chat with your PDFs and personal Knowledge Base entirely on your own Windows machine. Your data is intended to keep your chats and documents on the local machine during normal operation.</p>
-            <div class="hero-actions">
-                <a href="/downloads/StarkLLM-v1.0.0-beta.zip" class="btn btn-primary">⬇️ Download ZIP (113 MB)</a>
-                <a href="manual.html" class="btn btn-outline">Read User Manual</a>
+            <h1 style="font-size: 3rem; margin-bottom: 1rem;">Private Windows AI for Your <span class="text-gradient">Local Documents</span></h1>
+            
+            <!-- 1. What it is & Who it is for -->
+            <p style="font-size: 1.2rem; max-width: 800px; margin: 0 auto 1.5rem; color: var(--text-secondary); line-height: 1.6;">
+                StarkLLM is a private Windows research beta for technical users to chat with local documents and a personal Knowledge Base via Ollama. Built for developers, researchers, and technical professionals who want local RAG running on their own Docker + Ollama stack.
+            </p>
+
+            <!-- 2. First screen: 3 Bullets max -->
+            <ul style="list-style: none; padding: 0; margin: 0 auto 2rem; display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; text-align: left; max-width: 850px;">
+                <li style="background: rgba(20, 20, 25, 0.7); border: 1px solid rgba(255,255,255,0.1); padding: 0.8rem 1.2rem; border-radius: 8px; flex: 1; min-width: 240px;">
+                    <strong style="color: var(--text-primary);">&#128196; Local Documents:</strong><br>
+                    <span style="font-size: 0.9rem; color: var(--text-secondary);">Upload PDFs &amp; text files to isolated Workspaces.</span>
+                </li>
+                <li style="background: rgba(20, 20, 25, 0.7); border: 1px solid rgba(255,255,255,0.1); padding: 0.8rem 1.2rem; border-radius: 8px; flex: 1; min-width: 240px;">
+                    <strong style="color: var(--text-primary);">&#128218; Knowledge Base:</strong><br>
+                    <span style="font-size: 0.9rem; color: var(--text-secondary);">Map a permanent folder on your PC for cross-chat RAG.</span>
+                </li>
+                <li style="background: rgba(20, 20, 25, 0.7); border: 1px solid rgba(255,255,255,0.1); padding: 0.8rem 1.2rem; border-radius: 8px; flex: 1; min-width: 240px;">
+                    <strong style="color: var(--text-primary);">&#128274; Private by Default:</strong><br>
+                    <span style="font-size: 0.9rem; color: var(--text-secondary);">Runs on your hardware via Docker Desktop &amp; Ollama.</span>
+                </li>
+            </ul>
+
+            <!-- 3. Prerequisites visible BEFORE download button -->
+            <div style="background: rgba(212, 175, 55, 0.06); border: 1px solid rgba(212, 175, 55, 0.25); padding: 1.2rem 1.5rem; border-radius: 10px; max-width: 800px; margin: 0 auto 2rem; text-align: left;">
+                <h4 style="color: #d4af37; margin-bottom: 0.5rem; font-size: 1.05rem;">&#9888;&#65039; Before You Download &mdash; System Prerequisites</h4>
+                <ul style="margin: 0; padding-left: 1.2rem; color: var(--text-secondary); font-size: 0.92rem; line-height: 1.5; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 0.4rem 1.5rem;">
+                    <li><strong>OS:</strong> Windows 10/11 with WSL2 enabled.</li>
+                    <li><strong>Docker Desktop:</strong> Installed &amp; running in system tray.</li>
+                    <li><strong>Ollama:</strong> Installed natively on Windows host.</li>
+                    <li><strong>Hardware:</strong> NVIDIA GPU (8GB+ VRAM recommended for 27B model).</li>
+                    <li><strong>Models required:</strong> <code>ollama pull qwen3.6:27b</code> &amp; <code>qwen3-embedding:0.6b</code></li>
+                </ul>
+            </div>
+
+            <!-- 4. Primary Download ZIP button -->
+            <div class="hero-actions" style="justify-content: center; gap: 1rem;">
+                <a href="/downloads/StarkLLM-v1.0.0-beta.zip" class="btn btn-primary" style="padding: 0.9rem 1.8rem; font-size: 1.1rem;">⬇️ Download ZIP (113 MB)</a>
+                <a href="manual.html" class="btn btn-outline" style="padding: 0.9rem 1.5rem; font-size: 1.05rem;">Read User Manual</a>
+                <a href="https://github.com/homomorphicprivacy/StarkLLM" target="_blank" rel="noopener" class="btn btn-outline" style="padding: 0.9rem 1.5rem; font-size: 1.05rem;">GitHub Repository</a>
             </div>
         </section>
 
@@ -49,31 +84,55 @@
             <img src="/assets/LLM2024.png?v=5" alt="StarkLLM chat interface" class="hero-screenshot">
         </section>
 
-        <section class="container features-section">
-            <div class="grid">
-                <div class="card">
-                    <div class="card-icon">&#128274;</div>
-                    <h3>Local-First Privacy</h3>
-                    <p>Powered by Docker and Ollama, your chats and documents are designed to stay on your local machine. Built with data privacy in mind.</p>
+        <!-- How StarkLLM Compares Section -->
+        <section class="container" style="padding: 3rem 0;">
+            <div class="text-center" style="margin-bottom: 2.5rem;">
+                <h2 style="font-size: 2.4rem;">How <span class="text-gradient">StarkLLM</span> Compares</h2>
+                <p style="color: var(--text-secondary); font-size: 1.1rem; max-width: 700px; margin: 0.5rem auto 0;">An honest look at how StarkLLM fits into the local AI landscape alongside other popular open solutions.</p>
+            </div>
+
+            <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+                <!-- AnythingLLM / Jan -->
+                <div class="glass-panel" style="padding: 1.8rem; border-radius: 12px; display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                        <span style="background: rgba(255,255,255,0.1); color: #a1a1aa; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.8rem; text-transform: uppercase; font-weight: 600;">Desktop App (.exe)</span>
+                        <h3 style="color: #fff; margin: 0.8rem 0 0.5rem; font-size: 1.3rem;">AnythingLLM / Jan</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.5;">
+                            <strong>Easier Installation:</strong> Packaged as a single installer (.exe) with bundled local inference. Best if you want a zero-configuration consumer desktop application without installing Docker.
+                        </p>
+                    </div>
+                    <div style="margin-top: 1.2rem; padding-top: 0.8rem; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.88rem; color: #71717a;">
+                        Best for: Non-technical users seeking a one-click desktop app.
+                    </div>
                 </div>
-                <div class="card">
-                    <div class="card-icon">&#128196;</div>
-                    <h3>Chat with Documents</h3>
-                    <p>Upload PDFs and text files directly to your workspace. The integrated RAG engine retrieves answers directly from your sources.</p>
+
+                <!-- Open WebUI -->
+                <div class="glass-panel" style="padding: 1.8rem; border-radius: 12px; display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                        <span style="background: rgba(255,255,255,0.1); color: #a1a1aa; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.8rem; text-transform: uppercase; font-weight: 600;">Server / Multi-User</span>
+                        <h3 style="color: #fff; margin: 0.8rem 0 0.5rem; font-size: 1.3rem;">Open WebUI</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.5;">
+                            <strong>Feature-Rich Web Platform:</strong> Extremely versatile, feature-dense web interface inspired by ChatGPT. Primarily designed for server deployments, multi-user teams, and multi-model routing.
+                        </p>
+                    </div>
+                    <div style="margin-top: 1.2rem; padding-top: 0.8rem; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.88rem; color: #71717a;">
+                        Best for: Self-hosted team servers &amp; power users needing deep web customization.
+                    </div>
                 </div>
-                <div class="card">
-                    <div class="card-icon">&#128218;</div>
-                    <h3>Knowledge Base</h3>
-                    <p>Map a local folder on your PC to act as a global Knowledge Base accessible across all your different chats and projects.</p>
+
+                <!-- StarkLLM -->
+                <div class="glass-panel" style="padding: 1.8rem; border-radius: 12px; border: 1px solid rgba(212, 175, 55, 0.4); background: rgba(212, 175, 55, 0.04); display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                        <span style="background: rgba(212, 175, 55, 0.2); color: #d4af37; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.8rem; text-transform: uppercase; font-weight: 600;">Windows Research Beta</span>
+                        <h3 style="color: #fff; margin: 0.8rem 0 0.5rem; font-size: 1.3rem;">StarkLLM</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.5;">
+                            <strong>Local RAG on Your Stack:</strong> Transparent, local-first RAG and persistent folder Knowledge Base running directly on your own infrastructure (Docker Desktop + Ollama) for Windows technical users.
+                        </p>
+                    </div>
+                    <div style="margin-top: 1.2rem; padding-top: 0.8rem; border-top: 1px solid rgba(212, 175, 55, 0.2); font-size: 0.88rem; color: #d4af37;">
+                        Best for: Windows developers &amp; researchers who want full control over containers, local vectors, and host Ollama models.
+                    </div>
                 </div>
-                <div class="card">
-                    <div class="card-icon">&#128193;</div>
-                    <h3>Workspace Organization</h3>
-                    <p>Keep your workflows separated. Create distinct workspaces for different research projects, isolating context effectively.</p>
-                </div>
-                <div class="card">
-                    <div class="card-icon">&#10024;</div>
-                <a href="manual.html" class="btn btn-outline">Read the User Manual</a>
             </div>
         </section>
 
