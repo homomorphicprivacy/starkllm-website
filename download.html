@@ -63,12 +63,14 @@
                             </li>
                             <li style="position: relative; padding-left: 2.5rem;">
                                 <span style="position: absolute; left: 0; top: 0; font-weight: 800; color: #d4af37; font-size: 1.2rem; background: rgba(212, 175, 55, 0.1); border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center;">4</span>
-                                <strong style="color: var(--text-primary);">Open terminal in folder</strong> &mdash; In the extracted folder, click the Explorer address bar, type <code>cmd</code>, and press Enter.
+                                <strong style="color: var(--text-primary);">Open terminal in folder</strong> &mdash; In the extracted folder, click the Explorer address bar, type <code>cmd</code> (or <code>powershell</code>), and press Enter.
                             </li>
                             <li style="position: relative; padding-left: 2.5rem;">
                                 <span style="position: absolute; left: 0; top: 0; font-weight: 800; color: #d4af37; font-size: 1.2rem; background: rgba(212, 175, 55, 0.1); border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center;">5</span>
-                                <strong style="color: var(--text-primary);">Run start.exe</strong> &mdash; Type <code>start.exe</code> (if Windows warns: <em>More info</em> &rarr; <em>Run anyway</em>).<br>
-                                <span style="color: var(--text-secondary); font-size: 0.88rem;">Fallback: <code>start.cmd</code> &nbsp;|&nbsp; Last resort: <code>docker compose up --build -d</code></span>
+                                <strong style="color: var(--text-primary);">Launch StarkLLM</strong> &mdash; Execute the launcher:<br>
+                                <span style="font-size: 0.88rem; color: #d4af37;">In Command Prompt (cmd):</span> <code style="background:#0a0a0c; border: 1px solid #333; padding:0.15rem 0.4rem; border-radius:4px; color:#d4af37;">start.exe</code> or <code style="background:#0a0a0c; border: 1px solid #333; padding:0.15rem 0.4rem; border-radius:4px; color:#d4af37;">start.cmd</code><br>
+                                <span style="font-size: 0.88rem; color: #d4af37;">In PowerShell:</span> <code style="background:#0a0a0c; border: 1px solid #333; padding:0.15rem 0.4rem; border-radius:4px; color:#d4af37;">.\start.exe</code> or <code style="background:#0a0a0c; border: 1px solid #333; padding:0.15rem 0.4rem; border-radius:4px; color:#d4af37;">.\start.cmd</code><br>
+                                <span style="color: var(--text-secondary); font-size: 0.85rem;">(If Windows SmartScreen warns: <em>More info</em> &rarr; <em>Run anyway</em> | Last resort: <code>docker compose up --build -d</code>)</span>
                             </li>
                             <li style="position: relative; padding-left: 2.5rem;">
                                 <span style="position: absolute; left: 0; top: 0; font-weight: 800; color: #d4af37; font-size: 1.2rem; background: rgba(212, 175, 55, 0.1); border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center;">6</span>

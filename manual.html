@@ -140,18 +140,25 @@
                     <p>Files extracted from downloaded zip archives carry a <em>Mark of the Web (MOTW)</em> attribute. This is standard Windows security behavior for downloaded files, not a malware flag.</p>
                 </div>
 
-                <h3>Option 1 &mdash; Run start.exe from Terminal (Recommended)</h3>
+                <h3>Option 1 &mdash; Launch start.exe (Recommended)</h3>
                 <p>StarkLLM includes a standalone <code>start.exe</code> launcher that automatically checks Docker Desktop status, checks Ollama availability, builds containers, and opens your browser to <code>http://localhost:5173</code>.</p>
                 <ol>
                     <li>Open the extracted folder in File Explorer.</li>
-                    <li>Click the address bar, type <code>cmd</code>, and press <strong>Enter</strong>.</li>
-                    <li>Type <code>start.exe</code> and press Enter. If Windows SmartScreen displays a warning, click <strong>More info</strong> &rarr; <strong>Run anyway</strong>.</li>
+                    <li>Click the address bar, type <code>cmd</code> (or <code>powershell</code>), and press <strong>Enter</strong>.</li>
+                    <li>Execute the launcher:
+                        <ul>
+                            <li>In Command Prompt (cmd): <code>start.exe</code></li>
+                            <li>In PowerShell: <code>.\start.exe</code></li>
+                        </ul>
+                        <em>If Windows SmartScreen displays a warning, click <strong>More info</strong> &rarr; <strong>Run anyway</strong>.</em>
+                    </li>
                 </ol>
 
-                <h3>Option 2 &mdash; Run start.cmd (Terminal Fallback)</h3>
+                <h3>Option 2 &mdash; Launch start.cmd (Terminal Fallback)</h3>
                 <p>To launch via script in the terminal:</p>
                 <ol>
-                    <li>In the extracted folder terminal, run: <code>start.cmd</code></li>
+                    <li>In Command Prompt: <code>start.cmd</code></li>
+                    <li>In PowerShell: <code>.\start.cmd</code></li>
                 </ol>
 
                 <h3>Option 3 &mdash; Direct Docker Compose (Last Resort)</h3>
