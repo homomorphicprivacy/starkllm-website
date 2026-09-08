@@ -91,29 +91,6 @@ header {
   display: flex;
   align-items: center;
   gap: 8px;
-  transition: opacity 0.2s ease, color 0.2s ease;
-}
-
-.logo:hover, .logo:active {
-  color: #fff;
-  opacity: 1;
-}
-
-.logo:hover .brand-text,
-.logo:hover .text-gradient,
-.logo:active .brand-text,
-.logo:active .text-gradient {
-  background: none !important;
-  background-image: none !important;
-  -webkit-background-clip: border-box !important;
-  background-clip: border-box !important;
-  -webkit-text-fill-color: #fff !important;
-  color: #fff !important;
-  transition: all 0.2s ease;
-}
-
-.logo:hover .logo-img, .logo:active .logo-img {
-  filter: brightness(1.1);
 }
 
 .logo-img {
@@ -121,7 +98,6 @@ header {
   height: 28px;
   object-fit: contain;
   filter: brightness(0.9);
-  transition: filter 0.2s ease;
 }
 
 .nav-links {
@@ -212,7 +188,7 @@ header {
 }
 
 /* Interactive Cursors */
-.showcase-img, .gallery-img, .tech-img, .hero-screenshot {
+.showcase-img, .gallery-img, .tech-img {
   cursor: zoom-in;
 }
 

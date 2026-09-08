@@ -44,7 +44,7 @@
                 </div>
                 
                 <h2>1. Plain-Language Definition</h2>
-                <p>StarkLLM is built from the ground up to be a self-contained, local-first system. The architecture relies on Docker to containerize the database and backend, and is designed to minimize telemetry.</p>
+                <p>StarkLLM is built from the ground up to be a self-contained, air-gapped system. The architecture relies on Docker to containerize the database and backend, ensuring zero telemetry.</p>
                 
                 <h2>2. Why It Exists</h2>
                 <p>Enterprise data, legal briefs, and personal research are highly sensitive. Cloud AI providers often use user data to train future models. A local-first architecture helps mitigate this risk.</p>
@@ -56,10 +56,10 @@
                 <p>The frontend is a static web app communicating with a local FastAPI backend, which reads from a local SQLite database and a local ChromaDB vector store. Everything runs within isolated Docker containers on your host network.</p>
                 
                 <h2>5. User-Visible Benefit</h2>
-                <p>Helps support data governance policies (GDPR, HIPAA) and greater peace of mind, because the data is designed to stay on your device.</p>
+                <p>Alignment with privacy-conscious data governance practices, because core data processing is designed to stay on your local device.</p>
                 
                 <h2>6. Practical Example</h2>
-                <p>You can run StarkLLM on a laptop with the Wi-Fi physically disabled, and the entire system — document ingestion, vector search, and LLM inference — is designed to function fully offline once models are downloaded.</p>
+                <p>You can run StarkLLM on a laptop with the Wi-Fi physically disabled, and the entire system—document ingestion, vector search, and LLM inference—will function flawlessly.</p>
             </div>
             
             <aside>
@@ -82,7 +82,7 @@
                 </div>
                 <p>A free, open-source project.</p>
                 <p>Windows Research Beta</p>
-                <p style="margin-top: 1rem; font-size: 0.8rem; color: #71717a;">Provided "as-is" without warranties of any kind.<br>No liability for damages, data loss, or outcomes.<br>Dependent on user hardware, setup, and chosen local models.<br>Not a substitute for professional judgment. Third-party components (Docker, Ollama, models) have their own terms.</p>
+                <p style="margin-top: 1rem; font-size: 0.8rem; color: #71717a;">Provided 'as-is' without warranties.<br>No liability for damages, data loss,<br>or decisions made based on this software.</p>
             </div>
             <div class="footer-col">
                 <h4>Related Projects</h4>
@@ -102,8 +102,3 @@
     <script src="/script.js?v=4"></script>
 </body>
 </html>
-
-
-
-
-

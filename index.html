@@ -38,9 +38,9 @@
         <section class="hero container">
             <span class="badge">Research Beta &mdash; Windows</span>
             <h1>Private Local AI for your <span class="text-gradient">Documents</span></h1>
-            <p>A free, open-source, and local-first AI assistant. Chat with your PDFs and personal Knowledge Base entirely on your own Windows machine. Your data is intended to keep your chats and documents on the local machine during normal operation.</p>
+            <p>A private, local AI assistant for your own documents and workflows. Chat with your PDFs and personal Knowledge Base entirely on your own Windows machine. Your data is intended to keep your chats and documents on the local machine during normal operation.</p>
             <div class="hero-actions">
-                <a href="download.html" class="btn btn-primary">Download Windows Research Beta</a>
+                <a href="/downloads/StarkLLM-v1.0.0-beta.zip" class="btn btn-primary">⬇️ Download ZIP (113 MB)</a>
                 <a href="manual.html" class="btn btn-outline">Read User Manual</a>
             </div>
         </section>
@@ -92,7 +92,7 @@
                             <li style="position: relative; padding-left: 2.5rem;">
                                 <span style="position: absolute; left: 0; top: 0; font-weight: 800; color: #d4af37; font-size: 1.2rem; background: rgba(212, 175, 55, 0.1); border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center;">2</span>
                                 <strong style="color: var(--text-primary);">Install Ollama</strong> and pull the required models:<br>
-                                <code style="background:#0a0a0c; border: 1px solid #333; padding:0.4rem 0.6rem; border-radius:6px; font-size:0.9rem; display: block; margin-top: 0.5rem; color: #a1a1aa;">ollama pull qwen3.8:27b &amp;&amp; ollama pull qwen3-embedding:0.6b</code>
+                                <code style="background:#0a0a0c; border: 1px solid #333; padding:0.4rem 0.6rem; border-radius:6px; font-size:0.9rem; display: block; margin-top: 0.5rem; color: #a1a1aa;">ollama pull qwen3.6:27b &amp;&amp; ollama pull qwen3-embedding:0.6b</code>
                             </li>
                             <li style="position: relative; padding-left: 2.5rem;">
                                 <span style="position: absolute; left: 0; top: 0; font-weight: 800; color: #d4af37; font-size: 1.2rem; background: rgba(212, 175, 55, 0.1); border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center;">3</span>
@@ -117,7 +117,8 @@
                             <li>&#9888;&#65039; <strong>Windows SmartScreen:</strong> If Windows blocks <code>start.bat</code>, use the terminal or Unblock the file (see <a href="/download.html" style="color: #d4af37; text-decoration: none;">Download page</a>).</li>
                             <li>&#128187; <strong>Hardware matters:</strong> Speed and answer quality depend heavily on having a capable GPU (8GB+ VRAM recommended).</li>
                         </ul>
-                        <a href="https://github.com/homomorphicprivacy/StarkLLM/releases/latest" class="btn btn-primary" style="width: 100%; text-align: center; padding: 0.8rem 1rem;" target="_blank" rel="noopener">&#11015; Download from GitHub Releases</a>
+                        <a href="/downloads/StarkLLM-v1.0.0-beta.zip" class="btn btn-primary" style="width: 100%; text-align: center; padding: 0.8rem 1rem;" download>&#11015; Download ZIP (113 MB)</a>
+                        <a href="https://github.com/homomorphicprivacy/StarkLLM" target="_blank" rel="noopener" class="btn btn-outline" style="width: 100%; text-align: center; margin-top: 0.5rem; padding: 0.6rem 1rem; display: inline-block;">GitHub Repository</a>
                     </div>
                 </div>
             </div>
@@ -137,7 +138,7 @@
                     
                     <ul class="deep-dive-list">
                         <li><strong>Workspace Isolation:</strong> Separate your research projects, coding tasks, and legal document reviews into hard-bounded workspaces to prevent context contamination.</li>
-                        <li><strong>Live System Status &amp; Onboarding:</strong> A guided onboarding wizard checks your dependencies on first launch, while the live status monitor watches your vector database and Ollama uptime at a glance.</li>
+                        <li><strong>Live System Status:</strong> Monitor your vector database health, backend connectivity, and Ollama inference engine uptime at a glance.</li>
                         <li><strong>Instant Access:</strong> Jump directly into recent chat threads or review the documents currently indexed in your active workspace.</li>
                     </ul>
                 </div>
@@ -157,9 +158,8 @@
                     <p>Experience chat that is grounded in your documents. StarkLLM bridges the gap between open-weight LLMs and your personal or enterprise documents.</p>
                     
                     <ul class="deep-dive-list">
-                        <li><strong>Smart Intent Routing:</strong> StarkLLM automatically detects if you're asking a general knowledge question or interrogating your documents, optimizing response speed and minimizing unnecessary vector searches.</li>
-                        <li><strong>Strict Citations &amp; Refusals:</strong> The AI is heavily grounded. It will explicitly cite the source filename for claims, and strictly refuse to answer if the uploaded context doesn't contain the requested information.</li>
-                        <li><strong>Multilingual Retrieval:</strong> Fully validated RAG support for English, Chinese, German, and Arabic. Upload non-English documents and query them natively.</li>
+                        <li><strong>Source-Grounded Answers:</strong> The AI retrieves precise semantic chunks from your uploaded PDFs before generating an answer, helping reduce unsupported answers.</li>
+                        <li><strong>Transparent Citations:</strong> Responses typically include direct references to the original source document, allowing you to trace the AI's logic instantly.</li>
                         <li><strong>Multi-Chat Sessions:</strong> Maintain parallel, distinct conversations within the same workspace to explore different hypotheses simultaneously.</li>
                     </ul>
                 </div>

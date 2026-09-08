@@ -40,27 +40,17 @@ document.addEventListener('DOMContentLoaded', () => {
         img.addEventListener('click', () => {
             lightboxImg.src = img.src;
             lightboxOverlay.classList.add('active');
-            document.body.style.overflow = 'hidden'; // Lock scroll
         });
     });
 
     // Close lightbox
     const closeLightbox = () => {
         lightboxOverlay.classList.remove('active');
-        document.body.style.overflow = ''; // Restore scroll
         setTimeout(() => { lightboxImg.src = ''; }, 200); // Clear after animation
     };
 
     lightboxOverlay.addEventListener('click', (e) => {
         if (e.target !== lightboxImg) {
-            closeLightbox();
-        }
-    });
-
-    lightboxClose.addEventListener('click', closeLightbox);
-
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && lightboxOverlay.classList.contains('active')) {
             closeLightbox();
         }
     });

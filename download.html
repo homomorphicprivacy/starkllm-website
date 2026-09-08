@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!-- Rebuild trigger -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -55,7 +54,7 @@
                             <li style="position: relative; padding-left: 2.5rem;">
                                 <span style="position: absolute; left: 0; top: 0; font-weight: 800; color: #d4af37; font-size: 1.2rem; background: rgba(212, 175, 55, 0.1); border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center;">2</span>
                                 <strong style="color: var(--text-primary);">Install Ollama</strong> and pull the required models:<br>
-                                <code style="background:#0a0a0c; border: 1px solid #333; padding:0.4rem 0.6rem; border-radius:6px; font-size:0.9rem; display: block; margin-top: 0.5rem; color: #a1a1aa;">ollama pull qwen3.8:27b &amp;&amp; ollama pull qwen3-embedding:0.6b</code>
+                                <code style="background:#0a0a0c; border: 1px solid #333; padding:0.4rem 0.6rem; border-radius:6px; font-size:0.9rem; display: block; margin-top: 0.5rem; color: #a1a1aa;">ollama pull qwen3.6:27b &amp;&amp; ollama pull qwen3-embedding:0.6b</code>
                             </li>
                             <li style="position: relative; padding-left: 2.5rem;">
                                 <span style="position: absolute; left: 0; top: 0; font-weight: 800; color: #d4af37; font-size: 1.2rem; background: rgba(212, 175, 55, 0.1); border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center;">3</span>
@@ -80,7 +79,7 @@
                             <li>&#9888;&#65039; <strong>Windows SmartScreen:</strong> If Windows blocks <code>start.bat</code>, use the alternative options below.</li>
                             <li>&#128187; <strong>Hardware matters:</strong> Speed and answer quality depend heavily on having a capable GPU (8GB+ VRAM).</li>
                         </ul>
-                        <a href="https://github.com/homomorphicprivacy/StarkLLM/releases/latest" class="btn btn-primary" style="width: 100%; text-align: center; padding: 0.8rem 1rem;" target="_blank" rel="noopener">&#11015; Download from GitHub Releases</a>
+                        <a href="/downloads/StarkLLM-v1.0.0-beta.zip" class="btn btn-primary" style="width: 100%; text-align: center; padding: 0.8rem 1rem;" download>&#11015; Download ZIP (113 MB)</a>
                     </div>
                 </div>
             </div>
@@ -94,7 +93,7 @@
                 <li><strong>Ollama:</strong> Installed natively on Windows and running. Download from <a href="https://ollama.com" target="_blank" rel="noopener">ollama.com</a>.</li>
                 <li><strong>Models pulled:</strong> Open a terminal and run:
                     <div class="code-block">
-                        ollama pull qwen3.8:27b<br>
+                        ollama pull qwen3.6:27b<br>
                         ollama pull qwen3-embedding:0.6b
                     </div>
                 </li>
@@ -122,8 +121,8 @@
             <p>Once running, navigate to <code>http://localhost:5173</code> in your browser if it doesn't open automatically.</p>
 
             <!-- Method B: Unblock -->
-            <h2>Option B &mdash; Unblock the File (If Blocked)</h2>
-            <p>If Windows prevents <code>start.bat</code> from running, try unblocking it first:</p>
+            <h2>Option B &mdash; Unblock the Files (If Blocked)</h2>
+            <p>If Windows prevents <code>start.bat</code> from running, you can run <code>unblock.bat</code> (which strips security marks from all extracted files and launches the app) or unblock manually:</p>
             <ol>
                 <li>Right-click <code>start.bat</code> and select <strong>Properties</strong>.</li>
                 <li>At the bottom of the General tab, look for a message about the file being blocked from another computer.</li>
@@ -211,7 +210,7 @@
 
             <div style="margin-bottom: 1.5rem;">
                 <h4 style="color: var(--text-primary); font-size: 1.1rem; margin-bottom: 0.5rem;">8. What if the UI opens but chat does not work?</h4>
-                <p>Ensure Docker Desktop and Ollama are running. Verify you have pulled the required models (<code>ollama pull qwen3.8:27b</code>). If it still fails, reset the backend manually in a terminal with <code>docker compose down</code> followed by <code>docker compose up --build -d</code>.</p>
+                <p>Ensure Docker Desktop and Ollama are running. Verify you have pulled the required models (<code>ollama pull qwen3.6:27b</code> and <code>ollama pull qwen3-embedding:0.6b</code>). If chat cannot connect, Ollama must be running natively on your Windows host; the backend container communicates with Ollama via <code>host.docker.internal:11434</code>. If it still fails, reset the backend manually in a terminal with <code>docker compose down</code> followed by <code>docker compose up --build -d</code>.</p>
             </div>
 
             <div style="margin-bottom: 1.5rem;">
@@ -261,5 +260,3 @@
 
 
 
-< ! - -   t r i g g e r   b u i l d   - - >  
- 
