@@ -143,28 +143,27 @@
                 <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 2rem;">
                     <div style="flex: 1; min-width: 300px;">
                         <h2 style="font-size: 2.2rem; margin-bottom: 1.5rem; color: #fff;">&#9889; Start in 5 Minutes</h2>
-                        <ol class="custom-ordered-list" style="padding-left: 0; list-style: none; counter-reset: custom-counter; display: flex; flex-direction: column; gap: 1.2rem; color: var(--text-secondary); font-size: 1.05rem; line-height: 1.6;">
+                        <ol style="padding-left: 0; list-style: none; display: flex; flex-direction: column; gap: 1.2rem; margin: 0;">
                             <li style="position: relative; padding-left: 2.5rem;">
-                                <span style="position: absolute; left: 0; top: 0; font-weight: 800; color: #d4af37; font-size: 1.2rem; background: rgba(212, 175, 55, 0.1); border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; counter-increment: custom-counter; content: counter(custom-counter);">1</span>
-                                <strong style="color: var(--text-primary);">Start Docker Desktop</strong> &mdash; make sure it is running in the system tray.
+                                <span style="position: absolute; left: 0; top: 0; font-weight: 800; color: #d4af37; font-size: 1.2rem; background: rgba(212, 175, 55, 0.1); border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center;">1</span>
+                                <strong style="color: var(--text-primary);">Extract the ZIP</strong> package completely to a folder (e.g. <code>C:\StarkLLM\</code>).
                             </li>
                             <li style="position: relative; padding-left: 2.5rem;">
                                 <span style="position: absolute; left: 0; top: 0; font-weight: 800; color: #d4af37; font-size: 1.2rem; background: rgba(212, 175, 55, 0.1); border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center;">2</span>
-                                <strong style="color: var(--text-primary);">Install Ollama</strong> and pull the required models:<br>
-                                <code style="background:#0a0a0c; border: 1px solid #333; padding:0.4rem 0.6rem; border-radius:6px; font-size:0.9rem; display: block; margin-top: 0.5rem; color: #a1a1aa;">ollama pull qwen3.6:27b &amp;&amp; ollama pull qwen3-embedding:0.6b</code>
+                                <strong style="color: var(--text-primary);">Open terminal in folder</strong> &mdash; click the address bar, type <code>cmd</code>, press Enter.
                             </li>
                             <li style="position: relative; padding-left: 2.5rem;">
                                 <span style="position: absolute; left: 0; top: 0; font-weight: 800; color: #d4af37; font-size: 1.2rem; background: rgba(212, 175, 55, 0.1); border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center;">3</span>
-                                <strong style="color: var(--text-primary);">Download the ZIP</strong> and extract it to a folder (e.g. <code>C:\StarkLLM\</code>).
+                                <strong style="color: var(--text-primary);">Run start.cmd</strong> (or double-click <code>start.exe</code>).
                             </li>
                             <li style="position: relative; padding-left: 2.5rem;">
                                 <span style="position: absolute; left: 0; top: 0; font-weight: 800; color: #d4af37; font-size: 1.2rem; background: rgba(212, 175, 55, 0.1); border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center;">4</span>
-                                <strong style="color: var(--text-primary);">Run start.bat</strong> &mdash; double-click it and press <strong>1</strong>.<br>
-                                <span style="color: var(--text-secondary); font-size: 0.9rem;">Or run manually from terminal: <code>docker compose up --build -d</code></span>
+                                <strong style="color: var(--text-primary);">If Windows blocks scripts:</strong> run <code style="background:#0a0a0c; border: 1px solid #333; padding:0.2rem 0.4rem; border-radius:4px; color:#d4af37;">powershell -ExecutionPolicy Bypass -File unblock.ps1</code><br>
+                                <span style="color: var(--text-secondary); font-size: 0.9rem;">(Unblocks extracted files strictly inside the local folder).</span>
                             </li>
                             <li style="position: relative; padding-left: 2.5rem;">
                                 <span style="position: absolute; left: 0; top: 0; font-weight: 800; color: #d4af37; font-size: 1.2rem; background: rgba(212, 175, 55, 0.1); border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center;">5</span>
-                                <strong style="color: var(--text-primary);">Open your browser</strong> at <code>http://localhost:5173</code>
+                                <strong style="color: var(--text-primary);">Then run start.cmd</strong> &mdash; access browser at <code>http://localhost:5173</code>.
                             </li>
                         </ol>
                     </div>
@@ -173,7 +172,7 @@
                         <h4 style="color: #fff; margin-bottom: 1rem; font-size: 1.1rem;">Important Notes</h4>
                         <ul style="padding-left: 1.2rem; color: #a1a1aa; font-size: 0.9rem; line-height: 1.5; margin-bottom: 1.5rem; display: flex; flex-direction: column; gap: 0.8rem;">
                             <li>&#8987; <strong>First launch takes longer:</strong> Docker must download container images initially.</li>
-                            <li>&#9888;&#65039; <strong>Windows SmartScreen:</strong> If Windows blocks <code>start.bat</code>, use the terminal or Unblock the file (see <a href="/download.html" style="color: #d4af37; text-decoration: none;">Download page</a>).</li>
+                            <li>&#9888;&#65039; <strong>Windows SmartScreen:</strong> If execution is blocked, use <code>start.exe</code> or run <code>unblock.ps1</code> (see <a href="/download.html" style="color: #d4af37; text-decoration: none;">Download page</a>).</li>
                             <li>&#128187; <strong>Hardware matters:</strong> Speed and answer quality depend heavily on having a capable GPU (8GB+ VRAM recommended).</li>
                         </ul>
                         <a href="/downloads/StarkLLM-v1.0.0-beta.zip" class="btn btn-primary" style="width: 100%; text-align: center; padding: 0.8rem 1rem;" download>&#11015; Download ZIP (113 MB)</a>

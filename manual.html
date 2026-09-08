@@ -118,48 +118,43 @@
 
             <section id="installation">
                 <h2>7. Installation overview</h2>
-                <p>Installation involves preparing your host machine and then running the provided scripts.</p>
+                <p>Installation involves preparing your host machine and then running the platform launcher.</p>
                 <ol>
                     <li>Install WSL2 (`wsl --install` in PowerShell).</li>
                     <li>Install Docker Desktop and ensure WSL2 integration is enabled in its settings.</li>
-                    <li>Install Ollama for Windows and download the default models (`ollama pull qwen3.6:27b && ollama pull qwen3-embedding:0.6b`).</li>
-                    <li>Extract the StarkLLM release package to a directory of your choice.</li>
+                    <li>Install Ollama for Windows and download default models (<code>ollama pull qwen3.6:27b &amp;&amp; ollama pull qwen3-embedding:0.6b</code>).</li>
+                    <li>Extract the StarkLLM release package completely to a directory of your choice.</li>
                 </ol>
             </section>
 
             <section id="first-launch">
                 <h2>8. Launching StarkLLM</h2>
-                <p>Navigate to the extracted StarkLLM folder. There are four ways to start the platform depending on whether Windows allows the script to run.</p>
+                <p>Navigate to the extracted StarkLLM folder. Recommended launch options:</p>
 
                 <div class="alert warning">
-                    <h4>&#9888;&#65039; Windows May Block start.bat</h4>
-                    <p>Because <code>start.bat</code> was downloaded from the internet, Windows Smart App Control or SmartScreen may flag it as potentially unsafe. <strong>This does not indicate malware.</strong> It is a standard Windows behaviour applied to internet-sourced scripts. StarkLLM is fully open-source — you are welcome to inspect the file before running it.</p>
+                    <h4>&#9888;&#65039; Windows SmartScreen / Execution Policy Notice</h4>
+                    <p>Files extracted from downloaded zip archives carry a <em>Mark of the Web (MOTW)</em> attribute. This is standard Windows security behavior for internet files, not a malware flag.</p>
                 </div>
 
-                <h3>Option A — start.bat Control Panel (Easiest)</h3>
-                <p>If Windows permits it, double-click <code>start.bat</code>. A simple text menu appears:</p>
-                <ul>
-                    <li><strong>Press 1</strong> — Start StarkLLM (runs <code>docker compose up --build -d</code> and opens your browser)</li>
-                    <li><strong>Press 2</strong> — Stop StarkLLM (<code>docker compose down</code>)</li>
-                    <li><strong>Press 3</strong> — Exit the control panel without changing anything</li>
-                </ul>
-                <p>The app runs at <code>http://localhost:5173</code>. The first launch takes several minutes while Docker downloads and builds images. Subsequent starts are fast.</p>
+                <h3>Option A &mdash; Double-Click start.exe (Recommended)</h3>
+                <p>StarkLLM includes a standalone <code>start.exe</code> launcher that automatically checks Docker Desktop status, checks Ollama availability, builds containers, and opens your browser to <code>http://localhost:5173</code>.</p>
 
-                <h3>Option B &mdash; Unblock the Files</h3>
-                <p>If Windows blocks <code>start.bat</code>, you can double-click <code>unblock.bat</code> (which strips security marks from all extracted files and launches StarkLLM automatically), or unblock manually: right-click <code>start.bat</code> &rarr; <strong>Properties</strong> &rarr; check <strong>Unblock</strong> at the bottom &rarr; Apply &rarr; OK.</p>
+                <h3>Option B &mdash; Run start.cmd from Terminal</h3>
+                <p>To launch via command line without script association issues:</p>
+                <ol>
+                    <li>Open the extracted folder in File Explorer.</li>
+                    <li>Click the address bar, type <code>cmd</code>, and press Enter.</li>
+                    <li>Type <code>start.cmd</code> and press Enter.</li>
+                </ol>
 
-                <h3>Option C — Run from a Terminal</h3>
-                <p>Open a terminal (cmd or PowerShell) inside the project folder and run:</p>
-                <p><code>.\start.bat</code></p>
-                <p>Running from a terminal often bypasses SmartScreen without needing to unblock the file.</p>
+                <h3>Option C &mdash; Run unblock.ps1 (If Execution Blocked)</h3>
+                <p>If SmartScreen or execution policies prevent script execution, open PowerShell in the extracted folder and run:</p>
+                <p><code>powershell -ExecutionPolicy Bypass -File unblock.ps1</code></p>
+                <p><em>(Note: This command safely removes MOTW security flags strictly from files inside this extracted local folder.)</em></p>
+                <p>After running <code>unblock.ps1</code>, run <code>start.cmd</code> or <code>start.exe</code>.</p>
 
-                <h3>Option D — Manual Docker Commands</h3>
-                <p>If <code>start.bat</code> remains inaccessible, control StarkLLM directly:</p>
-                <ul>
-                    <li><strong>Start:</strong> <code>docker compose up --build -d</code> — then open <code>http://localhost:5173</code></li>
-                    <li><strong>Stop:</strong> <code>docker compose down</code></li>
-                </ul>
-                <p>These commands are identical to what <code>start.bat</code> runs internally. There is no functional difference.</p>
+                <h3>Option D &mdash; File Properties Unblock (Backup Workaround)</h3>
+                <p>As a backup method: right-click <code>start.cmd</code> (or <code>start.bat</code>) &rarr; <strong>Properties</strong> &rarr; check <strong>Unblock</strong> at the bottom of the General tab &rarr; Apply &rarr; OK.</p>
 
                 <h3 style="margin-top: 2.5rem;">Visual Walkthrough &amp; Screenshot Guide</h3>
                 <p>Below is a step-by-step visual overview of what to expect when running StarkLLM on your local machine:</p>
