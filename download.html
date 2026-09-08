@@ -49,24 +49,30 @@
                         <ol style="padding-left: 0; list-style: none; display: flex; flex-direction: column; gap: 1.2rem; margin: 0;">
                             <li style="position: relative; padding-left: 2.5rem;">
                                 <span style="position: absolute; left: 0; top: 0; font-weight: 800; color: #d4af37; font-size: 1.2rem; background: rgba(212, 175, 55, 0.1); border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center;">1</span>
-                                <strong style="color: var(--text-primary);">Extract the ZIP</strong> package completely to a folder (e.g. <code>C:\StarkLLM\</code>).
+                                <strong style="color: var(--text-primary);">Start Docker Desktop</strong> &mdash; Ensure Docker Desktop is running in your system tray.
                             </li>
                             <li style="position: relative; padding-left: 2.5rem;">
                                 <span style="position: absolute; left: 0; top: 0; font-weight: 800; color: #d4af37; font-size: 1.2rem; background: rgba(212, 175, 55, 0.1); border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center;">2</span>
-                                <strong style="color: var(--text-primary);">Open terminal in folder</strong> &mdash; click the address bar, type <code>cmd</code>, press Enter.
+                                <strong style="color: var(--text-primary);">Install Ollama &amp; pull models</strong> &mdash; In terminal, run:<br>
+                                <code style="background:#0a0a0c; border: 1px solid #333; padding:0.2rem 0.5rem; border-radius:4px; color:#d4af37; font-size: 0.88rem; display: inline-block; margin-top: 0.3rem;">ollama pull qwen3.6:27b</code><br>
+                                <code style="background:#0a0a0c; border: 1px solid #333; padding:0.2rem 0.5rem; border-radius:4px; color:#d4af37; font-size: 0.88rem; display: inline-block; margin-top: 0.2rem;">ollama pull qwen3-embedding:0.6b</code>
                             </li>
                             <li style="position: relative; padding-left: 2.5rem;">
                                 <span style="position: absolute; left: 0; top: 0; font-weight: 800; color: #d4af37; font-size: 1.2rem; background: rgba(212, 175, 55, 0.1); border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center;">3</span>
-                                <strong style="color: var(--text-primary);">Run start.cmd</strong> (or double-click <code>start.exe</code>).
+                                <strong style="color: var(--text-primary);">Download &amp; Extract ZIP</strong> &mdash; Extract the package completely to a folder (e.g. <code>C:\StarkLLM\</code>).
                             </li>
                             <li style="position: relative; padding-left: 2.5rem;">
                                 <span style="position: absolute; left: 0; top: 0; font-weight: 800; color: #d4af37; font-size: 1.2rem; background: rgba(212, 175, 55, 0.1); border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center;">4</span>
-                                <strong style="color: var(--text-primary);">If Windows blocks scripts:</strong> run <code style="background:#0a0a0c; border: 1px solid #333; padding:0.2rem 0.4rem; border-radius:4px; color:#d4af37;">powershell -ExecutionPolicy Bypass -File unblock.ps1</code><br>
-                                <span style="color: var(--text-secondary); font-size: 0.9rem;">(This unblocks files strictly inside the local StarkLLM directory).</span>
+                                <strong style="color: var(--text-primary);">Open terminal in folder</strong> &mdash; In the extracted folder, click the Explorer address bar, type <code>cmd</code>, and press Enter.
                             </li>
                             <li style="position: relative; padding-left: 2.5rem;">
                                 <span style="position: absolute; left: 0; top: 0; font-weight: 800; color: #d4af37; font-size: 1.2rem; background: rgba(212, 175, 55, 0.1); border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center;">5</span>
-                                <strong style="color: var(--text-primary);">Then run start.cmd</strong> &mdash; access browser at <code>http://localhost:5173</code>.
+                                <strong style="color: var(--text-primary);">Run start.exe</strong> &mdash; Type <code>start.exe</code> (if Windows warns: <em>More info</em> &rarr; <em>Run anyway</em>).<br>
+                                <span style="color: var(--text-secondary); font-size: 0.88rem;">Fallback: <code>start.cmd</code> &nbsp;|&nbsp; Last resort: <code>docker compose up --build -d</code></span>
+                            </li>
+                            <li style="position: relative; padding-left: 2.5rem;">
+                                <span style="position: absolute; left: 0; top: 0; font-weight: 800; color: #d4af37; font-size: 1.2rem; background: rgba(212, 175, 55, 0.1); border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center;">6</span>
+                                <strong style="color: var(--text-primary);">Open StarkLLM</strong> &mdash; Navigate to <code>http://localhost:5173</code> in your browser.
                             </li>
                         </ol>
                     </div>
@@ -75,10 +81,10 @@
                         <h4 style="color: #fff; margin-bottom: 1rem; font-size: 1.1rem;">Important Notes</h4>
                         <ul style="padding-left: 1.2rem; color: #a1a1aa; font-size: 0.9rem; line-height: 1.5; margin-bottom: 1.5rem; display: flex; flex-direction: column; gap: 0.8rem;">
                             <li>&#8987; <strong>First launch takes longer:</strong> Docker must download container images initially.</li>
-                            <li>&#9888;&#65039; <strong>Windows SmartScreen:</strong> Standard Windows Internet zone security flags downloaded scripts.</li>
+                            <li>&#9888;&#65039; <strong>Windows SmartScreen:</strong> If execution is blocked, use <em>More info &rarr; Run anyway</em> or run <code>start.cmd</code>.</li>
                             <li>&#128187; <strong>Hardware matters:</strong> Speed and answer quality depend heavily on having a capable GPU (8GB+ VRAM).</li>
                         </ul>
-                        <a href="/downloads/StarkLLM-v1.0.0-beta.zip" class="btn btn-primary" style="width: 100%; text-align: center; padding: 0.8rem 1rem;" download>&#11015; Download ZIP (113 MB)</a>
+                        <a href="/downloads/StarkLLM-v1.0.0-beta.zip" class="btn btn-primary" style="width: 100%; text-align: center; padding: 0.8rem 1rem;" download>&#11015; Download ZIP (115 MB)</a>
                     </div>
                 </div>
             </div>
@@ -101,42 +107,36 @@
 
             <!-- Windows Security & MotW -->
             <div class="alert warning" style="margin: 2rem 0;">
-                <h4>&#9888;&#65039; Windows SmartScreen / Execution Policy Security Notice</h4>
-                <p>Because files inside the ZIP were downloaded from the web, Windows attaches a <em>Mark of the Web (MOTW)</em> flag. This is standard Windows security behavior for downloaded zip contents, not a malware warning.</p>
+                <h4>&#9888;&#65039; Windows SmartScreen / Execution Notice</h4>
+                <p>Because files inside the ZIP are downloaded from the web, Windows attaches a <em>Mark of the Web (MOTW)</em> flag. This is standard Windows security behavior for downloaded archives, not a malware warning.</p>
             </div>
 
-            <!-- Option A: Primary Native Executable -->
-            <h2>Option A &mdash; Double-Click start.exe Launcher (Recommended)</h2>
-            <p>StarkLLM includes a standalone <code>start.exe</code> launcher that automatically checks Docker Desktop status, checks Ollama, builds containers, and opens your browser:</p>
+            <!-- Option 1: Primary Launcher -->
+            <h2>Option 1 &mdash; Run start.exe from Terminal (Recommended)</h2>
+            <p>StarkLLM includes a standalone <code>start.exe</code> launcher that checks Docker Desktop status, checks Ollama, builds containers, and opens your browser:</p>
             <ol>
-                <li>Double-click <code>start.exe</code> inside the extracted folder.</li>
-                <li>If Docker or Ollama are missing, the window will explain the exact missing requirement.</li>
+                <li>In File Explorer inside the extracted folder, click the address bar, type <code>cmd</code>, and press <strong>Enter</strong>.</li>
+                <li>Type <code>start.exe</code> and press Enter. If Windows SmartScreen displays a warning, click <strong>More info</strong> &rarr; <strong>Run anyway</strong>.</li>
             </ol>
 
-            <!-- Option B: Terminal Command -->
-            <h2>Option B &mdash; Run start.cmd from Terminal</h2>
-            <p>To avoid Windows file association blocks on <code>.bat</code> scripts:</p>
+            <!-- Option 2: Terminal Fallback -->
+            <h2>Option 2 &mdash; Run start.cmd (Terminal Fallback)</h2>
+            <p>If you prefer running a command script directly in the terminal:</p>
             <ol>
-                <li>Open the extracted folder in File Explorer.</li>
-                <li>Click the address bar, type <code>cmd</code>, and press <strong>Enter</strong>.</li>
-                <li>Type <code>start.cmd</code> and press Enter.</li>
+                <li>In the extracted folder terminal, run: <code>start.cmd</code></li>
             </ol>
 
-            <!-- Option C: Local Folder Unblock Script -->
-            <h2>Option C &mdash; Run unblock.ps1 (If Blocked)</h2>
-            <p>If SmartScreen or execution policies prevent execution, open PowerShell in the extracted folder and run:</p>
+            <!-- Option 3: Direct Docker Compose -->
+            <h2>Option 3 &mdash; Direct Docker Compose (Last Resort)</h2>
+            <p>If you prefer standard Docker CLI commands directly:</p>
+            <div class="code-block">docker compose up --build -d</div>
+
+            <!-- Option 4: Local Folder Unblock Script -->
+            <h2>Option 4 &mdash; Run unblock.ps1 (If Scripts are Blocked)</h2>
+            <p>If execution policies prevent script execution, open PowerShell in the extracted folder and run:</p>
             <div class="code-block">powershell -ExecutionPolicy Bypass -File unblock.ps1</div>
             <p style="color: var(--text-secondary); font-size: 0.9rem;"><em>This command safely removes SmartScreen flags only from files inside the current StarkLLM folder. It does not alter your global Windows security settings.</em></p>
-            <p>After unblocking, run <code>start.cmd</code> or <code>start.exe</code>.</p>
-
-            <!-- Backup Manual Unblock Method -->
-            <h2>Option D &mdash; File Properties Unblock (Backup Workaround)</h2>
-            <p>As a backup method if command line unblocking is unavailable:</p>
-            <ol>
-                <li>Right-click <code>start.cmd</code> (or <code>start.bat</code>) &rarr; <strong>Properties</strong>.</li>
-                <li>Check <strong>Unblock</strong> at the bottom of the General tab.</li>
-                <li>Click <strong>Apply</strong> &rarr; <strong>OK</strong>, then run the script again.</li>
-            </ol>
+            <p>After unblocking, run <code>start.exe</code> or <code>start.cmd</code> (or advanced option: <code>start.bat</code>).</p>
 
             <!-- Important Notes -->
             <h2>Important Notes</h2>
@@ -162,8 +162,8 @@
                         &nbsp;3.&nbsp;&nbsp;Exit<br><br>
                         Enter choice [1/2/3]: 1
                     </div>
-                    <h4 style="color: #fff; margin-top: 0.8rem; font-size: 1.05rem;">Step 1: start.bat Control Panel</h4>
-                    <p style="color: var(--text-secondary); font-size: 0.88rem; margin: 0;">Double-click <code>start.bat</code> and press 1 to build Docker containers and launch StarkLLM.</p>
+                    <h4 style="color: #fff; margin-top: 0.8rem; font-size: 1.05rem;">Step 1: Control Panel Launcher</h4>
+                    <p style="color: var(--text-secondary); font-size: 0.88rem; margin: 0;">Run <code>start.exe</code> or <code>start.cmd</code> from terminal to build Docker containers and launch StarkLLM.</p>
                 </div>
 
                 <div class="glass-panel" style="padding: 1.2rem; border-radius: 10px;">
@@ -215,8 +215,8 @@
             </div>
 
             <div style="margin-bottom: 1.5rem;">
-                <h4 style="color: var(--text-primary); font-size: 1.1rem; margin-bottom: 0.5rem;">4. Why does Windows block start.bat?</h4>
-                <p style="color: var(--text-secondary); margin-bottom: 0;">Windows SmartScreen flags scripts downloaded from the internet. It does not mean the file is malware. You can unblock it via file Properties, or bypass SmartScreen by running <code>.\start.bat</code> directly from a terminal.</p>
+                <h4 style="color: var(--text-primary); font-size: 1.1rem; margin-bottom: 0.5rem;">4. Why does Windows SmartScreen warn about downloaded launchers?</h4>
+                <p style="color: var(--text-secondary); margin-bottom: 0;">Windows attaches a Mark of the Web attribute to files downloaded from the internet. When running <code>start.exe</code>, click <strong>More info</strong> &rarr; <strong>Run anyway</strong>. Alternatively, run <code>start.cmd</code> from a terminal or run <code>unblock.ps1</code> to remove the flag locally.</p>
             </div>
 
             <div style="margin-bottom: 1.5rem;">

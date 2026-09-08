@@ -74,7 +74,7 @@
 
             <!-- 4. Primary Download ZIP button -->
             <div class="hero-actions" style="justify-content: center; gap: 1rem;">
-                <a href="/downloads/StarkLLM-v1.0.0-beta.zip" class="btn btn-primary" style="padding: 0.9rem 1.8rem; font-size: 1.1rem;">⬇️ Download ZIP (113 MB)</a>
+                <a href="/downloads/StarkLLM-v1.0.0-beta.zip" class="btn btn-primary" style="padding: 0.9rem 1.8rem; font-size: 1.1rem;">⬇️ Download ZIP (115 MB)</a>
                 <a href="manual.html" class="btn btn-outline" style="padding: 0.9rem 1.5rem; font-size: 1.05rem;">Read User Manual</a>
                 <a href="https://github.com/homomorphicprivacy/StarkLLM" target="_blank" rel="noopener" class="btn btn-outline" style="padding: 0.9rem 1.5rem; font-size: 1.05rem;">GitHub Repository</a>
             </div>
@@ -146,24 +146,30 @@
                         <ol style="padding-left: 0; list-style: none; display: flex; flex-direction: column; gap: 1.2rem; margin: 0;">
                             <li style="position: relative; padding-left: 2.5rem;">
                                 <span style="position: absolute; left: 0; top: 0; font-weight: 800; color: #d4af37; font-size: 1.2rem; background: rgba(212, 175, 55, 0.1); border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center;">1</span>
-                                <strong style="color: var(--text-primary);">Extract the ZIP</strong> package completely to a folder (e.g. <code>C:\StarkLLM\</code>).
+                                <strong style="color: var(--text-primary);">Start Docker Desktop</strong> &mdash; Ensure Docker Desktop is running in your system tray.
                             </li>
                             <li style="position: relative; padding-left: 2.5rem;">
                                 <span style="position: absolute; left: 0; top: 0; font-weight: 800; color: #d4af37; font-size: 1.2rem; background: rgba(212, 175, 55, 0.1); border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center;">2</span>
-                                <strong style="color: var(--text-primary);">Open terminal in folder</strong> &mdash; click the address bar, type <code>cmd</code>, press Enter.
+                                <strong style="color: var(--text-primary);">Install Ollama &amp; pull models</strong> &mdash; In terminal, run:<br>
+                                <code style="background:#0a0a0c; border: 1px solid #333; padding:0.2rem 0.5rem; border-radius:4px; color:#d4af37; font-size: 0.88rem; display: inline-block; margin-top: 0.3rem;">ollama pull qwen3.6:27b</code><br>
+                                <code style="background:#0a0a0c; border: 1px solid #333; padding:0.2rem 0.5rem; border-radius:4px; color:#d4af37; font-size: 0.88rem; display: inline-block; margin-top: 0.2rem;">ollama pull qwen3-embedding:0.6b</code>
                             </li>
                             <li style="position: relative; padding-left: 2.5rem;">
                                 <span style="position: absolute; left: 0; top: 0; font-weight: 800; color: #d4af37; font-size: 1.2rem; background: rgba(212, 175, 55, 0.1); border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center;">3</span>
-                                <strong style="color: var(--text-primary);">Run start.cmd</strong> (or double-click <code>start.exe</code>).
+                                <strong style="color: var(--text-primary);">Download &amp; Extract ZIP</strong> &mdash; Extract the package completely to a folder (e.g. <code>C:\StarkLLM\</code>).
                             </li>
                             <li style="position: relative; padding-left: 2.5rem;">
                                 <span style="position: absolute; left: 0; top: 0; font-weight: 800; color: #d4af37; font-size: 1.2rem; background: rgba(212, 175, 55, 0.1); border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center;">4</span>
-                                <strong style="color: var(--text-primary);">If Windows blocks scripts:</strong> run <code style="background:#0a0a0c; border: 1px solid #333; padding:0.2rem 0.4rem; border-radius:4px; color:#d4af37;">powershell -ExecutionPolicy Bypass -File unblock.ps1</code><br>
-                                <span style="color: var(--text-secondary); font-size: 0.9rem;">(Unblocks extracted files strictly inside the local folder).</span>
+                                <strong style="color: var(--text-primary);">Open terminal in folder</strong> &mdash; In the extracted folder, click the Explorer address bar, type <code>cmd</code>, and press Enter.
                             </li>
                             <li style="position: relative; padding-left: 2.5rem;">
                                 <span style="position: absolute; left: 0; top: 0; font-weight: 800; color: #d4af37; font-size: 1.2rem; background: rgba(212, 175, 55, 0.1); border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center;">5</span>
-                                <strong style="color: var(--text-primary);">Then run start.cmd</strong> &mdash; access browser at <code>http://localhost:5173</code>.
+                                <strong style="color: var(--text-primary);">Run start.exe</strong> &mdash; Type <code>start.exe</code> (if Windows warns: <em>More info</em> &rarr; <em>Run anyway</em>).<br>
+                                <span style="color: var(--text-secondary); font-size: 0.88rem;">Fallback: <code>start.cmd</code> &nbsp;|&nbsp; Last resort: <code>docker compose up --build -d</code></span>
+                            </li>
+                            <li style="position: relative; padding-left: 2.5rem;">
+                                <span style="position: absolute; left: 0; top: 0; font-weight: 800; color: #d4af37; font-size: 1.2rem; background: rgba(212, 175, 55, 0.1); border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center;">6</span>
+                                <strong style="color: var(--text-primary);">Open StarkLLM</strong> &mdash; Navigate to <code>http://localhost:5173</code> in your browser.
                             </li>
                         </ol>
                     </div>
@@ -172,10 +178,10 @@
                         <h4 style="color: #fff; margin-bottom: 1rem; font-size: 1.1rem;">Important Notes</h4>
                         <ul style="padding-left: 1.2rem; color: #a1a1aa; font-size: 0.9rem; line-height: 1.5; margin-bottom: 1.5rem; display: flex; flex-direction: column; gap: 0.8rem;">
                             <li>&#8987; <strong>First launch takes longer:</strong> Docker must download container images initially.</li>
-                            <li>&#9888;&#65039; <strong>Windows SmartScreen:</strong> If execution is blocked, use <code>start.exe</code> or run <code>unblock.ps1</code> (see <a href="/download.html" style="color: #d4af37; text-decoration: none;">Download page</a>).</li>
+                            <li>&#9888;&#65039; <strong>Windows SmartScreen:</strong> If execution is blocked, use <em>More info &rarr; Run anyway</em> or run <code>start.cmd</code>.</li>
                             <li>&#128187; <strong>Hardware matters:</strong> Speed and answer quality depend heavily on having a capable GPU (8GB+ VRAM recommended).</li>
                         </ul>
-                        <a href="/downloads/StarkLLM-v1.0.0-beta.zip" class="btn btn-primary" style="width: 100%; text-align: center; padding: 0.8rem 1rem;" download>&#11015; Download ZIP (113 MB)</a>
+                        <a href="/downloads/StarkLLM-v1.0.0-beta.zip" class="btn btn-primary" style="width: 100%; text-align: center; padding: 0.8rem 1rem;" download>&#11015; Download ZIP (115 MB)</a>
                         <a href="https://github.com/homomorphicprivacy/StarkLLM" target="_blank" rel="noopener" class="btn btn-outline" style="width: 100%; text-align: center; margin-top: 0.5rem; padding: 0.6rem 1rem; display: inline-block;">GitHub Repository</a>
                     </div>
                 </div>
