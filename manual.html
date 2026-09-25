@@ -212,7 +212,7 @@
 
             <section id="knowledge-base">
                 <h2>13. Using Knowledge Base &amp; Best Practices</h2>
-                <p>The Knowledge Base feature allows you to specify a local folder on your Windows host. StarkLLM mounts this folder and indexes all supported files within it. Unlike workspace-specific documents, the Knowledge Base acts as a global reference library that you can query from any chat session.</p>
+                <p>The Knowledge Base feature allows you to map a local folder on your Windows host. StarkLLM copies supported files into the container and indexes them into a global vector collection. Unlike workspace-specific documents, the Knowledge Base acts as a global reference library that you can query from any chat session. The system polls the mapped folder approximately every minute and re-indexes new or modified files automatically.</p>
                 
                 <div class="alert info">
                     <h4>Knowledge Base Guidance</h4>

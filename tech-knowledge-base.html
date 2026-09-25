@@ -53,7 +53,7 @@
                 <p>Without a global base, you would have to manually re-upload the same reference PDFs into every single new workspace you create, duplicating data and wasting time.</p>
 
                 <h2>4. How StarkLLM Implements It</h2>
-                <p>StarkLLM watches a local directory you specify. It recursively extracts and embeds all supported text files and PDFs, storing them in a dedicated global collection in ChromaDB.</p>
+                <p>StarkLLM polls a mapped local directory at regular intervals (approximately every minute). It recursively extracts and embeds all supported text files and PDFs, storing them in a dedicated global collection in ChromaDB. New or modified files are re-indexed automatically on the next poll cycle.</p>
                 
                 <h2>5. User-Visible Benefit</h2>
                 <p>You have a single source of truth that is automatically available to query from any chat session, regardless of your current workspace.</p>

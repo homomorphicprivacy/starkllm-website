@@ -62,7 +62,7 @@
                     
                     <ul class="deep-dive-list">
                         <li><strong>Source-Backed Responses:</strong> The AI retrieves verified text passages from your exact documents before formulating an answer.</li>
-                        <li><strong>Direct Citations:</strong> Responses include citations that link directly to the underlying source paragraphs.</li>
+                        <li><strong>Direct Citations:</strong> Responses include citations with the source filename and page or section locator, so you can find the relevant passage in your original document.</li>
                         <li><strong>Reduced Hallucination:</strong> Grounding the generation in your documents drastically reduces unsupported statements.</li>
                     </ul>
                 </div>
@@ -84,7 +84,7 @@
                     <ul class="deep-dive-list">
                         <li><strong>Local Folder Indexing:</strong> Map any folder on your Windows machine to StarkLLM. The system will recursively index supported files into a global vector collection.</li>
                         <li><strong>Universal Access:</strong> Query your Knowledge Base from any active chat session, regardless of the current workspace you are in.</li>
-                        <li><strong>Continuous Synchronization:</strong> As you add or modify files in your local folder, the Knowledge Base updates to reflect your latest research.</li>
+                        <li><strong>Interval Synchronization:</strong> The Knowledge Base checks your mapped folder approximately every minute and re-indexes new or modified files automatically.</li>
                     </ul>
                 </div>
             </div>
