@@ -54,7 +54,7 @@
                 <p>Without RAG, an LLM will confidently hallucinate an answer based on its pre-trained weights if it doesn't know the exact facts of your specific query.</p>
 
                 <h2>4. How StarkLLM Implements It</h2>
-                <p>When you ask a question, StarkLLM searches your local vector database (ChromaDB) for paragraphs semantically related to your query, and injects those paragraphs directly into the LLM's context window.</p>
+                <p>When you ask a question, StarkLLM searches your local vector database (ChromaDB) for passages semantically related to your query, and injects those passages directly into the LLM's context window.</p>
                 
                 <h2>5. User-Visible Benefit</h2>
                 <p>You receive source-grounded answers. AI responses include the source filename and page or section locator, so you can find the relevant passage in your original document.</p>

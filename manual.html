@@ -68,7 +68,7 @@
         <article class="manual-content">
             <section id="what-it-is">
                 <h2>1. What StarkLLM is</h2>
-                <p>StarkLLM is a private, local-first AI assistant designed for Windows. It provides a secure interface to chat with open-weight Large Language Models (LLMs) running directly on your machine. Through Retrieval-Augmented Generation (RAG), it allows you to upload documents (PDF, DOCX, TXT, MD, CSV, JSON, HTML), storing them in a local vector database to provide source-grounded answers to your questions.</p>
+                <p>StarkLLM is a private, local-first AI assistant designed for Windows. It provides a secure interface to chat with open-weight Large Language Models (LLMs) running directly on your machine. Through Retrieval-Augmented Generation (RAG), it allows you to upload documents (PDF, DOCX, TXT, MD, HTML, and images), storing them in a local vector database to provide source-grounded answers to your questions.</p>
             </section>
 
             <section id="who-it-is-for">
@@ -109,13 +109,13 @@
                 <h2>6. Recommended models</h2>
                 <div class="alert info">
                     <h4>Recommended Model Configuration</h4>
-                    <p>StarkLLM recommends <strong><code>qwen2.5:7b</code></strong> for text generation and <strong><code>nomic-embed-text</code></strong> for document vector embedding.</p>
+                    <p>StarkLLM ships with <strong><code>qwen3.8:27b</code></strong> as the default text model and <strong><code>qwen3-embedding:0.6b</code></strong> for document vector embedding.</p>
                 </div>
                 <ul>
-                    <li><strong>Balanced Default (qwen2.5:7b):</strong> High-accuracy model providing strong reasoning and document comprehension. Requires ~8GB–16GB RAM/VRAM.</li>
+                    <li><strong>Shipped Default (qwen3.8:27b):</strong> High-accuracy reasoning model with strong document comprehension. Requires 16GB+ VRAM or 32GB+ system RAM.</li>
+                    <li><strong>Lighter Alternative (qwen2.5:7b):</strong> Good balance of accuracy and speed for 8–16GB VRAM setups.</li>
                     <li><strong>Lightweight Option (qwen2.5:3b):</strong> Fast, low-footprint model suitable for 8 GB RAM systems or CPU-only setups.</li>
-                    <li><strong>High-Capability Option (qwen2.5:14b):</strong> 14B models providing superior analytical depth on 16GB+ VRAM/RAM setups.</li>
-                    <li><strong>Default Embedding Model (nomic-embed-text):</strong> Fast, high-accuracy embedding model optimized for local RAG retrieval.</li>
+                    <li><strong>Default Embedding Model (qwen3-embedding:0.6b):</strong> Fast, lightweight embedding model optimized for local RAG retrieval.</li>
                 </ul>
             </section>
 
@@ -125,10 +125,10 @@
                 <ol>
                     <li>Ensure Docker Desktop is installed and running.</li>
                     <li>Install Ollama from <a href="https://ollama.com" target="_blank" rel="noopener">ollama.com</a>.</li>
-                    <li>Pull recommended models in your terminal:
+                    <li>Pull the default models in your terminal:
                         <div class="code-block">
-                            ollama pull qwen2.5:7b<br>
-                            ollama pull nomic-embed-text
+                            ollama pull qwen3.8:27b<br>
+                            ollama pull qwen3-embedding:0.6b
                         </div>
                     </li>
                     <li>Extract the StarkLLM release package completely to a directory (e.g. <code>C:\StarkLLM\</code>).</li>
@@ -197,7 +197,7 @@
 
             <section id="documents">
                 <h2>11. Uploading documents &amp; Best Practices</h2>
-                <p>Inside a workspace, click the "Upload Document" button or drag-and-drop supported files (PDF, DOCX, TXT, MD, CSV, JSON, HTML) into the designated area. StarkLLM processes the document in the background—extracting text, generating semantic chunks, and embedding vectors into local ChromaDB.</p>
+                <p>Inside a workspace, click the "Upload Document" button or drag-and-drop supported files (PDF, DOCX, TXT, MD, HTML, and images) into the designated area. StarkLLM processes the document in the background—extracting text, generating semantic chunks, and embedding vectors into local ChromaDB.</p>
                 
                 <div class="alert info">
                     <h4>RAG Best Practices</h4>
@@ -212,8 +212,20 @@
 
             <section id="knowledge-base">
                 <h2>13. Using Knowledge Base &amp; Best Practices</h2>
-                <p>The Knowledge Base feature allows you to map a local folder on your Windows host. StarkLLM copies supported files into the container and indexes them into a global vector collection. Unlike workspace-specific documents, the Knowledge Base acts as a global reference library that you can query from any chat session. The system polls the mapped folder approximately every minute and re-indexes new or modified files automatically.</p>
-                
+                <p>The Knowledge Base feature allows you to map a local folder on your Windows host. StarkLLM performs a one-way copy of supported files (PDF, DOCX, TXT, MD, HTML, and images) into the container and indexes them into a global vector collection. Unlike workspace-specific documents, the Knowledge Base acts as a global reference library that you can query from any chat session. The system polls the mapped folder approximately every minute and re-indexes new or modified files automatically. Source files on your host are never deleted or modified.</p>
+
+                <h3>How to add a Knowledge Base folder</h3>
+                <p>Register a folder using the launcher from your terminal:</p>
+                <ul>
+                    <li><strong>Interactive:</strong> After <code>start.exe</code> finishes launching, press <code>[A]</code> in the launcher console and paste the full Windows path when prompted (e.g. <code>C:\Users\me\research</code>).</li>
+                    <li><strong>CLI flag:</strong> <code>start.exe --add-folder --folder="C:\Users\me\research"</code></li>
+                </ul>
+
+                <div class="alert warning">
+                    <h4>⚠️ Do not paste Windows paths into the web UI</h4>
+                    <p>The browser-based Knowledge Base panel does not accept raw Windows paths like <code>C:\Users\...</code>. Always register folders through the launcher (<code>[A]</code> or <code>--add-folder</code>). The web UI will display an error if a Windows path is entered directly.</p>
+                </div>
+
                 <div class="alert info">
                     <h4>Knowledge Base Guidance</h4>
                     <p>Structure your local folder logically with text-heavy documents (Markdown, TXT, clean PDFs). Avoid pointing the Knowledge Base to an entire root drive containing thousands of binary system files.</p>
@@ -264,7 +276,7 @@
             <section id="troubleshooting">
                 <h2>17. Troubleshooting</h2>
                 <ul>
-                    <li><strong>"Cannot connect to Ollama":</strong> Ensure Ollama is running in your Windows system tray. Ollama runs natively on the host, and the Docker container communicates via <code>host.docker.internal:11434</code>. Verify you pulled the required model (<code>ollama pull qwen2.5:7b</code>).</li>
+                    <li><strong>"Cannot connect to Ollama":</strong> Ensure Ollama is running in your Windows system tray. Ollama runs natively on the host, and the Docker container communicates via <code>host.docker.internal:11434</code>. Verify you pulled the required model (<code>ollama pull qwen3.8:27b</code>).</li>
                     <li><strong>Docker fails to start:</strong> Ensure Docker Desktop is running with WSL2 integration. If containers fail, try running <code>docker compose down</code> followed by <code>docker compose up --build -d</code>.</li>
                     <li><strong>Slow responses:</strong> Ensure Ollama is utilizing your dedicated NVIDIA GPU rather than defaulting to CPU inference.</li>
                 </ul>

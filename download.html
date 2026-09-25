@@ -55,9 +55,9 @@
                             <li style="position: relative; padding-left: 2.5rem;">
                                 <span style="position: absolute; left: 0; top: 0; font-weight: 800; color: #d4af37; font-size: 1.2rem; background: rgba(212, 175, 55, 0.1); border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center;">2</span>
                                 <strong style="color: var(--text-primary);">Install Ollama &amp; pull models</strong> &mdash; In terminal, run:<br>
-                                <code style="background:#0a0a0c; border: 1px solid #333; padding:0.2rem 0.5rem; border-radius:4px; color:#d4af37; font-size: 0.88rem; display: inline-block; margin-top: 0.3rem;">ollama pull qwen2.5:7b</code><br>
-                                <code style="background:#0a0a0c; border: 1px solid #333; padding:0.2rem 0.5rem; border-radius:4px; color:#d4af37; font-size: 0.88rem; display: inline-block; margin-top: 0.2rem;">ollama pull nomic-embed-text</code>
-                                <div style="font-size: 0.82rem; color: #a1a1aa; margin-top: 0.3rem;">(For 8GB RAM laptops use <code>ollama pull qwen2.5:3b</code>; for power users use <code>ollama pull qwen2.5:14b</code>)</div>
+                                <code style="background:#0a0a0c; border: 1px solid #333; padding:0.2rem 0.5rem; border-radius:4px; color:#d4af37; font-size: 0.88rem; display: inline-block; margin-top: 0.3rem;">ollama pull qwen3.8:27b</code><br>
+                                <code style="background:#0a0a0c; border: 1px solid #333; padding:0.2rem 0.5rem; border-radius:4px; color:#d4af37; font-size: 0.88rem; display: inline-block; margin-top: 0.2rem;">ollama pull qwen3-embedding:0.6b</code>
+                                <div style="font-size: 0.82rem; color: #a1a1aa; margin-top: 0.3rem;">(For lighter setups use <code>ollama pull qwen2.5:7b</code> or <code>ollama pull qwen2.5:3b</code>)</div>
                             </li>
                             <li style="position: relative; padding-left: 2.5rem;">
                                 <span style="position: absolute; left: 0; top: 0; font-weight: 800; color: #d4af37; font-size: 1.2rem; background: rgba(212, 175, 55, 0.1); border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center;">3</span>
@@ -116,12 +116,12 @@
                 <li><strong>Ollama:</strong> Installed natively on Windows and running. Download from <a href="https://ollama.com" target="_blank" rel="noopener">ollama.com</a>.</li>
                 <li><strong>Models recommended:</strong> Open a terminal and run:
                     <div class="code-block">
-                        ollama pull qwen2.5:7b<br>
-                        ollama pull nomic-embed-text
+                        ollama pull qwen3.8:27b<br>
+                        ollama pull qwen3-embedding:0.6b
                     </div>
                 </li>
                 <li><strong>Hardware:</strong> Minimum 8 GB RAM (for 3B models) / 16 GB RAM recommended (for 7B models). An NVIDIA GPU with 8 GB+ VRAM is strongly recommended for optimal performance. See the <a href="/manual.html">User Manual</a> for hardware tier guidance.</li>
-                <li><strong>Supported Formats:</strong> PDF, DOCX, TXT, MD, CSV, JSON, HTML.</li>
+                <li><strong>Supported Formats:</strong> PDF, DOCX, TXT, MD, HTML, and images (PNG, JPG).</li>
             </ul>
 
             <!-- Windows Security & MotW -->
@@ -253,7 +253,7 @@
 
             <div style="margin-bottom: 1.5rem;">
                 <h4 style="color: var(--text-primary); font-size: 1.1rem; margin-bottom: 0.5rem;">8. What if the UI opens but chat does not connect?</h4>
-                <p>Ensure Docker Desktop and Ollama are running. Verify you have pulled the recommended model (<code>ollama pull qwen2.5:7b</code> and <code>ollama pull nomic-embed-text</code>). The backend container communicates with Ollama on your host via <code>host.docker.internal:11434</code>. If needed, restart containers with <code>docker compose down</code> followed by <code>docker compose up --build -d</code>.</p>
+                <p>Ensure Docker Desktop and Ollama are running. Verify you have pulled the default model (<code>ollama pull qwen3.8:27b</code> and <code>ollama pull qwen3-embedding:0.6b</code>). The backend container communicates with Ollama on your host via <code>host.docker.internal:11434</code>. If needed, restart containers with <code>docker compose down</code> followed by <code>docker compose up --build -d</code>.</p>
             </div>
 
             <div style="margin-bottom: 1.5rem;">
