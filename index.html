@@ -3,21 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StarkLLM | Private Local AI</title>
+    <title>StarkLLM | 100% Private Local AI for Windows</title>
     <meta name="description" content="StarkLLM is a free, open-source, local-first AI assistant for Windows. Chat privately with your documents and Knowledge Base on your own machine.">
     <link rel="canonical" href="https://www.starkllm.com/">
-    <link rel="stylesheet" href="/styles.css?v=5">
+    <link rel="stylesheet" href="/styles.css?v=6">
     <link rel="icon" href="/favicon.ico" sizes="any">
     <link rel="icon" type="image/png" href="/assets/logo.png">
     <link rel="apple-touch-icon" href="/assets/logo.png">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script defer src="https://umami.homomorphicprivacy.com/script.js" data-website-id="42210010-d059-4616-bfe7-a7d12cde5f09"></script>
 </head>
 <body>
     <canvas id="neural-canvas"></canvas>
     <header>
         <div class="container nav-container">
             <a href="/" class="logo">
-                <img src="/assets/logo.png?v=5" alt="StarkLLM Logo" class="logo-img">
+                <img src="/assets/logo.png?v=6" alt="StarkLLM Logo" class="logo-img">
                 <span class="brand-text text-gradient">StarkLLM</span>
             </a>
             <button class="menu-toggle" id="menuToggle">&#9776;</button>
@@ -29,6 +29,7 @@
                     <li><a href="download.html">Download</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="contact.html">Contact</a></li>
+                    <li><a href="https://github.com/homomorphicprivacy/StarkLLM" target="_blank" rel="noopener">GitHub</a></li>
                 </ul>
             </nav>
         </div>
@@ -41,7 +42,7 @@
             
             <!-- 1. What it is & Who it is for -->
             <p style="font-size: 1.2rem; max-width: 800px; margin: 0 auto 1.5rem; color: var(--text-secondary); line-height: 1.6;">
-                StarkLLM is a private Windows research beta for technical users to chat with local documents and a personal Knowledge Base via Ollama. Built for developers, researchers, and technical professionals who want local RAG running on their own Docker + Ollama stack.
+                StarkLLM is a private Windows research beta for technical users to chat with local documents and a personal Knowledge Base via Ollama. Built for developers, researchers, and privacy-conscious professionals who want local RAG running on their own Docker + Ollama stack.
             </p>
 
             <!-- 2. First screen: 3 Bullets max -->
@@ -55,8 +56,8 @@
                     <span style="font-size: 0.9rem; color: var(--text-secondary);">Map a permanent folder on your PC for cross-chat RAG.</span>
                 </li>
                 <li style="background: rgba(20, 20, 25, 0.7); border: 1px solid rgba(255,255,255,0.1); padding: 0.8rem 1.2rem; border-radius: 8px; flex: 1; min-width: 240px;">
-                    <strong style="color: var(--text-primary);">&#128274; Private by Default:</strong><br>
-                    <span style="font-size: 0.9rem; color: var(--text-secondary);">Runs on your hardware via Docker Desktop &amp; Ollama.</span>
+                    <strong style="color: var(--text-primary);">&#128274; Strict Zero-Cloud:</strong><br>
+                    <span style="font-size: 0.9rem; color: var(--text-secondary);">Runs 100% on your hardware via Docker &amp; Ollama.</span>
                 </li>
             </ul>
 
@@ -67,21 +68,21 @@
                     <li><strong>OS:</strong> Windows 10/11 with WSL2 enabled.</li>
                     <li><strong>Docker Desktop:</strong> Installed &amp; running in system tray.</li>
                     <li><strong>Ollama:</strong> Installed natively on Windows host.</li>
-                    <li><strong>Hardware:</strong> NVIDIA GPU (8GB+ VRAM recommended for 27B model).</li>
-                    <li><strong>Models required:</strong> <code>ollama pull qwen3.8:27b</code> &amp; <code>qwen3-embedding:0.6b</code></li>
+                    <li><strong>Hardware:</strong> 8 GB RAM min / 16 GB recommended (NVIDIA GPU with 8GB+ VRAM recommended).</li>
+                    <li><strong>Models recommended:</strong> <code>ollama pull qwen2.5:7b</code> &amp; <code>nomic-embed-text</code></li>
                 </ul>
             </div>
 
             <!-- 4. Primary Download ZIP button -->
-            <div class="hero-actions" style="justify-content: center; gap: 1rem;">
-                <a href="/downloads/StarkLLM-v1.0.0-beta.zip" class="btn btn-primary" style="padding: 0.9rem 1.8rem; font-size: 1.1rem;">⬇️ Download ZIP (121 MB)</a>
+            <div class="hero-actions" style="justify-content: center; gap: 1rem; flex-wrap: wrap;">
+                <a href="/downloads/StarkLLM-v1.0.0-beta.zip" class="btn btn-primary" style="padding: 0.9rem 1.8rem; font-size: 1.1rem;">⬇️ Download ZIP (~117 MB)</a>
                 <a href="manual.html" class="btn btn-outline" style="padding: 0.9rem 1.5rem; font-size: 1.05rem;">Read User Manual</a>
                 <a href="https://github.com/homomorphicprivacy/StarkLLM" target="_blank" rel="noopener" class="btn btn-outline" style="padding: 0.9rem 1.5rem; font-size: 1.05rem;">GitHub Repository</a>
             </div>
         </section>
 
         <section class="container hero-img-section">
-            <img src="/assets/LLM2024.png?v=5" alt="StarkLLM chat interface" class="hero-screenshot">
+            <img src="/assets/LLM2024.png?v=6" alt="StarkLLM chat interface" class="hero-screenshot">
         </section>
 
         <!-- How StarkLLM Compares Section -->
@@ -112,7 +113,7 @@
                         <span style="background: rgba(255,255,255,0.1); color: #a1a1aa; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.8rem; text-transform: uppercase; font-weight: 600;">Server / Multi-User</span>
                         <h3 style="color: #fff; margin: 0.8rem 0 0.5rem; font-size: 1.3rem;">Open WebUI</h3>
                         <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.5;">
-                            <strong>Feature-Rich Web Platform:</strong> Extremely versatile, feature-dense web interface inspired by ChatGPT. Primarily designed for server deployments, multi-user teams, and multi-model routing.
+                            <strong>Feature-Rich Web Platform:</strong> Versatile, feature-dense web interface inspired by modern web apps. Primarily designed for server deployments, multi-user teams, and multi-model routing.
                         </p>
                     </div>
                     <div style="margin-top: 1.2rem; padding-top: 0.8rem; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.88rem; color: #71717a;">
@@ -136,7 +137,6 @@
             </div>
         </section>
 
-
         <!-- Prominent Start in 5 Minutes Block -->
         <section class="container" style="padding-bottom: 3rem;">
             <div class="glass-panel" style="background: rgba(20, 20, 25, 0.85); border: 1px solid rgba(212, 175, 55, 0.2); padding: 2.5rem; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
@@ -151,8 +151,8 @@
                             <li style="position: relative; padding-left: 2.5rem;">
                                 <span style="position: absolute; left: 0; top: 0; font-weight: 800; color: #d4af37; font-size: 1.2rem; background: rgba(212, 175, 55, 0.1); border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center;">2</span>
                                 <strong style="color: var(--text-primary);">Install Ollama &amp; pull models</strong> &mdash; In terminal, run:<br>
-                                <code style="background:#0a0a0c; border: 1px solid #333; padding:0.2rem 0.5rem; border-radius:4px; color:#d4af37; font-size: 0.88rem; display: inline-block; margin-top: 0.3rem;">ollama pull qwen3.8:27b</code><br>
-                                <code style="background:#0a0a0c; border: 1px solid #333; padding:0.2rem 0.5rem; border-radius:4px; color:#d4af37; font-size: 0.88rem; display: inline-block; margin-top: 0.2rem;">ollama pull qwen3-embedding:0.6b</code>
+                                <code style="background:#0a0a0c; border: 1px solid #333; padding:0.2rem 0.5rem; border-radius:4px; color:#d4af37; font-size: 0.88rem; display: inline-block; margin-top: 0.3rem;">ollama pull qwen2.5:7b</code><br>
+                                <code style="background:#0a0a0c; border: 1px solid #333; padding:0.2rem 0.5rem; border-radius:4px; color:#d4af37; font-size: 0.88rem; display: inline-block; margin-top: 0.2rem;">ollama pull nomic-embed-text</code>
                             </li>
                             <li style="position: relative; padding-left: 2.5rem;">
                                 <span style="position: absolute; left: 0; top: 0; font-weight: 800; color: #d4af37; font-size: 1.2rem; background: rgba(212, 175, 55, 0.1); border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center;">3</span>
@@ -179,12 +179,12 @@
                     <div style="flex: 0 0 320px; background: rgba(0,0,0,0.4); padding: 1.5rem; border-radius: 8px; border: 1px solid #333;">
                         <h4 style="color: #fff; margin-bottom: 1rem; font-size: 1.1rem;">Important Notes</h4>
                         <ul style="padding-left: 1.2rem; color: #a1a1aa; font-size: 0.9rem; line-height: 1.5; margin-bottom: 1.5rem; display: flex; flex-direction: column; gap: 0.8rem;">
-                            <li>&#8987; <strong>First launch:</strong> First launch can take several minutes while Docker images download. Once containers are up, the <em>app itself</em> may need <strong>1–2 minutes</strong> while the backend finishes startup — the setup wizard opens automatically when ready.</li>
+                            <li>&#8987; <strong>First launch:</strong> First launch can take several minutes while Docker images download. Once containers are up, the <em>app itself</em> may need <strong>1–2 minutes</strong> while the backend finishes startup.</li>
                             <li>&#9888;&#65039; <strong>Windows SmartScreen:</strong> If execution is blocked, use <em>More info &rarr; Run anyway</em> or run <code>start.cmd</code>.</li>
                             <li>&#128187; <strong>Hardware matters:</strong> Speed and answer quality depend heavily on having a capable GPU (8GB+ VRAM recommended).</li>
                         </ul>
-                        <a href="/downloads/StarkLLM-v1.0.0-beta.zip" class="btn btn-primary" style="width: 100%; text-align: center; padding: 0.8rem 1rem;" download>&#11015; Download ZIP (121 MB)</a>
-                        <a href="https://github.com/homomorphicprivacy/StarkLLM" target="_blank" rel="noopener" class="btn btn-outline" style="width: 100%; text-align: center; margin-top: 0.5rem; padding: 0.6rem 1rem; display: inline-block;">GitHub Repository</a>
+                        <a href="/downloads/StarkLLM-v1.0.0-beta.zip" class="btn btn-primary" style="width: 100%; text-align: center; padding: 0.8rem 1rem; display: block;" download>&#11015; Download ZIP (~117 MB)</a>
+                        <a href="https://github.com/homomorphicprivacy/StarkLLM" target="_blank" rel="noopener" class="btn btn-outline" style="width: 100%; text-align: center; margin-top: 0.5rem; padding: 0.6rem 1rem; display: block;">GitHub Repository</a>
                     </div>
                 </div>
             </div>
@@ -195,7 +195,7 @@
             <div class="deep-dive-grid">
                 <div class="deep-dive-visual">
                     <div class="showcase-frame">
-                        <img src="/assets/Dashboard.png?v=5" alt="StarkLLM Dashboard" class="showcase-img">
+                        <img src="/assets/Dashboard.png?v=6" alt="StarkLLM Dashboard" class="showcase-img">
                     </div>
                 </div>
                 <div class="deep-dive-text">
@@ -216,7 +216,7 @@
             <div class="deep-dive-grid reverse">
                 <div class="deep-dive-visual">
                     <div class="showcase-frame frame-dark">
-                        <img src="/assets/LLM2024.png?v=5" alt="StarkLLM Chat Interface" class="showcase-img">
+                        <img src="/assets/LLM2024.png?v=6" alt="StarkLLM Chat Interface" class="showcase-img">
                     </div>
                 </div>
                 <div class="deep-dive-text">
@@ -224,8 +224,8 @@
                     <p>Experience chat that is grounded in your documents. StarkLLM bridges the gap between open-weight LLMs and your personal or enterprise documents.</p>
                     
                     <ul class="deep-dive-list">
-                        <li><strong>Source-Grounded Answers:</strong> The AI retrieves precise semantic chunks from your uploaded PDFs before generating an answer, helping reduce unsupported answers.</li>
-                        <li><strong>Transparent Citations:</strong> Responses typically include direct references to the original source document, allowing you to trace the AI's logic instantly.</li>
+                        <li><strong>Source-Grounded Answers:</strong> The AI retrieves precise semantic chunks from your uploaded PDFs before generating an answer, drastically reducing unsupported answers.</li>
+                        <li><strong>Transparent Citations:</strong> Responses include direct references to the original source document, allowing you to trace the AI's logic instantly.</li>
                         <li><strong>Multi-Chat Sessions:</strong> Maintain parallel, distinct conversations within the same workspace to explore different hypotheses simultaneously.</li>
                     </ul>
                 </div>
@@ -237,7 +237,7 @@
             <div class="glass-panel text-center">
                 <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem;">The Architecture of Privacy</h2>
                 <p style="font-size: 1.15rem; max-width: 800px; margin: 0 auto 2rem;">
-                    StarkLLM offers an alternative to the cloud-dependent paradigm. Your enterprise data, legal briefs, and personal research may be too sensitive to transmit to remote APIs where they could be used for future model training.
+                    StarkLLM offers an offline alternative to cloud AI services. Your enterprise data, legal briefs, and personal research stay strictly on your machine.
                 </p>
                 <div class="grid" style="text-align: left; margin-top: 3rem;">
                     <div>
@@ -249,33 +249,35 @@
                         <p style="color: var(--text-secondary);">Your documents are chunked and embedded into a local ChromaDB vector store running inside an isolated Docker container.</p>
                     </div>
                     <div>
-                        <h3 style="color: var(--text-primary); margin-bottom: 0.5rem;">Minimal Telemetry</h3>
-                        <p style="color: var(--text-secondary);">StarkLLM does not include built-in tracking or analytics. Core AI functionality is designed to operate without remote dependencies.</p>
+                        <h3 style="color: var(--text-primary); margin-bottom: 0.5rem;">Zero Telemetry</h3>
+                        <p style="color: var(--text-secondary);">StarkLLM does not include built-in tracking, external web hooks, or analytics. Core AI functionality operates with 100% localhost routing.</p>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-        <footer>
+    <footer>
         <div class="container footer-content">
             <div class="footer-col">
                 <div class="footer-brand">
-                    <img src="/assets/logo.png?v=5" alt="StarkLLM" class="footer-logo">
+                    <img src="/assets/logo.png?v=6" alt="StarkLLM" class="footer-logo">
                     <span class="footer-brand-name">StarkLLM</span>
                 </div>
                 <p>A free, open-source project.</p>
                 <p>Windows Research Beta</p>
-                <p style="margin-top: 1rem; font-size: 0.8rem; color: #71717a;">Provided "as-is" without warranties of any kind.<br>No liability for damages, data loss, or outcomes.<br>Dependent on user hardware, setup, and chosen local models.<br>Not a substitute for professional judgment. Third-party components (Docker, Ollama, models) have their own terms.</p>
+                <p style="margin-top: 1rem; font-size: 0.8rem; color: #71717a;">Provided "as-is" without warranties of any kind.<br>No liability for damages, data loss, or outcomes.<br>Dependent on user hardware, setup, and chosen local models.<br>Not a substitute for professional judgment.</p>
             </div>
             <div class="footer-col">
                 <h4>Related Projects</h4>
+                <a href="https://github.com/homomorphicprivacy/StarkLLM" target="_blank" rel="noopener">GitHub Repository</a>
                 <a href="https://homomorphicprivacy.com" target="_blank" rel="noopener">homomorphicprivacy.com</a>
             </div>
             <div class="footer-col">
                 <h4>Legal</h4>
-                <a href="/impressum.html?v=4">Impressum</a>
-                <a href="/contact.html?v=4">Contact</a>
+                <a href="/impressum.html">Impressum</a>
+                <a href="/datenschutz.html">Datenschutz</a>
+                <a href="/contact.html">Contact</a>
             </div>
         </div>
         <div class="footer-bottom">
@@ -283,12 +285,6 @@
         </div>
     </footer>
 
-    <script src="/script.js?v=5"></script>
+    <script src="/script.js?v=6"></script>
 </body>
 </html>
-
-
-
-
-
-

@@ -22,35 +22,88 @@ document.addEventListener('DOMContentLoaded', () => {
     // Create lightbox DOM elements
     const lightboxOverlay = document.createElement('div');
     lightboxOverlay.classList.add('lightbox-overlay');
-    
-    const lightboxImg = document.createElement('img');
-    lightboxImg.classList.add('lightbox-img');
+    lightboxOverlay.setAttribute('role', 'dialog');
+    lightboxOverlay.setAttribute('aria-modal', 'true');
+    lightboxOverlay.setAttribute('aria-label', 'Image preview');
     
     const lightboxClose = document.createElement('button');
     lightboxClose.classList.add('lightbox-close');
+    lightboxClose.setAttribute('aria-label', 'Close image preview');
     lightboxClose.innerHTML = '&times;';
 
-    lightboxOverlay.appendChild(lightboxImg);
+    const lightboxContent = document.createElement('div');
+    lightboxContent.classList.add('lightbox-content');
+
+    const lightboxImg = document.createElement('img');
+    lightboxImg.classList.add('lightbox-img');
+
+    const lightboxCaption = document.createElement('div');
+    lightboxCaption.classList.add('lightbox-caption');
+
+    lightboxContent.appendChild(lightboxImg);
+    lightboxContent.appendChild(lightboxCaption);
+
+    lightboxOverlay.appendChild(lightboxContent);
     lightboxOverlay.appendChild(lightboxClose);
     document.body.appendChild(lightboxOverlay);
 
-    // Open lightbox on click
-    const interactiveImages = document.querySelectorAll('.showcase-img, .gallery-img, .tech-img, .hero-screenshot');
+    // Open lightbox function
+    const openLightbox = (img) => {
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt || 'Enlarged screenshot';
+        if (img.alt && img.alt.trim().length > 0) {
+            lightboxCaption.textContent = img.alt;
+            lightboxCaption.style.display = 'block';
+        } else {
+            lightboxCaption.textContent = '';
+            lightboxCaption.style.display = 'none';
+        }
+        lightboxOverlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    };
+
+    // Close lightbox function
+    const closeLightbox = () => {
+        lightboxOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+        setTimeout(() => { 
+            lightboxImg.src = ''; 
+            lightboxCaption.textContent = '';
+        }, 220);
+    };
+
+    // Attach click listeners to all content images
+    const interactiveImages = document.querySelectorAll(
+        '.showcase-img, .gallery-img, .tech-img, .hero-screenshot, .glass-panel img, .zoomable-img, .content-block img'
+    );
+    
     interactiveImages.forEach(img => {
-        img.addEventListener('click', () => {
-            lightboxImg.src = img.src;
-            lightboxOverlay.classList.add('active');
+        // Exclude header / footer logos
+        if (img.classList.contains('logo-img') || img.classList.contains('footer-logo') || img.classList.contains('brand-logo')) {
+            return;
+        }
+        img.classList.add('zoomable-img');
+        img.addEventListener('click', (e) => {
+            e.stopPropagation();
+            openLightbox(img);
         });
     });
 
-    // Close lightbox
-    const closeLightbox = () => {
-        lightboxOverlay.classList.remove('active');
-        setTimeout(() => { lightboxImg.src = ''; }, 200); // Clear after animation
-    };
-
+    // Close on overlay or close button click
     lightboxOverlay.addEventListener('click', (e) => {
-        if (e.target !== lightboxImg) {
+        if (e.target !== lightboxImg && e.target !== lightboxCaption) {
+            closeLightbox();
+        }
+    });
+
+    lightboxClose.addEventListener('click', (e) => {
+        e.stopPropagation();
+        closeLightbox();
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && lightboxOverlay.classList.contains('active')) {
             closeLightbox();
         }
     });

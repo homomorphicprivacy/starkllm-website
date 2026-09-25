@@ -6,16 +6,17 @@
     <title>Product | StarkLLM</title>
     <meta name="description" content="StarkLLM product features — local chat, document RAG, Knowledge Base, and multi-workspace support running entirely on your own machine.">
     <link rel="canonical" href="https://www.starkllm.com/product.html">
-    <link rel="stylesheet" href="/styles.css?v=5">
-    <link rel="icon" type="image/png" href="/assets/logo.png?v=5">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css?v=6">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" href="/assets/logo.png">
+    <script defer src="https://umami.homomorphicprivacy.com/script.js" data-website-id="42210010-d059-4616-bfe7-a7d12cde5f09"></script>
 </head>
 <body>
     <canvas id="neural-canvas"></canvas>
     <header>
         <div class="container nav-container">
             <a href="index.html" class="logo">
-                <img src="/assets/logo.png?v=5" alt="StarkLLM Logo" class="logo-img">
+                <img src="/assets/logo.png?v=6" alt="StarkLLM Logo" class="logo-img">
                 Stark<span class="text-gradient">LLM</span>
             </a>
             <button class="menu-toggle" id="menuToggle">&#9776;</button>
@@ -27,6 +28,7 @@
                     <li><a href="download.html">Download</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="contact.html">Contact</a></li>
+                    <li><a href="https://github.com/homomorphicprivacy/StarkLLM" target="_blank" rel="noopener">GitHub</a></li>
                 </ul>
             </nav>
         </div>
@@ -42,7 +44,7 @@
         <section class="container" style="max-width: 900px; padding-bottom: 4rem;">
             <div class="glass-panel text-center">
                 <h3 style="color: var(--text-primary); margin-bottom: 1rem;">The Document Lifecycle</h3>
-                <p>When you upload a PDF or text file into StarkLLM, processing is designed to stay local. First, local parsers extract the raw text (using OCR if necessary). Second, a Semantic Chunking algorithm splits the text into logical, overlapping blocks. Third, a local embedding model converts these blocks into high-dimensional vectors, storing them in your private ChromaDB container. Finally, when you ask a question, the system retrieves the most relevant vectors and injects them into the context window of your chosen Ollama LLM, aiming to produce grounded responses.</p>
+                <p>When you upload a PDF or text file into StarkLLM, processing stays local to your PC. First, local parsers extract the raw text. Second, a Semantic Chunking algorithm splits the text into logical, overlapping blocks. Third, a local embedding model converts these blocks into vectors, storing them in your private ChromaDB container. Finally, when you ask a question, the system retrieves the most relevant passages and injects them into the context window of your chosen Ollama LLM, producing source-grounded responses.</p>
             </div>
         </section>
 
@@ -51,17 +53,17 @@
             <div class="deep-dive-grid">
                 <div class="deep-dive-visual">
                     <div class="showcase-frame">
-                        <img src="/assets/LLM20242.png?v=5" alt="StarkLLM RAG Answers" class="showcase-img">
+                        <img src="/assets/LLM20242.png?v=6" alt="StarkLLM RAG Answers" class="showcase-img">
                     </div>
                 </div>
                 <div class="deep-dive-text">
                     <h2>Verifiable Intelligence</h2>
-                    <p>Large Language Models are prone to hallucination when relying solely on their pre-trained weights. StarkLLM helps reduce unsupported answers through Retrieval-Augmented Generation (RAG).</p>
+                    <p>Large Language Models can produce unsupported claims when answering from memory alone. StarkLLM addresses this through Retrieval-Augmented Generation (RAG).</p>
                     
                     <ul class="deep-dive-list">
-                        <li><strong>Source-Backed Responses:</strong> The AI is forced to read your exact documents before formulating an answer, ensuring high fidelity to the original text.</li>
-                        <li><strong>Direct Citations:</strong> Every response includes expandable citations. Click a citation to view the exact paragraph the AI used to construct its logic.</li>
-                        <li><strong>Reduced Hallucination:</strong> By constraining the model's context to your verified data, you significantly reduce the risk of confident but false information.</li>
+                        <li><strong>Source-Backed Responses:</strong> The AI retrieves verified text passages from your exact documents before formulating an answer.</li>
+                        <li><strong>Direct Citations:</strong> Responses include citations that link directly to the underlying source paragraphs.</li>
+                        <li><strong>Reduced Hallucination:</strong> Grounding the generation in your documents drastically reduces unsupported statements.</li>
                     </ul>
                 </div>
             </div>
@@ -72,7 +74,7 @@
             <div class="deep-dive-grid reverse">
                 <div class="deep-dive-visual">
                     <div class="showcase-frame frame-dark">
-                        <img src="/assets/KnowledgeBase.png?v=5" alt="StarkLLM Knowledge Base" class="showcase-img">
+                        <img src="/assets/KnowledgeBase.png?v=6" alt="StarkLLM Knowledge Base" class="showcase-img">
                     </div>
                 </div>
                 <div class="deep-dive-text">
@@ -88,9 +90,6 @@
             </div>
         </section>
 
-
-
-
         <!-- Workspace vs KB Comparison -->
         <section id="workspace-vs-kb" class="container" style="max-width: 900px; padding-bottom: 4rem;">
             <h2 style="font-size: 2.2rem; margin-bottom: 1rem;">Workspace vs Knowledge Base</h2>
@@ -102,11 +101,11 @@
                     <ul style="padding-left: 1.2rem; color: var(--text-secondary); margin-bottom: 1.5rem; line-height: 1.6;">
                         <li>Tied strictly to one single workspace.</li>
                         <li>Useful when work must stay isolated to prevent context contamination.</li>
-                        <li>Best for temporary or highly specific document sets.</li>
+                        <li>Best for temporary or project-specific document sets.</li>
                     </ul>
                     <div style="background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 6px; border: 1px solid #333;">
                         <strong style="color: var(--text-primary);">Example:</strong><br>
-                        <span style="color: var(--text-secondary); font-size: 0.95rem;">A folder of contracts for one specific legal case.</span>
+                        <span style="color: var(--text-secondary); font-size: 0.95rem;">A folder of contracts for one specific legal case or client audit.</span>
                     </div>
                 </div>
 
@@ -119,17 +118,18 @@
                     </ul>
                     <div style="background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 6px; border: 1px solid #333;">
                         <strong style="color: var(--text-primary);">Example:</strong><br>
-                        <span style="color: var(--text-secondary); font-size: 0.95rem;">Your ongoing, permanent research library or company SOPs.</span>
+                        <span style="color: var(--text-secondary); font-size: 0.95rem;">Your ongoing, permanent research library, handbook, or company SOPs.</span>
                     </div>
                 </div>
             </div>
         </section>
+
         <!-- Deep Dive: System Controls -->
         <section class="deep-dive-section container">
             <div class="deep-dive-grid">
                 <div class="deep-dive-visual">
                     <div class="showcase-frame">
-                        <img src="/assets/Settings.png?v=5" alt="StarkLLM Settings" class="showcase-img">
+                        <img src="/assets/Settings.png?v=6" alt="StarkLLM Settings" class="showcase-img">
                     </div>
                 </div>
                 <div class="deep-dive-text">
@@ -137,9 +137,9 @@
                     <p>StarkLLM provides deep administrative control over your local inference environment, empowering you to tune performance to your exact hardware capabilities.</p>
                     
                     <ul class="deep-dive-list">
-                        <li><strong>Model Selection:</strong> Switch seamlessly between any LLM downloaded via Ollama (e.g., Llama 3, Mistral, Qwen) directly from the chat interface.</li>
-                        <li><strong>Runtime Configuration:</strong> Adjust context window sizes, temperature, and advanced decoding parameters to perfectly balance speed and intelligence.</li>
-                        <li><strong>Air-Gapped Confidence:</strong> Review your network settings to verify that all API calls are strictly routed to `localhost`, keeping your workflows private.</li>
+                        <li><strong>Model Selection:</strong> Switch seamlessly between any LLM downloaded via Ollama (e.g., Qwen 2.5, Llama 3.2, Mistral) directly from the chat interface.</li>
+                        <li><strong>Runtime Configuration:</strong> Adjust context window sizes, temperature, and advanced parameters to balance speed and reasoning depth.</li>
+                        <li><strong>Strict Localhost Routing:</strong> All internal API communication runs on localhost Docker and host ports, keeping your data strictly on your machine.</li>
                     </ul>
                 </div>
             </div>
@@ -153,55 +153,55 @@
             </div>
             
             <div class="grid">
-                <a href="/tech-rag.html?v=3" class="card tech-card">
+                <a href="/tech-rag.html" class="card tech-card">
                     <div class="card-icon">&#128269;</div>
                     <h3>Retrieval-Augmented Generation (RAG)</h3>
                     <p>Learn how StarkLLM retrieves context from your documents to ground AI responses.</p>
                 </a>
                 
-                <a href="/tech-knowledge-base.html?v=3" class="card tech-card">
+                <a href="/tech-knowledge-base.html" class="card tech-card">
                     <div class="card-icon">&#128218;</div>
                     <h3>Global Knowledge Base</h3>
                     <p>Index local folders to act as a persistent reference library across all chats.</p>
                 </a>
                 
-                <a href="/tech-semantic-chunking.html?v=3" class="card tech-card">
+                <a href="/tech-semantic-chunking.html" class="card tech-card">
                     <div class="card-icon">&#9986;&#65039;</div>
                     <h3>Semantic Chunking</h3>
                     <p>Discover how documents are split intelligently to preserve contextual meaning.</p>
                 </a>
                 
-                <a href="/tech-hybrid-search.html?v=3" class="card tech-card">
-                    <div class="card-icon">&#128176;</div>
+                <a href="/tech-hybrid-search.html" class="card tech-card">
+                    <div class="card-icon">&#9878;&#65039;</div>
                     <h3>Hybrid Search &amp; Re-ranking</h3>
-                    <p>Understand the combination of vector and keyword search for precise retrieval.</p>
+                    <p>Understand the combination of vector similarity and BM25 keyword search with re-ranking.</p>
                 </a>
                 
-                <a href="/tech-multimodal.html?v=3" class="card tech-card">
+                <a href="/tech-multimodal.html" class="card tech-card">
                     <div class="card-icon">&#128248;</div>
                     <h3>Multimodal Documents</h3>
-                    <p>Process PDFs, images, and scanned documents using advanced OCR and Vision models.</p>
+                    <p>Process PDFs, images, and scanned documents using OCR and Vision models.</p>
                 </a>
                 
-                <a href="/tech-workspaces.html?v=3" class="card tech-card">
+                <a href="/tech-workspaces.html" class="card tech-card">
                     <div class="card-icon">&#128193;</div>
                     <h3>Multi-Workspace &amp; Multi-Chat</h3>
                     <p>Organize your work into isolated workspaces and separate chat sessions.</p>
                 </a>
                 
-                <a href="/tech-voice.html?v=3" class="card tech-card">
+                <a href="/tech-voice.html" class="card tech-card">
                     <div class="card-icon">&#127897;&#65039;</div>
                     <h3>Voice I/O (STT/TTS)</h3>
                     <p>Interact hands-free with local Speech-to-Text and Text-to-Speech capabilities.</p>
                 </a>
                 
-                <a href="/tech-local-models.html?v=3" class="card tech-card">
+                <a href="/tech-local-models.html" class="card tech-card">
                     <div class="card-icon">&#129302;</div>
                     <h3>Local Models with Ollama</h3>
                     <p>Run open-weight LLMs directly on your GPU without cloud dependencies.</p>
                 </a>
                 
-                <a href="/tech-privacy.html?v=3" class="card tech-card">
+                <a href="/tech-privacy.html" class="card tech-card">
                     <div class="card-icon">&#128274;</div>
                     <h3>Privacy &amp; Local-First Architecture</h3>
                     <p>Deep dive into the Docker-based system designed to keep your data local to your PC.</p>
@@ -215,18 +215,19 @@
                 <h2 style="font-size: 2.2rem; color: #fff; margin-bottom: 1rem;">Ready to Try StarkLLM?</h2>
                 <p style="color: var(--text-secondary); font-size: 1.1rem; margin-bottom: 2rem;">Download the free, open-source Windows Research Beta package today.</p>
                 <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
-                    <a href="/downloads/StarkLLM-v1.0.0-beta.zip" class="btn btn-primary" style="padding: 0.9rem 2rem; font-size: 1.1rem;" download>⬇️ Download ZIP (121 MB)</a>
+                    <a href="/downloads/StarkLLM-v1.0.0-beta.zip" class="btn btn-primary" style="padding: 0.9rem 2rem; font-size: 1.1rem;" download>⬇️ Download ZIP (~117 MB)</a>
                     <a href="/manual.html" class="btn btn-outline" style="padding: 0.9rem 2rem; font-size: 1.1rem;">Read User Manual</a>
+                    <a href="https://github.com/homomorphicprivacy/StarkLLM" target="_blank" rel="noopener" class="btn btn-outline" style="padding: 0.9rem 2rem; font-size: 1.1rem;">GitHub</a>
                 </div>
             </div>
         </section>
     </main>
 
-        <footer>
+    <footer>
         <div class="container footer-content">
             <div class="footer-col">
                 <div class="footer-brand">
-                    <img src="/assets/logo.png?v=5" alt="StarkLLM" class="footer-logo">
+                    <img src="/assets/logo.png?v=6" alt="StarkLLM" class="footer-logo">
                     <span class="footer-brand-name">StarkLLM</span>
                 </div>
                 <p>A free, open-source project.</p>
@@ -235,12 +236,14 @@
             </div>
             <div class="footer-col">
                 <h4>Related Projects</h4>
+                <a href="https://github.com/homomorphicprivacy/StarkLLM" target="_blank" rel="noopener">GitHub Repository</a>
                 <a href="https://homomorphicprivacy.com" target="_blank" rel="noopener">homomorphicprivacy.com</a>
             </div>
             <div class="footer-col">
                 <h4>Legal</h4>
-                <a href="/impressum.html?v=4">Impressum</a>
-                <a href="/contact.html?v=4">Contact</a>
+                <a href="/impressum.html">Impressum</a>
+                <a href="/datenschutz.html">Datenschutz</a>
+                <a href="/contact.html">Contact</a>
             </div>
         </div>
         <div class="footer-bottom">
@@ -248,6 +251,6 @@
         </div>
     </footer>
 
-    <script src="/script.js?v=5"></script>
+    <script src="/script.js?v=6"></script>
 </body>
 </html>

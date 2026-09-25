@@ -6,18 +6,18 @@
     <title>Download | StarkLLM</title>
     <meta name="description" content="Download the StarkLLM Windows Research Beta. Free, open-source, local-first AI assistant requiring Docker Desktop and Ollama.">
     <link rel="canonical" href="https://www.starkllm.com/download.html">
-    <link rel="stylesheet" href="/styles.css?v=5">
+    <link rel="stylesheet" href="/styles.css?v=6">
     <link rel="icon" href="/favicon.ico" sizes="any">
     <link rel="icon" type="image/png" href="/assets/logo.png">
     <link rel="apple-touch-icon" href="/assets/logo.png">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script defer src="https://umami.homomorphicprivacy.com/script.js" data-website-id="42210010-d059-4616-bfe7-a7d12cde5f09"></script>
 </head>
 <body>
     <canvas id="neural-canvas"></canvas>
     <header>
         <div class="container nav-container">
             <a href="/" class="logo">
-                <img src="/assets/logo.png?v=5" alt="StarkLLM Logo" class="logo-img">
+                <img src="/assets/logo.png?v=6" alt="StarkLLM Logo" class="logo-img">
                 <span class="brand-text text-gradient">StarkLLM</span>
             </a>
             <button class="menu-toggle" id="menuToggle">&#9776;</button>
@@ -29,6 +29,7 @@
                     <li><a href="download.html" class="active">Download</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="contact.html">Contact</a></li>
+                    <li><a href="https://github.com/homomorphicprivacy/StarkLLM" target="_blank" rel="noopener">GitHub</a></li>
                 </ul>
             </nav>
         </div>
@@ -54,8 +55,9 @@
                             <li style="position: relative; padding-left: 2.5rem;">
                                 <span style="position: absolute; left: 0; top: 0; font-weight: 800; color: #d4af37; font-size: 1.2rem; background: rgba(212, 175, 55, 0.1); border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center;">2</span>
                                 <strong style="color: var(--text-primary);">Install Ollama &amp; pull models</strong> &mdash; In terminal, run:<br>
-                                <code style="background:#0a0a0c; border: 1px solid #333; padding:0.2rem 0.5rem; border-radius:4px; color:#d4af37; font-size: 0.88rem; display: inline-block; margin-top: 0.3rem;">ollama pull qwen3.8:27b</code><br>
-                                <code style="background:#0a0a0c; border: 1px solid #333; padding:0.2rem 0.5rem; border-radius:4px; color:#d4af37; font-size: 0.88rem; display: inline-block; margin-top: 0.2rem;">ollama pull qwen3-embedding:0.6b</code>
+                                <code style="background:#0a0a0c; border: 1px solid #333; padding:0.2rem 0.5rem; border-radius:4px; color:#d4af37; font-size: 0.88rem; display: inline-block; margin-top: 0.3rem;">ollama pull qwen2.5:7b</code><br>
+                                <code style="background:#0a0a0c; border: 1px solid #333; padding:0.2rem 0.5rem; border-radius:4px; color:#d4af37; font-size: 0.88rem; display: inline-block; margin-top: 0.2rem;">ollama pull nomic-embed-text</code>
+                                <div style="font-size: 0.82rem; color: #a1a1aa; margin-top: 0.3rem;">(For 8GB RAM laptops use <code>ollama pull qwen2.5:3b</code>; for power users use <code>ollama pull qwen2.5:14b</code>)</div>
                             </li>
                             <li style="position: relative; padding-left: 2.5rem;">
                                 <span style="position: absolute; left: 0; top: 0; font-weight: 800; color: #d4af37; font-size: 1.2rem; background: rgba(212, 175, 55, 0.1); border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center;">3</span>
@@ -80,14 +82,28 @@
                     </div>
                     
                     <div style="flex: 0 0 320px; background: rgba(0,0,0,0.4); padding: 1.5rem; border-radius: 8px; border: 1px solid #333;">
-                        <h4 style="color: #fff; margin-bottom: 1rem; font-size: 1.1rem;">Important Notes</h4>
-                        <ul style="padding-left: 1.2rem; color: #a1a1aa; font-size: 0.9rem; line-height: 1.5; margin-bottom: 1.5rem; display: flex; flex-direction: column; gap: 0.8rem;">
-                            <li>&#8987; <strong>First launch:</strong> First launch can take several minutes while Docker images download. Once containers are up, the <em>app itself</em> needs <strong>1–2 minutes</strong> while the backend finishes startup — the setup wizard opens automatically when ready. If the wizard shows a loading spinner, simply wait.</li>
-                            <li>&#9888;&#65039; <strong>Windows SmartScreen:</strong> If execution is blocked, use <em>More info &rarr; Run anyway</em> or run <code>start.cmd</code>.</li>
-                            <li>&#128187; <strong>Hardware matters:</strong> Speed and answer quality depend heavily on having a capable GPU (8GB+ VRAM).</li>
+                        <h4 style="color: #fff; margin-bottom: 1rem; font-size: 1.1rem;">Release Package</h4>
+                        <ul style="padding-left: 1.2rem; color: #a1a1aa; font-size: 0.9rem; line-height: 1.5; margin-bottom: 1.2rem; display: flex; flex-direction: column; gap: 0.6rem;">
+                            <li>📦 <strong>Version:</strong> v1.0.0-beta (Windows)</li>
+                            <li>⚖️ <strong>License:</strong> Apache 2.0 (Open Source)</li>
+                            <li>💾 <strong>Size:</strong> ~117 MB</li>
                         </ul>
-                        <a href="/downloads/StarkLLM-v1.0.0-beta.zip" class="btn btn-primary" style="width: 100%; text-align: center; padding: 0.8rem 1rem;" download>&#11015; Download ZIP (121 MB)</a>
+                        <a href="/downloads/StarkLLM-v1.0.0-beta.zip" class="btn btn-primary" style="width: 100%; text-align: center; padding: 0.8rem 1rem; display: block;" download>⬇️ Download ZIP (~117 MB)</a>
+                        <a href="https://github.com/homomorphicprivacy/StarkLLM" target="_blank" rel="noopener" class="btn btn-outline" style="width: 100%; text-align: center; margin-top: 0.6rem; padding: 0.6rem 1rem; display: block;">GitHub Repository</a>
                     </div>
+                </div>
+            </div>
+
+            <!-- SHA-256 Verification Card -->
+            <div class="glass-panel" style="background: rgba(14, 14, 18, 0.85); border: 1px solid rgba(255, 255, 255, 0.1); padding: 1.8rem; border-radius: 10px; margin-bottom: 2.5rem;">
+                <h3 style="font-size: 1.3rem; margin-bottom: 0.8rem; color: #fff;">🔒 Cryptographic SHA-256 Checksum</h3>
+                <p style="color: var(--text-secondary); font-size: 0.92rem; margin-bottom: 0.8rem;">To verify archive integrity before execution, compare the SHA-256 hash of your downloaded file:</p>
+                <div style="background: #09090b; border: 1px solid #27272a; padding: 0.8rem 1rem; border-radius: 6px; font-family: monospace; font-size: 0.86rem; color: #4ade80; word-break: break-all; margin-bottom: 1rem;">
+                    15aa772d586946af5213dd9a0f74bcf725f87cd15502d23e48cfc8d1e128fb43
+                </div>
+                <div style="font-size: 0.88rem; color: var(--text-secondary);">
+                    <strong>Verify in PowerShell:</strong><br>
+                    <code style="background: #09090b; border: 1px solid #27272a; padding: 0.2rem 0.5rem; border-radius: 4px; color: #d4af37; display: inline-block; margin-top: 0.3rem;">Get-FileHash -Algorithm SHA256 StarkLLM-v1.0.0-beta.zip</code>
                 </div>
             </div>
 
@@ -96,21 +112,22 @@
             <p>Before you attempt to start StarkLLM, confirm that all of the following are in place:</p>
             <ul>
                 <li><strong>OS:</strong> Windows 10 or 11 with WSL2 enabled.</li>
-                <li><strong>Docker Desktop:</strong> Installed and actively running (visible in the system tray). <em>Without this, nothing will start.</em></li>
+                <li><strong>Docker Desktop:</strong> Installed and actively running (visible in the system tray). <em>Without this, containers cannot start.</em></li>
                 <li><strong>Ollama:</strong> Installed natively on Windows and running. Download from <a href="https://ollama.com" target="_blank" rel="noopener">ollama.com</a>.</li>
-                <li><strong>Models pulled:</strong> Open a terminal and run:
+                <li><strong>Models recommended:</strong> Open a terminal and run:
                     <div class="code-block">
-                        ollama pull qwen3.8:27b<br>
-                        ollama pull qwen3-embedding:0.6b
+                        ollama pull qwen2.5:7b<br>
+                        ollama pull nomic-embed-text
                     </div>
                 </li>
-                <li><strong>Hardware:</strong> Minimum 16 GB RAM. An NVIDIA GPU with 8 GB+ VRAM is strongly recommended for usable performance. See the <a href="/manual.html">User Manual</a> for hardware tier guidance.</li>
+                <li><strong>Hardware:</strong> Minimum 8 GB RAM (for 3B models) / 16 GB RAM recommended (for 7B models). An NVIDIA GPU with 8 GB+ VRAM is strongly recommended for optimal performance. See the <a href="/manual.html">User Manual</a> for hardware tier guidance.</li>
+                <li><strong>Supported Formats:</strong> PDF, DOCX, TXT, MD, CSV, JSON, HTML.</li>
             </ul>
 
             <!-- Windows Security & MotW -->
             <div class="alert warning" style="margin: 2rem 0;">
-                <h4>&#9888;&#65039; Windows SmartScreen / Execution Notice</h4>
-                <p>Because files inside the ZIP are downloaded from the web, Windows attaches a <em>Mark of the Web (MOTW)</em> flag. This is standard Windows security behavior for downloaded archives, not a malware warning.</p>
+                <h4>⚠️ Windows SmartScreen / Execution Notice</h4>
+                <p>Because files inside the ZIP are downloaded from the web, Windows attaches a <em>Mark of the Web (MOTW)</em> flag. When running <code>start.exe</code>, click <strong>More info</strong> &rarr; <strong>Run anyway</strong>, or run <code>unblock.ps1</code> in PowerShell to clear the attribute locally.</p>
             </div>
 
             <!-- Option 1: Primary Launcher -->
@@ -125,7 +142,7 @@
             <h2>Option 2 &mdash; Run start.cmd (Terminal Fallback)</h2>
             <p>If you prefer running a command script directly in the terminal:</p>
             <ol>
-                <li>In the extracted folder terminal, run: <code>start.cmd</code></li>
+                <li>In the extracted folder terminal, run: <code>start.cmd</code> (or in PowerShell: <code>.\start.cmd</code>)</li>
             </ol>
 
             <!-- Option 3: Direct Docker Compose -->
@@ -138,14 +155,14 @@
             <p>If execution policies prevent script execution, open PowerShell in the extracted folder and run:</p>
             <div class="code-block">powershell -ExecutionPolicy Bypass -File unblock.ps1</div>
             <p style="color: var(--text-secondary); font-size: 0.9rem;"><em>This command safely removes SmartScreen flags only from files inside the current StarkLLM folder. It does not alter your global Windows security settings.</em></p>
-            <p>After unblocking, run <code>start.exe</code> or <code>start.cmd</code> (or advanced option: <code>start.bat</code>).</p>
+            <p>After unblocking, run <code>start.exe</code> or <code>start.cmd</code>.</p>
 
             <!-- Important Notes -->
             <h2>Important Notes</h2>
             <ul>
-                <li>StarkLLM is <strong>free</strong> and <strong>open source</strong>.</li>
+                <li>StarkLLM is <strong>free</strong> and <strong>open source (Apache 2.0)</strong>.</li>
                 <li>Intended for <strong>research and non-commercial use</strong>.</li>
-                <li>Provided <strong>without warranty</strong> or liability of any kind.</li>
+                <li>Provided <strong>"as-is" without warranty</strong> or liability of any kind.</li>
             </ul>
 
             <!-- Application Interface Walkthrough -->
@@ -169,33 +186,31 @@
                 </div>
 
                 <div class="glass-panel" style="padding: 1.2rem; border-radius: 10px;">
-                    <img src="/assets/Dashboard.png?v=5" alt="StarkLLM Dashboard & Workspace" style="width: 100%; height: 210px; object-fit: cover; border-radius: 6px; border: 1px solid #333;">
+                    <img src="/assets/Dashboard.png?v=6" alt="StarkLLM Dashboard & Workspace" class="showcase-img" style="width: 100%; height: 210px; object-fit: cover; border-radius: 6px; border: 1px solid #333;">
                     <h4 style="color: #fff; margin-top: 0.8rem; font-size: 1.05rem;">Step 2: Dashboard &amp; Workspaces</h4>
                     <p style="color: var(--text-secondary); font-size: 0.88rem; margin: 0;">Create local accounts and organize research into isolated Workspaces.</p>
                 </div>
 
                 <div class="glass-panel" style="padding: 1.2rem; border-radius: 10px;">
-                    <img src="/assets/LLM20242.png?v=5" alt="StarkLLM Document Upload" style="width: 100%; height: 210px; object-fit: cover; border-radius: 6px; border: 1px solid #333;">
+                    <img src="/assets/LLM20242.png?v=6" alt="StarkLLM Document Upload" class="showcase-img" style="width: 100%; height: 210px; object-fit: cover; border-radius: 6px; border: 1px solid #333;">
                     <h4 style="color: #fff; margin-top: 0.8rem; font-size: 1.05rem;">Step 3: Upload Documents</h4>
                     <p style="color: var(--text-secondary); font-size: 0.88rem; margin: 0;">Drag and drop PDFs or text files into your active Workspace for local vector embedding.</p>
                 </div>
 
                 <div class="glass-panel" style="padding: 1.2rem; border-radius: 10px;">
-                    <img src="/assets/LLM2024.png?v=5" alt="StarkLLM Chat with Citation" style="width: 100%; height: 210px; object-fit: cover; border-radius: 6px; border: 1px solid #333;">
+                    <img src="/assets/LLM2024.png?v=6" alt="StarkLLM Chat with Citation" class="showcase-img" style="width: 100%; height: 210px; object-fit: cover; border-radius: 6px; border: 1px solid #333;">
                     <h4 style="color: #fff; margin-top: 0.8rem; font-size: 1.05rem;">Step 4: Chat with Citations</h4>
                     <p style="color: var(--text-secondary); font-size: 0.88rem; margin: 0;">Ask questions grounded in your documents with direct, verifiable source citations.</p>
                 </div>
             </div>
 
             <h2>Contribute &amp; Suggest Improvements</h2>
-            <p>StarkLLM is an open, evolving project. If you encounter a bug, have a feature idea, or want to share how you are using it, you are welcome to get in touch.</p>
+            <p>StarkLLM is an open, evolving project. If you encounter a bug, have a feature idea, or want to inspect the source code:</p>
             <ul>
+                <li><strong>GitHub:</strong> <a href="https://github.com/homomorphicprivacy/StarkLLM" target="_blank" rel="noopener">github.com/homomorphicprivacy/StarkLLM</a> &mdash; Browse source code, inspect batch launchers, and open issues.</li>
                 <li><strong>Email:</strong> <a href="mailto:info@starkllm.com">info@starkllm.com</a></li>
-                <li><strong>GitHub:</strong> Browse the source, open issues, or submit improvements directly.</li>
             </ul>
         </div>
-
-
 
         <!-- FAQ Section -->
         <section id="faq" class="container" style="max-width: 900px; padding-bottom: 4rem;">
@@ -203,17 +218,17 @@
             
             <div style="margin-bottom: 1.5rem;">
                 <h4 style="color: var(--text-primary); font-size: 1.1rem; margin-bottom: 0.5rem;">1. Does my data leave my computer?</h4>
-                <p style="color: var(--text-secondary); margin-bottom: 0;">StarkLLM is designed to keep your data on your machine. Documents are stored in a local ChromaDB container. AI inference runs via Ollama on your host machine. During normal local operation, no data is intended to be transmitted externally.</p>
+                <p style="color: var(--text-secondary); margin-bottom: 0;">StarkLLM is designed to keep your data strictly on your machine. Documents are stored in a local ChromaDB container. AI inference runs via Ollama on your host machine. During normal local operation, no data is transmitted externally.</p>
             </div>
 
             <div style="margin-bottom: 1.5rem;">
                 <h4 style="color: var(--text-primary); font-size: 1.1rem; margin-bottom: 0.5rem;">2. Is StarkLLM free?</h4>
-                <p style="color: var(--text-secondary); margin-bottom: 0;">Yes. It is free and open-source. There are no subscriptions or premium tiers. It is provided "as is" with no liability.</p>
+                <p style="color: var(--text-secondary); margin-bottom: 0;">Yes. It is free and open-source under Apache 2.0. There are no subscriptions, telemetry, or hidden tiers. It is provided "as is" for research purposes.</p>
             </div>
 
             <div style="margin-bottom: 1.5rem;">
                 <h4 style="color: var(--text-primary); font-size: 1.1rem; margin-bottom: 0.5rem;">3. Why can answers be slow?</h4>
-                <p style="color: var(--text-secondary); margin-bottom: 0;">Speed depends on your hardware. If you do not have a dedicated GPU, Ollama defaults to CPU inference, which is significantly slower. A dedicated NVIDIA GPU (8GB+ VRAM) can significantly improve generation speed.</p>
+                <p style="color: var(--text-secondary); margin-bottom: 0;">Speed depends on your hardware. If you do not have a dedicated GPU, Ollama defaults to CPU inference, which is significantly slower. A dedicated NVIDIA GPU (8GB+ VRAM) provides significantly faster generation.</p>
             </div>
 
             <div style="margin-bottom: 1.5rem;">
@@ -223,55 +238,57 @@
 
             <div style="margin-bottom: 1.5rem;">
                 <h4 style="color: var(--text-primary); font-size: 1.1rem; margin-bottom: 0.5rem;">5. What hardware do I need?</h4>
-                <p style="color: var(--text-secondary); margin-bottom: 0;">At minimum: 16 GB RAM and an NVIDIA GPU with 8GB VRAM for 8-Billion parameter models. For demanding models (14B-32B), 24GB VRAM or 64GB system RAM is recommended.</p>
+                <p style="color: var(--text-secondary); margin-bottom: 0;">Minimum: 8 GB RAM (for 3B models) / 16 GB RAM (for 7B models). For power-user models (14B-32B), 24GB VRAM or 64GB system RAM is recommended.</p>
             </div>
 
             <div style="margin-bottom: 1.5rem;">
                 <h4 style="color: var(--text-primary); font-size: 1.1rem; margin-bottom: 0.5rem;">6. What is the difference between normal chat and document chat?</h4>
-                <p style="color: var(--text-secondary); margin-bottom: 0;">Normal chat relies solely on the LLM's pre-trained knowledge. Document chat uses RAG: it searches your uploaded PDFs first, feeds relevant chunks to the LLM, and provides answers with specific citations to your documents.</p>
+                <p style="color: var(--text-secondary); margin-bottom: 0;">Normal chat relies solely on the LLM's pre-trained knowledge. Document chat uses RAG: it searches your uploaded documents first, feeds relevant chunks to the LLM, and provides answers with verifiable citations.</p>
             </div>
 
             <div style="margin-bottom: 1.5rem;">
                 <h4 style="color: var(--text-primary); font-size: 1.1rem; margin-bottom: 0.5rem;">7. What is the difference between Workspace Documents and Knowledge Base?</h4>
-                <p style="color: var(--text-secondary); margin-bottom: 0;">Workspace Documents are temporary and isolated to a specific project. The Knowledge Base is a persistent, global folder on your machine that can be referenced from any chat.</p>
+                <p style="color: var(--text-secondary); margin-bottom: 0;">Workspace Documents are isolated to a specific project. The Knowledge Base is a persistent, global folder on your machine that can be referenced from any chat session.</p>
             </div>
 
             <div style="margin-bottom: 1.5rem;">
-                <h4 style="color: var(--text-primary); font-size: 1.1rem; margin-bottom: 0.5rem;">8. What if the UI opens but chat does not work?</h4>
-                <p>Ensure Docker Desktop and Ollama are running. Verify you have pulled the required models (<code>ollama pull qwen3.8:27b</code> and <code>ollama pull qwen3-embedding:0.6b</code>). If chat cannot connect, Ollama must be running natively on your Windows host; the backend container communicates with Ollama via <code>host.docker.internal:11434</code>. If it still fails, reset the backend manually in a terminal with <code>docker compose down</code> followed by <code>docker compose up --build -d</code>.</p>
+                <h4 style="color: var(--text-primary); font-size: 1.1rem; margin-bottom: 0.5rem;">8. What if the UI opens but chat does not connect?</h4>
+                <p>Ensure Docker Desktop and Ollama are running. Verify you have pulled the recommended model (<code>ollama pull qwen2.5:7b</code> and <code>ollama pull nomic-embed-text</code>). The backend container communicates with Ollama on your host via <code>host.docker.internal:11434</code>. If needed, restart containers with <code>docker compose down</code> followed by <code>docker compose up --build -d</code>.</p>
             </div>
 
             <div style="margin-bottom: 1.5rem;">
-                <h4 style="color: var(--text-primary); font-size: 1.1rem; margin-bottom: 0.5rem;">9. Can I use this commercially?</h4>
-                <p style="color: var(--text-secondary); margin-bottom: 0;">StarkLLM is a Research Beta. You can use it freely, but there are no commercial warranties, support SLAs, or liability accepted for business disruption or data loss.</p>
+                <h4 style="color: var(--text-primary); font-size: 1.1rem; margin-bottom: 0.5rem;">9. Can I inspect the source code?</h4>
+                <p style="color: var(--text-secondary); margin-bottom: 0;">Yes. StarkLLM is fully open source on GitHub at <a href="https://github.com/homomorphicprivacy/StarkLLM" target="_blank" rel="noopener">homomorphicprivacy/StarkLLM</a> under the Apache 2.0 license.</p>
             </div>
 
             <div style="margin-bottom: 1.5rem;">
                 <h4 style="color: var(--text-primary); font-size: 1.1rem; margin-bottom: 0.5rem;">10. Where can I send feedback or contribute?</h4>
-                <p style="color: var(--text-secondary); margin-bottom: 0;">We welcome feedback! Email us at <a href="mailto:info@starkllm.com">info@starkllm.com</a> or open an issue on our GitHub repository.</p>
+                <p style="color: var(--text-secondary); margin-bottom: 0;">We welcome feedback! Email us at <a href="mailto:info@starkllm.com">info@starkllm.com</a> or open an issue on our <a href="https://github.com/homomorphicprivacy/StarkLLM" target="_blank" rel="noopener">GitHub repository</a>.</p>
             </div>
         </section>
     </main>
 
-        <footer>
+    <footer>
         <div class="container footer-content">
             <div class="footer-col">
                 <div class="footer-brand">
-                    <img src="/assets/logo.png?v=5" alt="StarkLLM" class="footer-logo">
+                    <img src="/assets/logo.png?v=6" alt="StarkLLM" class="footer-logo">
                     <span class="footer-brand-name">StarkLLM</span>
                 </div>
                 <p>A free, open-source project.</p>
                 <p>Windows Research Beta</p>
-                <p style="margin-top: 1rem; font-size: 0.8rem; color: #71717a;">Provided "as-is" without warranties of any kind.<br>No liability for damages, data loss, or outcomes.<br>Dependent on user hardware, setup, and chosen local models.<br>Not a substitute for professional judgment. Third-party components (Docker, Ollama, models) have their own terms.</p>
+                <p style="margin-top: 1rem; font-size: 0.8rem; color: #71717a;">Provided "as-is" without warranties of any kind.<br>No liability for damages, data loss, or outcomes.<br>Dependent on user hardware, setup, and chosen local models.<br>Not a substitute for professional judgment.</p>
             </div>
             <div class="footer-col">
                 <h4>Related Projects</h4>
+                <a href="https://github.com/homomorphicprivacy/StarkLLM" target="_blank" rel="noopener">GitHub Repository</a>
                 <a href="https://homomorphicprivacy.com" target="_blank" rel="noopener">homomorphicprivacy.com</a>
             </div>
             <div class="footer-col">
                 <h4>Legal</h4>
-                <a href="/impressum.html?v=4">Impressum</a>
-                <a href="/contact.html?v=4">Contact</a>
+                <a href="/impressum.html">Impressum</a>
+                <a href="/datenschutz.html">Datenschutz</a>
+                <a href="/contact.html">Contact</a>
             </div>
         </div>
         <div class="footer-bottom">
@@ -279,12 +296,6 @@
         </div>
     </footer>
 
-    <script src="/script.js?v=5"></script>
+    <script src="/script.js?v=6"></script>
 </body>
 </html>
-
-
-
-
-
-

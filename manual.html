@@ -6,18 +6,18 @@
     <title>User Manual | StarkLLM</title>
     <meta name="description" content="Comprehensive User Manual for StarkLLM. Learn how to install, configure, and use your private local AI assistant.">
     <link rel="canonical" href="https://www.starkllm.com/manual.html">
-    <link rel="stylesheet" href="/styles.css?v=5">
+    <link rel="stylesheet" href="/styles.css?v=6">
     <link rel="icon" href="/favicon.ico" sizes="any">
     <link rel="icon" type="image/png" href="/assets/logo.png">
     <link rel="apple-touch-icon" href="/assets/logo.png">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script defer src="https://umami.homomorphicprivacy.com/script.js" data-website-id="42210010-d059-4616-bfe7-a7d12cde5f09"></script>
 </head>
 <body>
     <canvas id="neural-canvas"></canvas>
     <header>
         <div class="container nav-container">
             <a href="/" class="logo">
-                <img src="/assets/logo.png?v=5" alt="StarkLLM Logo" class="logo-img">
+                <img src="/assets/logo.png?v=6" alt="StarkLLM Logo" class="logo-img">
                 <span class="brand-text text-gradient">StarkLLM</span>
             </a>
             <button class="menu-toggle" id="menuToggle">&#9776;</button>
@@ -29,6 +29,7 @@
                     <li><a href="download.html">Download</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="contact.html">Contact</a></li>
+                    <li><a href="https://github.com/homomorphicprivacy/StarkLLM" target="_blank" rel="noopener">GitHub</a></li>
                 </ul>
             </nav>
         </div>
@@ -49,99 +50,106 @@
                 <li><a href="#software">5. Required software</a></li>
                 <li><a href="#models">6. Recommended models</a></li>
                 <li><a href="#installation">7. Installation overview</a></li>
-                <li><a href="#first-launch">8. Launching StarkLLM (Options A–D)</a></li>
-                <li><a href="#workspaces">9. Creating a workspace</a></li>
-                <li><a href="#documents">10. Uploading documents</a></li>
-                <li><a href="#chat">11. Using chat with documents</a></li>
-                <li><a href="#knowledge-base">12. Using Knowledge Base</a></li>
-                <li><a href="#switching-models">13. Switching models</a></li>
-                <li><a href="#voice">14. Voice features</a></li>
-                <li><a href="#troubleshooting">15. Troubleshooting</a></li>
-                <li><a href="#limitations">16. Limitations</a></li>
-                <li><a href="#workspace-vs-kb">17. Workspace vs Knowledge Base</a></li>
-                <li><a href="#faq">18. FAQ</a></li>
+                <li><a href="#first-launch">8. Launching StarkLLM (Options 1–4)</a></li>
+                <li><a href="#first-week">9. First-week usage path</a></li>
+                <li><a href="#workspaces">10. Creating a workspace</a></li>
+                <li><a href="#documents">11. Uploading documents</a></li>
+                <li><a href="#chat">12. Using chat with documents</a></li>
+                <li><a href="#knowledge-base">13. Using Knowledge Base</a></li>
+                <li><a href="#workspace-vs-kb">14. Workspace vs Knowledge Base</a></li>
+                <li><a href="#switching-models">15. Switching models</a></li>
+                <li><a href="#voice">16. Voice features</a></li>
+                <li><a href="#troubleshooting">17. Troubleshooting</a></li>
+                <li><a href="#limitations">18. Limitations</a></li>
+                <li><a href="#faq">19. FAQ</a></li>
             </ul>
         </aside>
 
         <article class="manual-content">
             <section id="what-it-is">
                 <h2>1. What StarkLLM is</h2>
-                <p>StarkLLM is a private, local-first AI assistant designed for Windows. It provides a secure interface to chat with open-weight Large Language Models (LLMs) running directly on your machine. Through Retrieval-Augmented Generation (RAG), it allows you to upload PDFs and text documents, storing them in a local vector database to provide source-grounded answers to your questions.</p>
+                <p>StarkLLM is a private, local-first AI assistant designed for Windows. It provides a secure interface to chat with open-weight Large Language Models (LLMs) running directly on your machine. Through Retrieval-Augmented Generation (RAG), it allows you to upload documents (PDF, DOCX, TXT, MD, CSV, JSON, HTML), storing them in a local vector database to provide source-grounded answers to your questions.</p>
             </section>
 
             <section id="who-it-is-for">
                 <h2>2. Who it is for</h2>
-                <p>StarkLLM is built for researchers, analysts, developers, and privacy-conscious professionals who need to interrogate sensitive documents without exposing them to third-party cloud providers. If you work under strict data governance policies or simply value strong data privacy, this tool is designed for you.</p>
+                <p>StarkLLM is built for researchers, analysts, developers, and privacy-conscious professionals who need to interrogate sensitive documents without exposing them to third-party cloud providers. If you work under strict data governance policies or simply value data privacy, this tool is designed for you.</p>
             </section>
 
             <section id="what-it-is-not">
                 <h2>3. What it is not for</h2>
-                <p>StarkLLM is <strong>not</strong> a cloud chatbot (like ChatGPT or Claude). It does not rely on massive server farms. It is also not a zero-configuration consumer app; the initial setup requires installing underlying technical dependencies like Docker and Ollama. If you want instant, low-effort AI and do not care about data privacy, a cloud subscription will be easier and faster.</p>
+                <p>StarkLLM is <strong>not</strong> a cloud chatbot (like ChatGPT or Claude). It does not rely on remote server farms. It is also not a zero-configuration consumer app; the initial setup requires installing underlying dependencies like Docker and Ollama. If you want instant, low-effort AI and do not mind cloud data transmission, a cloud subscription will be easier and faster.</p>
             </section>
 
             <section id="hardware">
-                <h2>4. Required hardware (Crucial)</h2>
+                <h2>4. Required hardware</h2>
                 <div class="alert warning">
-                    <h4>Hardware Reality</h4>
-                    <p>StarkLLM is a local AI system. If you do not have a sufficiently strong PC, your experience will be poor. Weak CPUs will result in slow answers. Low RAM will cause model load failures or system crashing. Without a capable local setup, StarkLLM cannot deliver its full value.</p>
+                    <h4>Hardware Guidance</h4>
+                    <p>StarkLLM is a local AI system. Inference speed and capability depend on your PC specifications. Dedicated GPUs provide significantly faster answer generation.</p>
                 </div>
                 <ul>
-                    <li><strong>Minimum Tier (Acceptable but slow):</strong> Intel i5 / Ryzen 5 (8th/3000 series+), 16 GB RAM. Inference will run on CPU and be quite slow. You will be restricted to 8B models.</li>
-                    <li><strong>Good Tier (Recommended):</strong> Intel i7 / Ryzen 7, 32 GB RAM, NVIDIA RTX 3060 / 4060 (8GB+ VRAM). Offers fast, fluid inference for 8B models and can handle 14B models comfortably.</li>
-                    <li><strong>Excellent Tier (Power User):</strong> Intel i9 / Ryzen 9, 64 GB RAM, NVIDIA RTX 3090 / 4090 (24GB VRAM). Required for running exceptionally intelligent 32B+ models at high speeds with massive context windows.</li>
-                    <li><strong>Storage:</strong> Fast NVMe SSD with at least 50GB of free space for Docker images, vector databases, and LLM weights. Mechanical hard drives will cause severe performance degradation during document embedding.</li>
+                    <li><strong>Basic / Laptop Tier:</strong> Modern CPU, 8 GB RAM. Recommended for lightweight 3B models (e.g. <code>qwen2.5:3b</code>). Usable for document summaries, but slower on large context.</li>
+                    <li><strong>Standard Tier (Recommended):</strong> Intel i7 / Ryzen 7, 16–32 GB RAM, NVIDIA RTX 3060 / 4060 (8GB+ VRAM). Offers fast, fluid inference for 7B models (e.g. <code>qwen2.5:7b</code>) and handles 14B models comfortably.</li>
+                    <li><strong>Power User Tier:</strong> Intel i9 / Ryzen 9, 32–64 GB RAM, NVIDIA RTX 3090 / 4090 (16–24GB VRAM). Enables running larger 14B–32B models with extensive context windows.</li>
+                    <li><strong>Storage:</strong> Fast NVMe or SATA SSD with at least 30–50GB of free space for Docker containers and local model weights.</li>
                 </ul>
             </section>
 
             <section id="software">
                 <h2>5. Required software</h2>
-                <p>Because StarkLLM runs entirely locally, it relies on standard containerization and inference engines.</p>
+                <p>Because StarkLLM runs entirely locally, it relies on standard containerization and inference engines:</p>
                 <ul>
                     <li><strong>Windows 10 or 11</strong> with WSL2 (Windows Subsystem for Linux) enabled.</li>
                     <li><strong>Docker Desktop:</strong> Used to orchestrate the vector database, backend API, and frontend UI.</li>
-                    <li><strong>Ollama:</strong> The inference engine responsible for actually running the LLM models locally.</li>
+                    <li><strong>Ollama:</strong> The inference engine responsible for running LLM models locally on your host machine.</li>
                 </ul>
             </section>
 
             <section id="models">
-                <h2>6. Default &amp; recommended models</h2>
+                <h2>6. Recommended models</h2>
                 <div class="alert info">
-                    <h4>Model Intelligence &amp; Defaults</h4>
-                    <p>StarkLLM defaults to <strong><code>qwen3.8:27b</code></strong> for text generation and <strong><code>qwen3-embedding:0.6b</code></strong> for document embedding. Answer quality depends heavily on the model used.</p>
+                    <h4>Recommended Model Configuration</h4>
+                    <p>StarkLLM recommends <strong><code>qwen2.5:7b</code></strong> for text generation and <strong><code>nomic-embed-text</code></strong> for document vector embedding.</p>
                 </div>
                 <ul>
-                    <li><strong>Default Text Model (qwen3.8:27b):</strong> High-capacity model providing strong reasoning and document comprehension. Requires ~12GB–16GB VRAM/RAM.</li>
-                    <li><strong>Default Embedding Model (qwen3-embedding:0.6b):</strong> Lightweight, highly accurate vector embedding model optimized for fast RAG retrieval.</li>
-                    <li><strong>Optional Alternatives (e.g., Llama 3 or Mistral):</strong> You can pull other Ollama models as alternatives if desired for testing or lower hardware constraints.</li>
+                    <li><strong>Balanced Default (qwen2.5:7b):</strong> High-accuracy model providing strong reasoning and document comprehension. Requires ~8GB–16GB RAM/VRAM.</li>
+                    <li><strong>Lightweight Option (qwen2.5:3b):</strong> Fast, low-footprint model suitable for 8 GB RAM systems or CPU-only setups.</li>
+                    <li><strong>High-Capability Option (qwen2.5:14b):</strong> 14B models providing superior analytical depth on 16GB+ VRAM/RAM setups.</li>
+                    <li><strong>Default Embedding Model (nomic-embed-text):</strong> Fast, high-accuracy embedding model optimized for local RAG retrieval.</li>
                 </ul>
             </section>
 
             <section id="installation">
                 <h2>7. Installation overview</h2>
-                <p>Installation involves preparing your host machine and then running the platform launcher.</p>
+                <p>Installation involves preparing your host machine and then running the launcher:</p>
                 <ol>
-                    <li>Install WSL2 (`wsl --install` in PowerShell).</li>
-                    <li>Install Docker Desktop and ensure WSL2 integration is enabled in its settings.</li>
-                    <li>Install Ollama for Windows and download default models (<code>ollama pull qwen3.8:27b &amp;&amp; ollama pull qwen3-embedding:0.6b</code>).</li>
-                    <li>Extract the StarkLLM release package completely to a directory of your choice.</li>
+                    <li>Ensure Docker Desktop is installed and running.</li>
+                    <li>Install Ollama from <a href="https://ollama.com" target="_blank" rel="noopener">ollama.com</a>.</li>
+                    <li>Pull recommended models in your terminal:
+                        <div class="code-block">
+                            ollama pull qwen2.5:7b<br>
+                            ollama pull nomic-embed-text
+                        </div>
+                    </li>
+                    <li>Extract the StarkLLM release package completely to a directory (e.g. <code>C:\StarkLLM\</code>).</li>
                 </ol>
             </section>
 
             <section id="first-launch">
                 <h2>8. Launching StarkLLM</h2>
-                <p>Navigate to the extracted StarkLLM folder. Recommended launch sequence:</p>
+                <p>Navigate to the extracted StarkLLM folder. Choose from the available launcher options:</p>
 
                 <div class="alert info" style="margin-bottom: 1rem;">
-                    <strong>First Launch Note:</strong> First launch can take several minutes while Docker images download. Once the containers are running, the backend needs an additional <strong>1–2 minutes</strong> to initialise (database setup, migrations, model checks). The launcher waits automatically and only opens your browser when the backend is ready. The setup wizard will show <em>"Starting backend…"</em> if it opens before the backend is fully up — just wait a moment and it will proceed automatically. <strong>Do not refresh</strong> or treat this as an error.
+                    <strong>First Launch Note:</strong> First launch can take several minutes while Docker images initialize. Once containers are running, the backend initializes in <strong>1–2 minutes</strong>. The setup wizard opens automatically at <code>http://localhost:5173</code> when ready.
                 </div>
 
                 <div class="alert warning">
-                    <h4>&#9888;&#65039; Windows SmartScreen / Execution Notice</h4>
-                    <p>Files extracted from downloaded zip archives carry a <em>Mark of the Web (MOTW)</em> attribute. This is standard Windows security behavior for downloaded files, not a malware flag.</p>
+                    <h4>⚠️ Windows SmartScreen / Execution Notice</h4>
+                    <p>Files extracted from downloaded zip archives carry a <em>Mark of the Web (MOTW)</em> attribute. When running <code>start.exe</code>, click <strong>More info</strong> &rarr; <strong>Run anyway</strong>, or run <code>unblock.ps1</code> in PowerShell to clear the attribute locally.</p>
                 </div>
 
                 <h3>Option 1 &mdash; Launch start.exe (Recommended)</h3>
-                <p>StarkLLM includes a standalone <code>start.exe</code> launcher that automatically checks Docker Desktop status, checks Ollama availability, builds containers, and opens your browser to <code>http://localhost:5173</code>.</p>
+                <p>StarkLLM includes a standalone <code>start.exe</code> launcher that automatically checks Docker Desktop status, checks Ollama availability, starts containers, and opens your browser to <code>http://localhost:5173</code>.</p>
                 <ol>
                     <li>Open the extracted folder in File Explorer.</li>
                     <li>Click the address bar, type <code>cmd</code> (or <code>powershell</code>), and press <strong>Enter</strong>.</li>
@@ -150,7 +158,6 @@
                             <li>In Command Prompt (cmd): <code>start.exe</code></li>
                             <li>In PowerShell: <code>.\start.exe</code></li>
                         </ul>
-                        <em>If Windows SmartScreen displays a warning, click <strong>More info</strong> &rarr; <strong>Run anyway</strong>.</em>
                     </li>
                 </ol>
 
@@ -168,233 +175,153 @@
                 <h3>Option 4 &mdash; Run unblock.ps1 (If Execution Blocked)</h3>
                 <p>If execution policies prevent script execution, open PowerShell in the extracted folder and run:</p>
                 <p><code>powershell -ExecutionPolicy Bypass -File unblock.ps1</code></p>
-                <p><em>(Note: This command safely removes MOTW security flags strictly from files inside this extracted local folder.)</em></p>
-                <p>After running <code>unblock.ps1</code>, run <code>start.exe</code> or <code>start.cmd</code> (or advanced: <code>start.bat</code>).</p>
-
-                <h3 style="margin-top: 2.5rem;">Visual Walkthrough &amp; Screenshot Guide</h3>
-                <p>Below is a step-by-step visual overview of what to expect when running StarkLLM on your local machine:</p>
-
-                <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 1.5rem; margin-bottom: 2.5rem;">
-                    <div class="glass-panel" style="padding: 1.2rem; border-radius: 10px;">
-                        <div style="background: #0a0a0c; border: 1px solid #333; border-radius: 6px; padding: 1.2rem; font-family: monospace; color: #4ade80; font-size: 0.85rem; line-height: 1.5; height: 210px; overflow: hidden;">
-                            <span style="color: #d4af37;">============================================</span><br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;StarkLLM Control Panel<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Windows Research Beta<br>
-                            <span style="color: #d4af37;">============================================</span><br><br>
-                            &nbsp;1.&nbsp;&nbsp;Start StarkLLM<br>
-                            &nbsp;2.&nbsp;&nbsp;Stop&nbsp;&nbsp;StarkLLM<br>
-                            &nbsp;3.&nbsp;&nbsp;Exit<br><br>
-                            Enter choice [1/2/3]: 1
-                        </div>
-                        <h4 style="color: #fff; margin-top: 0.8rem; font-size: 1.05rem;">Step 1: Control Panel Launcher</h4>
-                        <p style="color: var(--text-secondary); font-size: 0.88rem; margin: 0;">Run <code>start.exe</code> or <code>start.cmd</code> from terminal to build Docker containers and launch StarkLLM.</p>
-                    </div>
-
-                    <div class="glass-panel" style="padding: 1.2rem; border-radius: 10px;">
-                        <img src="/assets/Dashboard.png?v=5" alt="StarkLLM Dashboard & Workspace" style="width: 100%; height: 210px; object-fit: cover; border-radius: 6px; border: 1px solid #333;">
-                        <h4 style="color: #fff; margin-top: 0.8rem; font-size: 1.05rem;">Step 2: Dashboard &amp; Workspaces</h4>
-                        <p style="color: var(--text-secondary); font-size: 0.88rem; margin: 0;">Create local accounts and organize research into isolated Workspaces.</p>
-                    </div>
-
-                    <div class="glass-panel" style="padding: 1.2rem; border-radius: 10px;">
-                        <img src="/assets/LLM20242.png?v=5" alt="StarkLLM Document Upload" style="width: 100%; height: 210px; object-fit: cover; border-radius: 6px; border: 1px solid #333;">
-                        <h4 style="color: #fff; margin-top: 0.8rem; font-size: 1.05rem;">Step 3: Upload Documents</h4>
-                        <p style="color: var(--text-secondary); font-size: 0.88rem; margin: 0;">Drag and drop PDFs or text files into your active Workspace for local vector embedding.</p>
-                    </div>
-
-                    <div class="glass-panel" style="padding: 1.2rem; border-radius: 10px;">
-                        <img src="/assets/LLM2024.png?v=5" alt="StarkLLM Chat with Citation" style="width: 100%; height: 210px; object-fit: cover; border-radius: 6px; border: 1px solid #333;">
-                        <h4 style="color: #fff; margin-top: 0.8rem; font-size: 1.05rem;">Step 4: Chat with Citations</h4>
-                        <p style="color: var(--text-secondary); font-size: 0.88rem; margin: 0;">Ask questions grounded in your documents with direct, verifiable source citations.</p>
-                    </div>
-                </div>
+                <p>After running <code>unblock.ps1</code>, run <code>start.exe</code> or <code>start.cmd</code> (or <code>start.bat</code>).</p>
             </section>
 
             <section id="first-week">
-                <h2>8. First-week usage path</h2>
+                <h2>9. First-week usage path</h2>
                 <p>To get the most out of StarkLLM, we recommend this progression during your first week:</p>
                 <ol>
-                    <li><strong>Day 1:</strong> Start small. Create a single workspace, upload 2-3 standard PDFs (like research papers or manuals), and practice asking questions. Observe how the citations work.</li>
-                    <li><strong>Day 2:</strong> Experiment with model switching. Download a different model via Ollama (e.g., if you started with Llama 3, try Mistral) and compare how they answer the exact same document questions.</li>
-                    <li><strong>Day 3:</strong> Push the limits. Upload a complex, scanned PDF or a massive 500-page report. Notice how semantic chunking breaks it down.</li>
-                    <li><strong>Day 4:</strong> Organize. Create distinct workspaces for different areas of your life (e.g., "Finances", "Coding Projects", "Legal").</li>
-                    <li><strong>Day 5+:</strong> Set up your Global Knowledge Base. Point StarkLLM to your permanent notes folder so you never have to re-upload them again.</li>
+                    <li><strong>Day 1:</strong> Start small. Create a single workspace, upload 2-3 standard documents (like research papers or manuals), and practice asking questions. Observe how the citations work.</li>
+                    <li><strong>Day 2:</strong> Experiment with model switching. Download a different model via Ollama (e.g., try <code>qwen2.5:3b</code> vs <code>qwen2.5:7b</code> or <code>llama3.2</code>) and compare how they answer the same document questions.</li>
+                    <li><strong>Day 3:</strong> Upload a complex multi-page report. Notice how semantic chunking breaks it down into logical blocks.</li>
+                    <li><strong>Day 4:</strong> Organize. Create distinct workspaces for different projects (e.g., "Finances", "Codebase", "Legal").</li>
+                    <li><strong>Day 5+:</strong> Set up your Global Knowledge Base. Point StarkLLM to your permanent notes folder so you can query it across all chat sessions.</li>
                 </ol>
             </section>
 
-
-
-        <!-- Workspace vs KB Comparison -->
-        <section id="workspace-vs-kb" class="container" style="max-width: 900px; padding-bottom: 4rem;">
-            <h2 style="font-size: 2.2rem; margin-bottom: 1rem;">Workspace vs Knowledge Base</h2>
-            <p style="color: var(--text-secondary); margin-bottom: 2rem; font-size: 1.1rem;">StarkLLM offers two ways to contextualize the AI. Understanding the difference is critical to organizing your intelligence.</p>
-            
-            <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2rem;">
-                <div class="glass-panel" style="border-top: 4px solid #c084fc;">
-                    <h3 style="color: #c084fc; font-size: 1.4rem; margin-bottom: 1rem;">Workspace Documents</h3>
-                    <ul style="padding-left: 1.2rem; color: var(--text-secondary); margin-bottom: 1.5rem; line-height: 1.6;">
-                        <li>Tied strictly to one single workspace.</li>
-                        <li>Useful when work must stay isolated to prevent context contamination.</li>
-                        <li>Best for temporary or highly specific document sets.</li>
-                    </ul>
-                    <div style="background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 6px; border: 1px solid #333;">
-                        <strong style="color: var(--text-primary);">Example:</strong><br>
-                        <span style="color: var(--text-secondary); font-size: 0.95rem;">A folder of contracts for one specific legal case.</span>
-                    </div>
-                </div>
-
-                <div class="glass-panel" style="border-top: 4px solid #d4af37;">
-                    <h3 style="color: #d4af37; font-size: 1.4rem; margin-bottom: 1rem;">Knowledge Base</h3>
-                    <ul style="padding-left: 1.2rem; color: var(--text-secondary); margin-bottom: 1.5rem; line-height: 1.6;">
-                        <li>A persistent, global intelligence layer.</li>
-                        <li>Useful across all chats and ongoing workspaces simultaneously.</li>
-                        <li>Best for long-term reference material and personal archives.</li>
-                    </ul>
-                    <div style="background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 6px; border: 1px solid #333;">
-                        <strong style="color: var(--text-primary);">Example:</strong><br>
-                        <span style="color: var(--text-secondary); font-size: 0.95rem;">Your ongoing, permanent research library or company SOPs.</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
             <section id="workspaces">
-                <h2>9. Creating a workspace</h2>
+                <h2>10. Creating a workspace</h2>
                 <p>Workspaces isolate your data. In the left sidebar, click "New Workspace" to create a fresh context. For example, you might create a "Legal Review" workspace and a separate "Market Research" workspace. Documents and chats in one workspace cannot cross-contaminate another.</p>
             </section>
 
             <section id="documents">
-                <h2>10. Uploading documents & Best Practices</h2>
-                <p>Inside a workspace, click the "Upload Document" button or drag-and-drop PDFs/TXT files into the designated area. StarkLLM will process the document in the background—extracting the text, breaking it into semantic chunks, and embedding it into the local ChromaDB vector store. <em>Note: Scanned PDFs without embedded text may require external OCR first.</em></p>
+                <h2>11. Uploading documents &amp; Best Practices</h2>
+                <p>Inside a workspace, click the "Upload Document" button or drag-and-drop supported files (PDF, DOCX, TXT, MD, CSV, JSON, HTML) into the designated area. StarkLLM processes the document in the background—extracting text, generating semantic chunks, and embedding vectors into local ChromaDB.</p>
                 
                 <div class="alert info">
                     <h4>RAG Best Practices</h4>
-                    <p>For the highest quality answers, ensure your documents are clean. Remove massive tables of raw numbers (which LLMs struggle to read natively) and ensure scanned documents are properly OCR'd. Ask specific, targeted questions rather than vague prompts like "summarize this".</p>
+                    <p>For high quality answers, ensure your documents contain clean text. Ask specific, targeted questions rather than vague prompts to help the retrieval engine locate the most relevant sections.</p>
                 </div>
             </section>
 
             <section id="chat">
-                <h2>11. Using chat with documents</h2>
-                <p>Once a document is processed, you can ask questions in the chat interface. StarkLLM will perform a hybrid search to find the most relevant chunks of text from your uploaded documents, provide those chunks to the local LLM, and generate an answer. Citations will be provided, allowing you to trace answers back to the original document context.</p>
+                <h2>12. Using chat with documents</h2>
+                <p>Once a document is processed, you can ask questions in the chat interface. StarkLLM performs hybrid search to find the most relevant chunks from your uploaded documents, feeds those chunks to your local LLM, and generates an answer with verifiable citations.</p>
             </section>
 
             <section id="knowledge-base">
-                <h2>12. Using Knowledge Base & Best Practices</h2>
+                <h2>13. Using Knowledge Base &amp; Best Practices</h2>
                 <p>The Knowledge Base feature allows you to specify a local folder on your Windows host. StarkLLM mounts this folder and indexes all supported files within it. Unlike workspace-specific documents, the Knowledge Base acts as a global reference library that you can query from any chat session.</p>
                 
                 <div class="alert info">
-                    <h4>Knowledge Base Best Practices</h4>
-                    <p>Structure your local folder logically. Only include text-heavy, informational documents (Markdown, TXT, clean PDFs). Do not point the Knowledge Base to your entire `C:\` drive or a folder containing thousands of images, binaries, or zip files, as this will crash the embedding process and pollute your vector space.</p>
+                    <h4>Knowledge Base Guidance</h4>
+                    <p>Structure your local folder logically with text-heavy documents (Markdown, TXT, clean PDFs). Avoid pointing the Knowledge Base to an entire root drive containing thousands of binary system files.</p>
+                </div>
+            </section>
+
+            <section id="workspace-vs-kb">
+                <h2>14. Workspace vs Knowledge Base</h2>
+                <p>StarkLLM offers two ways to contextualize the AI. Understanding the difference is critical to organizing your intelligence:</p>
+                
+                <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 1.5rem; margin-bottom: 2rem;">
+                    <div class="glass-panel" style="border-top: 4px solid #c084fc;">
+                        <h3 style="color: #c084fc; font-size: 1.3rem; margin-bottom: 0.8rem;">Workspace Documents</h3>
+                        <ul style="padding-left: 1.2rem; color: var(--text-secondary); margin-bottom: 1rem; line-height: 1.6;">
+                            <li>Tied strictly to one single workspace.</li>
+                            <li>Keeps work isolated to prevent context contamination.</li>
+                            <li>Best for temporary or project-specific document sets.</li>
+                        </ul>
+                        <div style="background: rgba(0,0,0,0.3); padding: 0.8rem; border-radius: 6px; border: 1px solid #333; font-size: 0.9rem;">
+                            <strong style="color: var(--text-primary);">Example:</strong> Contracts for one specific legal review.
+                        </div>
+                    </div>
+
+                    <div class="glass-panel" style="border-top: 4px solid #d4af37;">
+                        <h3 style="color: #d4af37; font-size: 1.3rem; margin-bottom: 0.8rem;">Knowledge Base</h3>
+                        <ul style="padding-left: 1.2rem; color: var(--text-secondary); margin-bottom: 1rem; line-height: 1.6;">
+                            <li>A persistent, global intelligence layer.</li>
+                            <li>Available across all chats and workspaces simultaneously.</li>
+                            <li>Best for permanent reference material and personal archives.</li>
+                        </ul>
+                        <div style="background: rgba(0,0,0,0.3); padding: 0.8rem; border-radius: 6px; border: 1px solid #333; font-size: 0.9rem;">
+                            <strong style="color: var(--text-primary);">Example:</strong> Research archive or engineering documentation.
+                        </div>
+                    </div>
                 </div>
             </section>
 
             <section id="switching-models">
-                <h2>13. Switching models</h2>
-                <p>If you have downloaded multiple models via Ollama (e.g., `qwen3.8:27b` and `mistral`), you can switch between them using the dropdown menu in the StarkLLM chat interface. Note that changing models mid-conversation will not lose chat history, but the tone and intelligence of the new model will apply to subsequent messages.</p>
+                <h2>15. Switching models</h2>
+                <p>If you have downloaded multiple models via Ollama (e.g., <code>qwen2.5:7b</code>, <code>llama3.2</code>, or <code>mistral</code>), you can switch between them using the dropdown menu in the StarkLLM chat interface. Changing models retains chat history while using the selected model for new replies.</p>
             </section>
 
             <section id="voice">
-                <h2>14. Voice features</h2>
-                <p>StarkLLM supports local Speech-to-Text (STT) for dictating messages and Text-to-Speech (TTS) for reading answers aloud. Ensure your microphone permissions are granted in the browser. Voice processing happens entirely on your machine, preserving the privacy of your spoken words.</p>
+                <h2>16. Voice features</h2>
+                <p>StarkLLM supports local Speech-to-Text (STT) for dictating messages and Text-to-Speech (TTS) for reading answers aloud. Ensure browser microphone permissions are enabled. Voice processing is handled locally without sending audio to external clouds.</p>
             </section>
 
             <section id="troubleshooting">
-                <h2>15. Troubleshooting</h2>
+                <h2>17. Troubleshooting</h2>
                 <ul>
-                    <li><strong>"Cannot connect to Ollama":</strong> Ensure the Ollama app is running in your Windows system tray. Note that Ollama runs on the host and the container communicates via <code>host.docker.internal:11434</code>. Verify you pulled the required default model (<code>ollama pull qwen3.8:27b</code>).</li>
-                    <li><strong>Docker fails to start:</strong> Ensure Docker Desktop is running. If containers fail, try running <code>docker compose down</code> followed by <code>docker compose up --build -d</code>.</li>
-                    <li><strong>Very slow responses:</strong> Your machine may be relying on CPU inference. Ensure you have an NVIDIA GPU and that Ollama is correctly detecting it.</li>
+                    <li><strong>"Cannot connect to Ollama":</strong> Ensure Ollama is running in your Windows system tray. Ollama runs natively on the host, and the Docker container communicates via <code>host.docker.internal:11434</code>. Verify you pulled the required model (<code>ollama pull qwen2.5:7b</code>).</li>
+                    <li><strong>Docker fails to start:</strong> Ensure Docker Desktop is running with WSL2 integration. If containers fail, try running <code>docker compose down</code> followed by <code>docker compose up --build -d</code>.</li>
+                    <li><strong>Slow responses:</strong> Ensure Ollama is utilizing your dedicated NVIDIA GPU rather than defaulting to CPU inference.</li>
                 </ul>
             </section>
 
             <section id="limitations">
-                <h2>16. Limitations</h2>
-                <p>Be aware of the following technical realities:</p>
+                <h2>18. Limitations</h2>
                 <ul>
-                    <li>The first setup is more technical than standard SaaS tools.</li>
-                    <li>Speed depends entirely on your local hardware.</li>
-                    <li>Document retrieval quality depends on the clarity of the original text.</li>
-                    <li>StarkLLM is provided "as is" as a Research Beta, without commercial warranty.</li>
+                    <li>Initial setup requires installing Docker Desktop and Ollama.</li>
+                    <li>Response speed and throughput depend on your local hardware.</li>
+                    <li>Document retrieval quality depends on the formatting and clarity of the input text.</li>
+                    <li>StarkLLM is provided "as is" as an open-source Research Beta under Apache 2.0.</li>
                 </ul>
             </section>
 
+            <section id="faq">
+                <h2>19. Frequently Asked Questions</h2>
+                
+                <div style="margin-bottom: 1.5rem;">
+                    <h4 style="color: var(--text-primary); font-size: 1.1rem; margin-bottom: 0.5rem;">1. Does my data leave my computer?</h4>
+                    <p style="color: var(--text-secondary); margin-bottom: 0;">No. StarkLLM is designed to keep data strictly on your machine. Documents are stored in local ChromaDB containers and inference runs via Ollama on your PC.</p>
+                </div>
 
-        <!-- FAQ Section -->
-        <section id="faq" >
-            <h2 style="font-size: 2.2rem; margin-bottom: 2rem;">Frequently Asked Questions</h2>
-            
-            <div style="margin-bottom: 1.5rem;">
-                <h4 style="color: var(--text-primary); font-size: 1.1rem; margin-bottom: 0.5rem;">1. Does my data leave my computer?</h4>
-                <p style="color: var(--text-secondary); margin-bottom: 0;">StarkLLM is designed to keep your data on your machine. Documents are stored in a local ChromaDB container. AI inference runs via Ollama on your host machine. During normal local operation, no data is intended to be transmitted externally.</p>
-            </div>
+                <div style="margin-bottom: 1.5rem;">
+                    <h4 style="color: var(--text-primary); font-size: 1.1rem; margin-bottom: 0.5rem;">2. Is StarkLLM free and open source?</h4>
+                    <p style="color: var(--text-secondary); margin-bottom: 0;">Yes. StarkLLM is free and open source under the Apache 2.0 license. The source code is available on <a href="https://github.com/homomorphicprivacy/StarkLLM" target="_blank" rel="noopener">GitHub</a>.</p>
+                </div>
 
-            <div style="margin-bottom: 1.5rem;">
-                <h4 style="color: var(--text-primary); font-size: 1.1rem; margin-bottom: 0.5rem;">2. Is StarkLLM free?</h4>
-                <p style="color: var(--text-secondary); margin-bottom: 0;">Yes. It is free and open-source. There are no subscriptions or premium tiers. It is provided "as is" with no liability.</p>
-            </div>
-
-            <div style="margin-bottom: 1.5rem;">
-                <h4 style="color: var(--text-primary); font-size: 1.1rem; margin-bottom: 0.5rem;">3. Why can answers be slow?</h4>
-                <p style="color: var(--text-secondary); margin-bottom: 0;">Speed depends on your hardware. If you do not have a dedicated GPU, Ollama defaults to CPU inference, which is significantly slower. A dedicated NVIDIA GPU (8GB+ VRAM) can significantly improve generation speed.</p>
-            </div>
-
-            <div style="margin-bottom: 1.5rem;">
-                <h4 style="color: var(--text-primary); font-size: 1.1rem; margin-bottom: 0.5rem;">4. Why does Windows SmartScreen warn about downloaded launchers?</h4>
-                <p style="color: var(--text-secondary); margin-bottom: 0;">Windows attaches a Mark of the Web attribute to files downloaded from the internet. When running <code>start.exe</code>, click <strong>More info</strong> &rarr; <strong>Run anyway</strong>. Alternatively, run <code>start.cmd</code> from a terminal or run <code>unblock.ps1</code> to remove the flag locally.</p>
-            </div>
-
-            <div style="margin-bottom: 1.5rem;">
-                <h4 style="color: var(--text-primary); font-size: 1.1rem; margin-bottom: 0.5rem;">5. What hardware do I need?</h4>
-                <p style="color: var(--text-secondary); margin-bottom: 0;">At minimum: 16 GB RAM and an NVIDIA GPU with 8GB VRAM for 8-Billion parameter models. For demanding models (14B-32B), 24GB VRAM or 64GB system RAM is recommended.</p>
-            </div>
-
-            <div style="margin-bottom: 1.5rem;">
-                <h4 style="color: var(--text-primary); font-size: 1.1rem; margin-bottom: 0.5rem;">6. What is the difference between normal chat and document chat?</h4>
-                <p style="color: var(--text-secondary); margin-bottom: 0;">Normal chat relies solely on the LLM's pre-trained knowledge. Document chat uses RAG: it searches your uploaded PDFs first, feeds relevant chunks to the LLM, and provides answers with specific citations to your documents.</p>
-            </div>
-
-            <div style="margin-bottom: 1.5rem;">
-                <h4 style="color: var(--text-primary); font-size: 1.1rem; margin-bottom: 0.5rem;">7. What is the difference between Workspace Documents and Knowledge Base?</h4>
-                <p style="color: var(--text-secondary); margin-bottom: 0;">Workspace Documents are temporary and isolated to a specific project. The Knowledge Base is a persistent, global folder on your machine that can be referenced from any chat.</p>
-            </div>
-
-            <div style="margin-bottom: 1.5rem;">
-                <h4 style="color: var(--text-primary); font-size: 1.1rem; margin-bottom: 0.5rem;">8. What if the UI opens but chat does not work?</h4>
-                <p>Ensure Docker Desktop and Ollama are running. Verify you have pulled the required models (<code>ollama pull qwen3.8:27b</code>). If it still fails, reset the backend manually in a terminal with <code>docker compose down</code> followed by <code>docker compose up --build -d</code>.</p>
-            </div>
-
-            <div style="margin-bottom: 1.5rem;">
-                <h4 style="color: var(--text-primary); font-size: 1.1rem; margin-bottom: 0.5rem;">9. Can I use this commercially?</h4>
-                <p style="color: var(--text-secondary); margin-bottom: 0;">StarkLLM is a Research Beta. You can use it freely, but there are no commercial warranties, support SLAs, or liability accepted for business disruption or data loss.</p>
-            </div>
-
-            <div style="margin-bottom: 1.5rem;">
-                <h4 style="color: var(--text-primary); font-size: 1.1rem; margin-bottom: 0.5rem;">10. Where can I send feedback or contribute?</h4>
-                <p style="color: var(--text-secondary); margin-bottom: 0;">We welcome feedback! Email us at <a href="mailto:info@starkllm.com">info@starkllm.com</a> or open an issue on our GitHub repository.</p>
-            </div>
-        </section>
+                <div style="margin-bottom: 1.5rem;">
+                    <h4 style="color: var(--text-primary); font-size: 1.1rem; margin-bottom: 0.5rem;">3. Where can I inspect or contribute to the source code?</h4>
+                    <p style="color: var(--text-secondary); margin-bottom: 0;">Visit <a href="https://github.com/homomorphicprivacy/StarkLLM" target="_blank" rel="noopener">github.com/homomorphicprivacy/StarkLLM</a> to review source code, inspect launchers, and open issues.</p>
+                </div>
+            </section>
         </article>
     </main>
 
-        <footer>
+    <footer>
         <div class="container footer-content">
             <div class="footer-col">
                 <div class="footer-brand">
-                    <img src="/assets/logo.png?v=5" alt="StarkLLM" class="footer-logo">
+                    <img src="/assets/logo.png?v=6" alt="StarkLLM" class="footer-logo">
                     <span class="footer-brand-name">StarkLLM</span>
                 </div>
                 <p>A free, open-source project.</p>
                 <p>Windows Research Beta</p>
-                <p style="margin-top: 1rem; font-size: 0.8rem; color: #71717a;">Provided "as-is" without warranties of any kind.<br>No liability for damages, data loss, or outcomes.<br>Dependent on user hardware, setup, and chosen local models.<br>Not a substitute for professional judgment. Third-party components (Docker, Ollama, models) have their own terms.</p>
+                <p style="margin-top: 1rem; font-size: 0.8rem; color: #71717a;">Provided "as-is" without warranties of any kind.<br>No liability for damages, data loss, or outcomes.<br>Dependent on user hardware, setup, and chosen local models.<br>Not a substitute for professional judgment.</p>
             </div>
             <div class="footer-col">
                 <h4>Related Projects</h4>
+                <a href="https://github.com/homomorphicprivacy/StarkLLM" target="_blank" rel="noopener">GitHub Repository</a>
                 <a href="https://homomorphicprivacy.com" target="_blank" rel="noopener">homomorphicprivacy.com</a>
             </div>
             <div class="footer-col">
                 <h4>Legal</h4>
-                <a href="/impressum.html?v=4">Impressum</a>
-                <a href="/contact.html?v=4">Contact</a>
+                <a href="/impressum.html">Impressum</a>
+                <a href="/datenschutz.html">Datenschutz</a>
+                <a href="/contact.html">Contact</a>
             </div>
         </div>
         <div class="footer-bottom">
@@ -402,12 +329,6 @@
         </div>
     </footer>
 
-    <script src="/script.js?v=5"></script>
+    <script src="/script.js?v=6"></script>
 </body>
 </html>
-
-
-
-
-
-
