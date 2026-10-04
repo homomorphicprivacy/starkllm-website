@@ -94,8 +94,9 @@ header {
 }
 
 .logo-img {
-  width: 28px;
   height: 28px;
+  width: auto;
+  max-width: 54px;
   object-fit: contain;
   filter: brightness(0.9);
 }
@@ -350,8 +351,9 @@ header {
 }
 
 .footer-logo {
-  width: 22px;
   height: 22px;
+  width: auto;
+  max-width: 42px;
   object-fit: contain;
   filter: brightness(0.85);
 }
