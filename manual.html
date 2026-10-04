@@ -108,8 +108,8 @@
                         models (e.g. <code>qwen2.5:3b</code>). Usable for document summaries, but slower on large
                         context.</li>
                     <li><strong>Standard Tier (Recommended):</strong> Intel i7 / Ryzen 7, 16–32 GB RAM, NVIDIA RTX 3060
-                        / 4060 (8GB+ VRAM). Offers fast, fluid inference for 7B models (e.g. <code>qwen2.5:7b</code>)
-                        and handles 14B models comfortably.</li>
+                        / 4060 (8GB+ VRAM). Offers fast, fluid inference for 7B models (e.g. <code>qwen2.5:7b</code>).
+                        14B models need more VRAM or will run slowly on this tier.</li>
                     <li><strong>Power User Tier:</strong> Intel i9 / Ryzen 9, 32–64 GB RAM, NVIDIA RTX 3090 / 4090
                         (16–24GB VRAM). Enables running larger 14B–32B models with extensive context windows.</li>
                     <li><strong>Storage:</strong> Fast NVMe or SATA SSD with at least 30–50GB of free space for Docker
@@ -140,11 +140,9 @@
                 </div>
                 <ul>
                     <li><strong>Recommended Default (qwen2.5:7b):</strong> High-accuracy reasoning model with strong
-                        document comprehension. Balanced reasoning for 8GB-16GB RAM and dedicated 6GB+ VRAM.</li>
-                    <li><strong>Lighter Alternative (qwen2.5:7b):</strong> Good balance of accuracy and speed for 8–16GB
-                        VRAM setups.</li>
-                    <li><strong>Lightweight Option (qwen2.5:3b):</strong> Fast, low-footprint model suitable for 8 GB
-                        RAM systems or CPU-only setups.</li>
+                        document comprehension. Balanced reasoning for 8–16 GB RAM and dedicated 8GB+ VRAM.</li>
+                    <li><strong>Lighter Alternative (qwen2.5:3b):</strong> Fast, low-resource model for laptops with 8 GB RAM or CPU-only setups.</li>
+                    <li><strong>Power User Option (qwen2.5:14b or larger):</strong> Best with 16 GB+ VRAM or 32 GB+ system RAM. Slower on lesser hardware.</li>
                     <li><strong>Default Embedding Model (nomic-embed-text):</strong> Fast, lightweight embedding
                         model optimized for local RAG retrieval.</li>
                 </ul>
@@ -186,7 +184,7 @@
                         locally.</p>
                 </div>
 
-                <h3>Option 1 &mdash; Launch start.exe (Recommended)</h3>
+                <h3>Option A &mdash; Launch start.exe (Portable ZIP)</h3>
                 <p>StarkLLM includes a standalone <code>start.exe</code> launcher that automatically checks Docker
                     Desktop status, checks Ollama availability, starts containers, and opens your browser to
                     <code>http://localhost:5173</code>.
@@ -204,14 +202,14 @@
                     </li>
                 </ol>
 
-                <h3>Option 2 &mdash; Launch start.cmd (Terminal Fallback)</h3>
+                <h3>Option B &mdash; Launch start.cmd (Portable ZIP)</h3>
                 <p>To launch via script in the terminal:</p>
                 <ol>
                     <li>In Command Prompt: <code>start.cmd</code></li>
                     <li>In PowerShell: <code>.\start.cmd</code></li>
                 </ol>
 
-                <h3>Option 3 &mdash; Direct Docker Compose (Last Resort)</h3>
+                <h3>Option C &mdash; Direct Docker Compose (Portable ZIP)</h3>
                 <p>Run standard Docker compose directly from the terminal:</p>
                 <p><code>docker compose up --build -d</code></p>
 

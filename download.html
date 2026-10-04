@@ -42,11 +42,12 @@
         </div>
 
         <div class="content-block" style="max-width: 1000px;">
-            <!-- Prominent Start in 5 Minutes Block -->
+            <!-- Setup Steps Block -->
             <div class="glass-panel" style="background: rgba(20, 20, 25, 0.85); border: 1px solid rgba(212, 175, 55, 0.2); padding: 2.5rem; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); margin-bottom: 3rem;">
                 <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 2rem;">
                     <div style="flex: 1; min-width: 300px;">
-                        <h2 style="font-size: 2.2rem; margin-bottom: 1.5rem; color: #fff;">&#9889; Start in 5 Minutes</h2>
+                        <h2 style="font-size: 2.2rem; margin-bottom: 1.5rem; color: #fff;">&#9889; Setup Steps</h2>
+                        <p style="font-size:0.88rem; color:var(--text-secondary); margin-bottom:1.2rem;">If Docker, Ollama, and the models are already installed, setup takes about 5 minutes. First-time model and Docker-image downloads depend on your bandwidth.</p>
                         <ol style="padding-left: 0; list-style: none; display: flex; flex-direction: column; gap: 1.2rem; margin: 0;">
                             <li style="position: relative; padding-left: 2.5rem;">
                                 <span style="position: absolute; left: 0; top: 0; font-weight: 800; color: #d4af37; font-size: 1.2rem; background: rgba(212, 175, 55, 0.1); border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center;">1</span>
@@ -132,7 +133,7 @@
             </div>
 
             <!-- Option 1: Primary Launcher -->
-            <h2>Option 1 &mdash; Run start.exe from Terminal (Recommended)</h2>
+            <h2>Option A &mdash; Run start.exe from Terminal (Portable ZIP)</h2>
             <p>StarkLLM includes a standalone <code>start.exe</code> launcher that checks Docker Desktop status, checks Ollama, builds containers, and opens your browser:</p>
             <ol>
                 <li>In File Explorer inside the extracted folder, click the address bar, type <code>cmd</code>, and press <strong>Enter</strong>.</li>
@@ -140,19 +141,19 @@
             </ol>
 
             <!-- Option 2: Terminal Fallback -->
-            <h2>Option 2 &mdash; Run start.cmd (Terminal Fallback)</h2>
+            <h2>Option B &mdash; Run start.cmd (Portable ZIP)</h2>
             <p>If you prefer running a command script directly in the terminal:</p>
             <ol>
                 <li>In the extracted folder terminal, run: <code>start.cmd</code> (or in PowerShell: <code>.\start.cmd</code>)</li>
             </ol>
 
             <!-- Option 3: Direct Docker Compose -->
-            <h2>Option 3 &mdash; Direct Docker Compose (Last Resort)</h2>
+            <h2>Option C &mdash; Direct Docker Compose (Portable ZIP)</h2>
             <p>If you prefer standard Docker CLI commands directly:</p>
             <div class="code-block">docker compose up --build -d</div>
 
             <!-- Option 4: Local Folder Unblock Script -->
-            <h2>Option 4 &mdash; Run unblock.ps1 (If Scripts are Blocked)</h2>
+            <h2>Option D &mdash; Run unblock.ps1 (If Scripts are Blocked)</h2>
             <p>If execution policies prevent script execution, open PowerShell in the extracted folder and run:</p>
             <div class="code-block">powershell -ExecutionPolicy Bypass -File unblock.ps1</div>
             <p style="color: var(--text-secondary); font-size: 0.9rem;"><em>This command safely removes SmartScreen flags only from files inside the current StarkLLM folder. It does not alter your global Windows security settings.</em></p>
@@ -224,7 +225,7 @@
 
             <div style="margin-bottom: 1.5rem;">
                 <h4 style="color: var(--text-primary); font-size: 1.1rem; margin-bottom: 0.5rem;">2. Is StarkLLM free?</h4>
-                <p style="color: var(--text-secondary); margin-bottom: 0;">Yes. It is free and open-source under Apache 2.0. There are no subscriptions, telemetry, or hidden tiers. It is provided "as is" for research purposes.</p>
+                <p style="color: var(--text-secondary); margin-bottom: 0;">Yes. It is free and open-source under Apache 2.0 for personal, research, and commercial use. No subscriptions, telemetry, or hidden tiers. Provided "as is" with no warranty.</p>
             </div>
 
             <div style="margin-bottom: 1.5rem;">

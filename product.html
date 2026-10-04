@@ -44,7 +44,7 @@
         <section class="container" style="max-width: 900px; padding-bottom: 4rem;">
             <div class="glass-panel text-center">
                 <h3 style="color: var(--text-primary); margin-bottom: 1rem;">The Document Lifecycle</h3>
-                <p>When you upload a PDF or text file into StarkLLM, processing stays local to your PC. First, local parsers extract the raw text. Second, a Semantic Chunking algorithm splits the text into logical, overlapping blocks. Third, a local embedding model converts these blocks into vectors, storing them in your private ChromaDB container. Finally, when you ask a question, the system retrieves the most relevant passages and injects them into the context window of your chosen Ollama LLM, producing source-grounded responses.</p>
+                <p>When you upload a PDF or text file into StarkLLM, processing stays local to your PC. First, local parsers extract the raw text (scanned PDFs and images go through local OCR / vision before chunking). Second, a Semantic Chunking algorithm splits the text into logical, overlapping blocks. Third, a local embedding model converts these blocks into vectors, storing them in your private ChromaDB container. Finally, when you ask a question, the system retrieves the most relevant passages and injects them into the context window of your chosen Ollama LLM, producing source-grounded responses.</p>
             </div>
         </section>
 
