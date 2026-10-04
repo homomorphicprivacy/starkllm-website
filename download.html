@@ -55,9 +55,9 @@
                             <li style="position: relative; padding-left: 2.5rem;">
                                 <span style="position: absolute; left: 0; top: 0; font-weight: 800; color: #d4af37; font-size: 1.2rem; background: rgba(212, 175, 55, 0.1); border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center;">2</span>
                                 <strong style="color: var(--text-primary);">Install Ollama &amp; pull models</strong> &mdash; In terminal, run:<br>
-                                <code style="background:#0a0a0c; border: 1px solid #333; padding:0.2rem 0.5rem; border-radius:4px; color:#d4af37; font-size: 0.88rem; display: inline-block; margin-top: 0.3rem;">ollama pull qwen3.8:27b</code><br>
-                                <code style="background:#0a0a0c; border: 1px solid #333; padding:0.2rem 0.5rem; border-radius:4px; color:#d4af37; font-size: 0.88rem; display: inline-block; margin-top: 0.2rem;">ollama pull qwen3-embedding:0.6b</code>
-                                <div style="font-size: 0.82rem; color: #a1a1aa; margin-top: 0.3rem;">(For lighter setups use <code>ollama pull qwen2.5:7b</code> or <code>ollama pull qwen2.5:3b</code>)</div>
+                                <code style="background:#0a0a0c; border: 1px solid #333; padding:0.2rem 0.5rem; border-radius:4px; color:#d4af37; font-size: 0.88rem; display: inline-block; margin-top: 0.3rem;">ollama pull qwen2.5:7b</code><br>
+                                <code style="background:#0a0a0c; border: 1px solid #333; padding:0.2rem 0.5rem; border-radius:4px; color:#d4af37; font-size: 0.88rem; display: inline-block; margin-top: 0.2rem;">ollama pull nomic-embed-text</code>
+                                <div style="font-size: 0.82rem; color: #a1a1aa; margin-top: 0.3rem;">(For 8GB RAM laptops use <code>ollama pull qwen2.5:3b</code> | For power workstations use <code>ollama pull qwen2.5:14b</code>)</div>
                             </li>
                             <li style="position: relative; padding-left: 2.5rem;">
                                 <span style="position: absolute; left: 0; top: 0; font-weight: 800; color: #d4af37; font-size: 1.2rem; background: rgba(212, 175, 55, 0.1); border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center;">3</span>
@@ -75,7 +75,7 @@
                         <ul style="padding-left: 1.2rem; color: #a1a1aa; font-size: 0.9rem; line-height: 1.5; margin-bottom: 1.2rem; display: flex; flex-direction: column; gap: 0.6rem;">
                             <li>📦 <strong>Version:</strong> v1.0.0-beta (Windows)</li>
                             <li>⚖️ <strong>License:</strong> Apache 2.0 (Open Source)</li>
-                            <li>💾 <strong>Size:</strong> ~117 MB</li>
+                            <li>💾 <strong>Size:</strong> ~115 MB</li>
                         </ul>
                         <a href="/downloads/StarkLLM-Setup.exe" class="btn btn-primary" style="width: 100%; text-align: center; padding: 0.9rem 1rem; display: block; font-weight: 700;" download>⬇️ Download Windows Installer (.exe)</a>
                         <div style="display: flex; gap: 0.5rem; margin-top: 0.6rem;">
@@ -88,14 +88,23 @@
 
             <!-- SHA-256 Verification Card -->
             <div class="glass-panel" style="background: rgba(14, 14, 18, 0.85); border: 1px solid rgba(255, 255, 255, 0.1); padding: 1.8rem; border-radius: 10px; margin-bottom: 2.5rem;">
-                <h3 style="font-size: 1.3rem; margin-bottom: 0.8rem; color: #fff;">🔒 Cryptographic SHA-256 Checksum</h3>
-                <p style="color: var(--text-secondary); font-size: 0.92rem; margin-bottom: 0.8rem;">To verify archive integrity before execution, compare the SHA-256 hash of your downloaded file:</p>
-                <div style="background: #09090b; border: 1px solid #27272a; padding: 0.8rem 1rem; border-radius: 6px; font-family: monospace; font-size: 0.86rem; color: #4ade80; word-break: break-all; margin-bottom: 1rem;">
-                    15aa772d586946af5213dd9a0f74bcf725f87cd15502d23e48cfc8d1e128fb43
+                <h3 style="font-size: 1.3rem; margin-bottom: 0.8rem; color: #fff;">🔒 Cryptographic SHA-256 Checksums</h3>
+                <p style="color: var(--text-secondary); font-size: 0.92rem; margin-bottom: 0.8rem;">To verify file integrity before execution, compare the SHA-256 hash of your downloaded package:</p>
+                <div style="margin-bottom: 1rem;">
+                    <strong style="color: #fff; font-size: 0.9rem;">StarkLLM-Setup.exe (Windows Installer):</strong>
+                    <div style="background: #09090b; border: 1px solid #27272a; padding: 0.6rem 0.8rem; border-radius: 6px; font-family: monospace; font-size: 0.84rem; color: #4ade80; word-break: break-all; margin-top: 0.3rem;">
+                        49dfea82ed1eeef7b2c1f4cba82f41e1381b617de903ee606c82153961b9384f
+                    </div>
+                </div>
+                <div style="margin-bottom: 1rem;">
+                    <strong style="color: #fff; font-size: 0.9rem;">StarkLLM-v1.0.0-beta.zip (Portable ZIP):</strong>
+                    <div style="background: #09090b; border: 1px solid #27272a; padding: 0.6rem 0.8rem; border-radius: 6px; font-family: monospace; font-size: 0.84rem; color: #a1a1aa; word-break: break-all; margin-top: 0.3rem;">
+                        15aa772d586946af5213dd9a0f74bcf725f87cd15502d23e48cfc8d1e128fb43
+                    </div>
                 </div>
                 <div style="font-size: 0.88rem; color: var(--text-secondary);">
                     <strong>Verify in PowerShell:</strong><br>
-                    <code style="background: #09090b; border: 1px solid #27272a; padding: 0.2rem 0.5rem; border-radius: 4px; color: #d4af37; display: inline-block; margin-top: 0.3rem;">Get-FileHash -Algorithm SHA256 StarkLLM-v1.0.0-beta.zip</code>
+                    <code style="background: #09090b; border: 1px solid #27272a; padding: 0.2rem 0.5rem; border-radius: 4px; color: #d4af37; display: inline-block; margin-top: 0.3rem;">Get-FileHash -Algorithm SHA256 StarkLLM-Setup.exe</code>
                 </div>
             </div>
 
@@ -108,12 +117,12 @@
                 <li><strong>Ollama:</strong> Installed natively on Windows and running. Download from <a href="https://ollama.com" target="_blank" rel="noopener">ollama.com</a>.</li>
                 <li><strong>Models recommended:</strong> Open a terminal and run:
                     <div class="code-block">
-                        ollama pull qwen3.8:27b<br>
-                        ollama pull qwen3-embedding:0.6b
+                        ollama pull qwen2.5:7b<br>
+                        ollama pull nomic-embed-text
                     </div>
                 </li>
                 <li><strong>Hardware:</strong> Minimum 8 GB RAM (for 3B models) / 16 GB RAM recommended (for 7B models). An NVIDIA GPU with 8 GB+ VRAM is strongly recommended for optimal performance. See the <a href="/manual.html">User Manual</a> for hardware tier guidance.</li>
-                <li><strong>Supported Formats:</strong> PDF, DOCX, TXT, MD, HTML, and images (PNG, JPG).</li>
+                <li><strong>Supported Formats:</strong> PDF, DOCX, TXT, Markdown (.md), CSV, JSON, HTML, and Images (PNG, JPG with OCR).</li>
             </ul>
 
             <!-- Windows Security & MotW -->
@@ -153,7 +162,7 @@
             <h2>Important Notes</h2>
             <ul>
                 <li>StarkLLM is <strong>free</strong> and <strong>open source (Apache 2.0)</strong>.</li>
-                <li>Intended for <strong>research and non-commercial use</strong>.</li>
+                <li>Licensed under <strong>Apache 2.0 (Free for personal, research, and commercial use)</strong>.</li>
                 <li>Provided <strong>"as-is" without warranty</strong> or liability of any kind.</li>
             </ul>
 
@@ -245,7 +254,7 @@
 
             <div style="margin-bottom: 1.5rem;">
                 <h4 style="color: var(--text-primary); font-size: 1.1rem; margin-bottom: 0.5rem;">8. What if the UI opens but chat does not connect?</h4>
-                <p>Ensure Docker Desktop and Ollama are running. Verify you have pulled the default model (<code>ollama pull qwen3.8:27b</code> and <code>ollama pull qwen3-embedding:0.6b</code>). The backend container communicates with Ollama on your host via <code>host.docker.internal:11434</code>. If needed, restart containers with <code>docker compose down</code> followed by <code>docker compose up --build -d</code>.</p>
+                <p>Ensure Docker Desktop and Ollama are running. Verify you have pulled the default model (<code>ollama pull qwen2.5:7b</code> and <code>ollama pull nomic-embed-text</code>). The backend container communicates with Ollama on your host via <code>host.docker.internal:11434</code>. If needed, restart containers with <code>docker compose down</code> followed by <code>docker compose up --build -d</code>.</p>
             </div>
 
             <div style="margin-bottom: 1.5rem;">

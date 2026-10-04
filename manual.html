@@ -134,18 +134,18 @@
                 <h2>6. Recommended models</h2>
                 <div class="alert info">
                     <h4>Recommended Model Configuration</h4>
-                    <p>StarkLLM ships with <strong><code>qwen3.8:27b</code></strong> as the default text model and
-                        <strong><code>qwen3-embedding:0.6b</code></strong> for document vector embedding.
+                    <p>StarkLLM ships with <strong><code>qwen2.5:7b</code></strong> as the default text model and
+                        <strong><code>nomic-embed-text</code></strong> for document vector embedding.
                     </p>
                 </div>
                 <ul>
-                    <li><strong>Shipped Default (qwen3.8:27b):</strong> High-accuracy reasoning model with strong
-                        document comprehension. Requires 16GB+ VRAM or 32GB+ system RAM.</li>
+                    <li><strong>Recommended Default (qwen2.5:7b):</strong> High-accuracy reasoning model with strong
+                        document comprehension. Balanced reasoning for 8GB-16GB RAM and dedicated 6GB+ VRAM.</li>
                     <li><strong>Lighter Alternative (qwen2.5:7b):</strong> Good balance of accuracy and speed for 8–16GB
                         VRAM setups.</li>
                     <li><strong>Lightweight Option (qwen2.5:3b):</strong> Fast, low-footprint model suitable for 8 GB
                         RAM systems or CPU-only setups.</li>
-                    <li><strong>Default Embedding Model (qwen3-embedding:0.6b):</strong> Fast, lightweight embedding
+                    <li><strong>Default Embedding Model (nomic-embed-text):</strong> Fast, lightweight embedding
                         model optimized for local RAG retrieval.</li>
                 </ul>
             </section>
@@ -159,11 +159,11 @@
                     </li>
                     <li>Pull the default models in your terminal:
                         <div class="code-block">
-                            ollama pull qwen3.8:27b<br>
-                            ollama pull qwen3-embedding:0.6b
+                            ollama pull qwen2.5:7b<br>
+                            ollama pull nomic-embed-text
                         </div>
                     </li>
-                    <li>Extract the StarkLLM release package completely to a directory (e.g. <code>C:\StarkLLM\</code>).
+                    <li>Run <code>StarkLLM-Setup.exe</code> (Windows Installer) or extract the Portable ZIP.
                     </li>
                 </ol>
             </section>
@@ -369,7 +369,7 @@
                     <li><strong>"Cannot connect to Ollama":</strong> Ensure Ollama is running in your Windows system
                         tray. Ollama runs natively on the host, and the Docker container communicates via
                         <code>host.docker.internal:11434</code>. Verify you pulled the required model
-                        (<code>ollama pull qwen3.8:27b</code>).
+                        (<code>ollama pull qwen2.5:7b</code>).
                     </li>
                     <li><strong>Docker fails to start:</strong> Ensure Docker Desktop is running with WSL2 integration.
                         If containers fail, try running <code>docker compose down</code> followed by

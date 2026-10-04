@@ -69,7 +69,7 @@
                     <li><strong>Docker Desktop:</strong> Installed &amp; running in system tray.</li>
                     <li><strong>Ollama:</strong> Installed natively on Windows host.</li>
                     <li><strong>Hardware:</strong> 8 GB RAM min / 16 GB recommended (NVIDIA GPU with 8GB+ VRAM recommended).</li>
-                    <li><strong>Models:</strong> <code>ollama pull qwen3.8:27b</code> &amp; <code>qwen3-embedding:0.6b</code> (or lighter: <code>qwen2.5:7b</code>)</li>
+                    <li><strong>Models:</strong> <code>ollama pull qwen2.5:7b</code> &amp; <code>nomic-embed-text</code> (or lighter: <code>qwen2.5:3b</code>)</li>
                 </ul>
             </div>
 
@@ -151,27 +151,16 @@
                             <li style="position: relative; padding-left: 2.5rem;">
                                 <span style="position: absolute; left: 0; top: 0; font-weight: 800; color: #d4af37; font-size: 1.2rem; background: rgba(212, 175, 55, 0.1); border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center;">2</span>
                                 <strong style="color: var(--text-primary);">Install Ollama &amp; pull models</strong> &mdash; In terminal, run:<br>
-                                <code style="background:#0a0a0c; border: 1px solid #333; padding:0.2rem 0.5rem; border-radius:4px; color:#d4af37; font-size: 0.88rem; display: inline-block; margin-top: 0.3rem;">ollama pull qwen3.8:27b</code><br>
-                                <code style="background:#0a0a0c; border: 1px solid #333; padding:0.2rem 0.5rem; border-radius:4px; color:#d4af37; font-size: 0.88rem; display: inline-block; margin-top: 0.2rem;">ollama pull qwen3-embedding:0.6b</code>
+                                <code style="background:#0a0a0c; border: 1px solid #333; padding:0.2rem 0.5rem; border-radius:4px; color:#d4af37; font-size: 0.88rem; display: inline-block; margin-top: 0.3rem;">ollama pull qwen2.5:7b</code><br>
+                                <code style="background:#0a0a0c; border: 1px solid #333; padding:0.2rem 0.5rem; border-radius:4px; color:#d4af37; font-size: 0.88rem; display: inline-block; margin-top: 0.2rem;">ollama pull nomic-embed-text</code>
                             </li>
                             <li style="position: relative; padding-left: 2.5rem;">
                                 <span style="position: absolute; left: 0; top: 0; font-weight: 800; color: #d4af37; font-size: 1.2rem; background: rgba(212, 175, 55, 0.1); border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center;">3</span>
-                                <strong style="color: var(--text-primary);">Download &amp; Extract ZIP</strong> &mdash; Extract the package completely to a folder (e.g. <code>C:\StarkLLM\</code>).
+                                <strong style="color: var(--text-primary);">Run StarkLLM Setup (.exe)</strong> &mdash; Download and run <code>StarkLLM-Setup.exe</code> (or extract Portable ZIP). The wizard automatically configures desktop shortcuts.
                             </li>
                             <li style="position: relative; padding-left: 2.5rem;">
                                 <span style="position: absolute; left: 0; top: 0; font-weight: 800; color: #d4af37; font-size: 1.2rem; background: rgba(212, 175, 55, 0.1); border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center;">4</span>
-                                <strong style="color: var(--text-primary);">Open terminal in folder</strong> &mdash; In the extracted folder, click the Explorer address bar, type <code>cmd</code> (or <code>powershell</code>), and press Enter.
-                            </li>
-                            <li style="position: relative; padding-left: 2.5rem;">
-                                <span style="position: absolute; left: 0; top: 0; font-weight: 800; color: #d4af37; font-size: 1.2rem; background: rgba(212, 175, 55, 0.1); border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center;">5</span>
-                                <strong style="color: var(--text-primary);">Launch StarkLLM</strong> &mdash; Execute the launcher:<br>
-                                <span style="font-size: 0.88rem; color: #d4af37;">In Command Prompt (cmd):</span> <code style="background:#0a0a0c; border: 1px solid #333; padding:0.15rem 0.4rem; border-radius:4px; color:#d4af37;">start.exe</code> or <code style="background:#0a0a0c; border: 1px solid #333; padding:0.15rem 0.4rem; border-radius:4px; color:#d4af37;">start.cmd</code><br>
-                                <span style="font-size: 0.88rem; color: #d4af37;">In PowerShell:</span> <code style="background:#0a0a0c; border: 1px solid #333; padding:0.15rem 0.4rem; border-radius:4px; color:#d4af37;">.\start.exe</code> or <code style="background:#0a0a0c; border: 1px solid #333; padding:0.15rem 0.4rem; border-radius:4px; color:#d4af37;">.\start.cmd</code><br>
-                                <span style="color: var(--text-secondary); font-size: 0.85rem;">(If Windows SmartScreen warns: <em>More info</em> &rarr; <em>Run anyway</em> | Last resort: <code>docker compose up --build -d</code>)</span>
-                            </li>
-                            <li style="position: relative; padding-left: 2.5rem;">
-                                <span style="position: absolute; left: 0; top: 0; font-weight: 800; color: #d4af37; font-size: 1.2rem; background: rgba(212, 175, 55, 0.1); border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center;">6</span>
-                                <strong style="color: var(--text-primary);">Open StarkLLM</strong> &mdash; Navigate to <code>http://localhost:5173</code> in your browser.
+                                <strong style="color: var(--text-primary);">Launch &amp; Enjoy</strong> &mdash; Click the StarkLLM desktop shortcut. Services start automatically and open <code>http://localhost:5173</code> in your browser.
                             </li>
                         </ol>
                     </div>
